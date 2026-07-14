@@ -1,0 +1,13 @@
+{
+  "name": "osce-reference-web",
+  "private": true,
+  "dependencies": {
+    "ai": "^4.3.19",
+    "@ai-sdk/anthropic": "^1.2.12",
+    "openai": "^4.104.0"
+  },
+  "devDependencies": {
+    "@vercel/node": "^3.2.24",
+    "typescript": "^5.9.3"
+  }
+}

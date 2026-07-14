@@ -245,6 +245,54 @@ tr:hover td{background:rgba(0,0,0,.03);}
   color:#a09890;padding:10px 12px 4px;margin-top:4px;border-top:1px solid var(--border-light);}
 .aw-mod-sep:first-child{border-top:none;margin-top:0;}
 
+/* TG4 BIBLE CHAT WIDGET */
+#tg4-chat-btn{position:fixed;right:24px;bottom:88px;z-index:300;
+  width:56px;height:56px;border-radius:50%;background:var(--badge-bg);color:var(--badge-text);
+  border:none;cursor:pointer;font-size:22px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 14px rgba(0,0,0,.25);}
+#tg4-chat-panel{position:fixed;right:24px;bottom:154px;z-index:300;
+  width:380px;max-width:calc(100vw - 48px);height:min(560px,70vh);
+  background:var(--card);border:1px solid var(--border);border-radius:14px;
+  box-shadow:0 12px 40px rgba(0,0,0,.28);display:none;flex-direction:column;overflow:hidden;}
+#tg4-chat-panel.open{display:flex;}
+#tg4-chat-header{padding:14px 16px;border-bottom:1px solid var(--border);
+  font-family:var(--font-serif);font-weight:700;font-size:14.5px;
+  background:var(--tg4-bg);color:var(--text);display:flex;align-items:center;justify-content:space-between;flex-shrink:0;}
+#tg4-chat-header button{background:none;border:none;font-size:16px;cursor:pointer;color:var(--muted);}
+#tg4-chat-messages{flex:1;overflow-y:auto;padding:14px 16px;display:flex;flex-direction:column;gap:14px;}
+.tg4-msg{font-size:13.5px;line-height:1.6;}
+.tg4-msg.user{align-self:flex-end;background:var(--link-active-bg);padding:8px 12px;border-radius:10px;max-width:85%;}
+.tg4-msg.bot h3{font-family:var(--font-serif);font-size:14.5px;margin:0 0 6px;}
+.tg4-msg.bot h4{font-size:10px;font-weight:800;letter-spacing:.4px;text-transform:uppercase;
+  color:var(--muted);margin:10px 0 4px;}
+.tg4-msg.bot p{margin:0 0 8px;}
+.tg4-msg.bot ul{margin:0 0 8px 16px;}
+.tg4-msg.bot li{margin-bottom:3px;}
+.tg4-msg.bot hr{border:none;border-top:1px solid var(--border);margin:10px 0;}
+.tg4-sources{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px;}
+.tg4-source-thumb{display:block;width:64px;border:1px solid var(--tg4-border);border-radius:6px;overflow:hidden;text-decoration:none;flex-shrink:0;}
+.tg4-source-thumb img{display:block;width:100%;}
+.tg4-source-thumb span{display:block;font-size:9.5px;text-align:center;padding:2px 0;color:var(--muted);background:var(--tg4-bg);}
+#tg4-chat-form{display:flex;gap:8px;padding:12px;border-top:1px solid var(--border);flex-shrink:0;}
+#tg4-chat-input{flex:1;border:1px solid var(--border);border-radius:8px;padding:8px 10px;font-size:13px;font-family:var(--font-sans);resize:none;}
+#tg4-chat-form button{background:var(--badge-bg);color:var(--badge-text);border:none;border-radius:8px;padding:0 16px;cursor:pointer;font-size:13px;}
+#tg4-chat-form button:disabled{opacity:.5;cursor:default;}
+#tg4-page-lightbox{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.75);
+  display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+#tg4-page-lightbox.open{display:flex;}
+#tg4-page-lightbox img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+@media (max-width:640px){
+  #tg4-chat-btn{bottom:24px;}
+  #tg4-chat-panel{bottom:90px;right:12px;left:12px;width:auto;}
+}
+.sb-tg4-link{display:flex;flex-direction:column;gap:1px;margin:10px 12px;padding:9px 12px;
+  border-radius:8px;background:var(--tg4-bg);border:1px solid var(--tg4-border);
+  font-size:12.5px;font-weight:700;color:var(--text);text-decoration:none;}
+.sb-tg4-link span{font-size:10px;font-weight:400;color:var(--muted);}
+.sb-tg4-link:hover{background:var(--sidebar-hover);}
+.tg4-open-full{display:inline-block;margin-top:8px;font-size:11.5px;font-weight:600;
+  color:var(--accent);text-decoration:none;border-bottom:1px solid var(--tg4-border);}
+
 </style>
 </head>
 <body>
@@ -261,6 +309,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
   <input type="text" id="sb-search" placeholder="Search stations…" autocomplete="off">
   <span class="sb-search-icon">⌕</span>
 </div>
+<a href="/tg4-bible" class="sb-tg4-link">📖 TG4 Bible <span>ask &amp; cite the guidelines</span></a>
 <nav id="sb-nav"><div class="ch-group" data-chapter="aw">
   <div class="ch-hdr" onclick="toggleChapter('aw')">
     <span class="ch-emoji">📚</span>
@@ -11637,6 +11686,160 @@ document.getElementById('overlay').addEventListener('click', function () {
   openChapter('aw');
   const firstLink = document.querySelector('.st-link');
   if (firstLink) firstLink.click();
+})();
+</script>
+
+<button id="tg4-chat-btn" aria-label="Ask the TG4 Bible">💬</button>
+<div id="tg4-chat-panel">
+  <div id="tg4-chat-header">
+    <span>TG4 Bible</span>
+    <button id="tg4-chat-close" aria-label="Close">✕</button>
+  </div>
+  <div id="tg4-chat-messages">
+    <div class="tg4-msg bot">Ask me anything from Therapeutic Guidelines 4 — I'll give you the key points and show the exact pages.</div>
+  </div>
+  <form id="tg4-chat-form">
+    <textarea id="tg4-chat-input" rows="1" placeholder="e.g. dose for acute dental pain?"></textarea>
+    <button type="submit">Ask</button>
+  </form>
+</div>
+<div id="tg4-page-lightbox"><img id="tg4-page-lightbox-img" src="" alt="TG4 page"></div>
+
+<script>
+(function () {
+  const btn        = document.getElementById('tg4-chat-btn');
+  const panel      = document.getElementById('tg4-chat-panel');
+  const closeBtn   = document.getElementById('tg4-chat-close');
+  const messagesEl = document.getElementById('tg4-chat-messages');
+  const form       = document.getElementById('tg4-chat-form');
+  const input      = document.getElementById('tg4-chat-input');
+  const lightbox    = document.getElementById('tg4-page-lightbox');
+  const lightboxImg = document.getElementById('tg4-page-lightbox-img');
+
+  btn.addEventListener('click', () => panel.classList.toggle('open'));
+  closeBtn.addEventListener('click', () => panel.classList.remove('open'));
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function inline(s) {
+    return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }
+  function renderMarkdown(text) {
+    const lines = escapeHtml(text).split('\n');
+    let html = '';
+    let inList = false;
+    function closeList() { if (inList) { html += '</ul>'; inList = false; } }
+    lines.forEach(function (line) {
+      const h2 = line.match(/^##\s+(.*)/);
+      const h3 = line.match(/^###\s+(.*)/);
+      const bullet = line.match(/^\s*-\s+(.*)/);
+      const hr = /^-{3,}$/.test(line.trim());
+      if (hr) { closeList(); html += '<hr>'; }
+      else if (h2) { closeList(); html += '<h3>' + inline(h2[1]) + '</h3>'; }
+      else if (h3) { closeList(); html += '<h4>' + inline(h3[1]) + '</h4>'; }
+      else if (bullet) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + inline(bullet[1]) + '</li>';
+      } else if (line.trim() === '') {
+        closeList();
+      } else {
+        closeList();
+        html += '<p>' + inline(line) + '</p>';
+      }
+    });
+    closeList();
+    return html;
+  }
+
+  function addMessage(role, text) {
+    const div = document.createElement('div');
+    div.className = 'tg4-msg ' + role;
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+    return div;
+  }
+
+  function renderSources(container, pages, question) {
+    if (!pages || !pages.length) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'tg4-sources';
+    pages.forEach((p) => {
+      const num = String(p).padStart(3, '0');
+      const a = document.createElement('a');
+      a.href = '#';
+      a.className = 'tg4-source-thumb';
+      a.innerHTML = '<img src="data/tg4-pages/' + num + '.jpg" loading="lazy" alt="TG4 page ' + p + '"><span>p.' + p + '</span>';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        lightboxImg.src = 'data/tg4-pages/' + num + '.jpg';
+        lightbox.classList.add('open');
+      });
+      wrap.appendChild(a);
+    });
+    container.appendChild(wrap);
+
+    const full = document.createElement('a');
+    full.href = '/tg4-bible?q=' + encodeURIComponent(question);
+    full.className = 'tg4-open-full';
+    full.textContent = 'Open full answer in TG4 Bible →';
+    container.appendChild(full);
+
+    messagesEl.scrollTop = messagesEl.scrollHeight;
+  }
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    input.value = '';
+    addMessage('user', question);
+    const botDiv = addMessage('bot', '…');
+    const submitBtn = form.querySelector('button');
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question }),
+      });
+      if (!res.ok || !res.body) {
+        botDiv.textContent = 'Sorry, something went wrong. Please try again.';
+        return;
+      }
+      let sourcePages = [];
+      try { sourcePages = JSON.parse(res.headers.get('X-Source-Pages') || '[]'); } catch (_err) {}
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let text = '';
+      botDiv.textContent = '';
+      while (true) {
+        const chunk = await reader.read();
+        if (chunk.done) break;
+        text += decoder.decode(chunk.value, { stream: true });
+        botDiv.textContent = text;
+        messagesEl.scrollTop = messagesEl.scrollHeight;
+      }
+      botDiv.innerHTML = renderMarkdown(text);
+      renderSources(botDiv, sourcePages, question);
+    } catch (err) {
+      botDiv.textContent = 'Sorry, something went wrong. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+      messagesEl.scrollTop = messagesEl.scrollHeight;
+    }
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
 })();
 </script>
 </body>

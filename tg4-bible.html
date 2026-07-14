@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>TG4 Bible — ADC Study Bank</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --link-active-bg:#e0dbd3;
+  --badge-bg:#3d3935; --badge-text:#f5f2ed;
+  --tg4-bg:#fdf8f0; --tg4-border:#c4a97a;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  min-height:100vh;font-size:15px;line-height:1.75;-webkit-font-smoothing:antialiased;
+  display:flex;flex-direction:column;}
+
+header.tg4-page-header{display:flex;align-items:center;gap:16px;padding:16px 24px;
+  border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:10;}
+.tg4-back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.tg4-back:hover{color:var(--text);}
+.tg4-page-title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.tg4-page-sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;}
+
+main.tg4-page-main{flex:1;width:100%;max-width:760px;margin:0 auto;padding:24px 20px 140px;}
+.tg4-page-messages{display:flex;flex-direction:column;gap:22px;}
+.tg4-page-msg{font-size:14.5px;line-height:1.7;}
+.tg4-page-msg.user{align-self:flex-end;background:var(--link-active-bg);padding:10px 16px;
+  border-radius:12px;max-width:80%;font-weight:600;}
+.tg4-page-msg.bot{background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:16px 18px;}
+.tg4-page-msg.bot h3{font-family:var(--font-serif);font-size:17px;margin:0 0 10px;}
+.tg4-page-msg.bot h4{font-size:12px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;
+  color:var(--muted);margin:14px 0 8px;}
+.tg4-page-msg.bot p{margin:0 0 10px;}
+.tg4-page-msg.bot ul{margin:0 0 10px 18px;}
+.tg4-page-msg.bot li{margin-bottom:4px;}
+.tg4-page-msg.bot hr{border:none;border-top:1px solid var(--border);margin:14px 0;}
+
+.tg4-sources{display:flex;gap:12px;flex-wrap:wrap;margin-top:14px;}
+.tg4-source-thumb{display:block;width:110px;border:1px solid var(--tg4-border);border-radius:8px;
+  overflow:hidden;text-decoration:none;flex-shrink:0;background:var(--tg4-bg);}
+.tg4-source-thumb img{display:block;width:100%;}
+.tg4-source-thumb span{display:block;font-size:11px;text-align:center;padding:4px 0;
+  color:var(--muted);font-weight:600;}
+
+form.tg4-page-form{position:fixed;bottom:0;left:0;right:0;display:flex;gap:10px;
+  padding:16px 20px;background:rgba(245,242,237,.96);backdrop-filter:blur(8px);
+  border-top:1px solid var(--border);}
+form.tg4-page-form > div{max-width:760px;margin:0 auto;display:flex;gap:10px;width:100%;}
+#tg4p-input{flex:1;border:1px solid var(--border);border-radius:9px;padding:12px 14px;
+  font-size:14px;font-family:var(--font-sans);resize:none;background:var(--card);}
+form.tg4-page-form button{background:var(--badge-bg);color:var(--badge-text);border:none;
+  border-radius:9px;padding:0 22px;cursor:pointer;font-size:14px;font-weight:600;}
+form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
+
+#tg4-page-lightbox{position:fixed;inset:0;z-index:400;background:rgba(0,0,0,.75);
+  display:none;align-items:center;justify-content:center;padding:20px;cursor:zoom-out;}
+#tg4-page-lightbox.open{display:flex;}
+#tg4-page-lightbox img{max-width:100%;max-height:100%;border-radius:6px;box-shadow:0 10px 40px rgba(0,0,0,.5);}
+</style>
+</head>
+<body>
+
+<header class="tg4-page-header">
+  <a href="index.html" class="tg4-back">← OSCE Reference</a>
+  <div class="tg4-page-title">📖 TG4 Bible</div>
+  <div class="tg4-page-sub">Ask a clinical question —<br>get key points + the exact TG4 pages.</div>
+</header>
+
+<main class="tg4-page-main">
+  <div id="tg4p-messages" class="tg4-page-messages">
+    <div class="tg4-page-msg bot">Ask me anything from Therapeutic Guidelines 4 — I'll answer with key points and show the exact pages behind the answer.</div>
+  </div>
+</main>
+
+<form id="tg4p-form" class="tg4-page-form">
+  <div>
+    <textarea id="tg4p-input" rows="1" placeholder="e.g. dose for acute dental pain?"></textarea>
+    <button type="submit">Ask</button>
+  </div>
+</form>
+
+<div id="tg4-page-lightbox"><img id="tg4p-lightbox-img" src="" alt="TG4 page"></div>
+
+<script>
+(function () {
+  const messagesEl = document.getElementById('tg4p-messages');
+  const form       = document.getElementById('tg4p-form');
+  const input      = document.getElementById('tg4p-input');
+  const lightbox    = document.getElementById('tg4-page-lightbox');
+  const lightboxImg = document.getElementById('tg4p-lightbox-img');
+
+  lightbox.addEventListener('click', () => lightbox.classList.remove('open'));
+
+  function escapeHtml(s) {
+    return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+  }
+  function inline(s) {
+    return s.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  }
+  function renderMarkdown(text) {
+    const lines = escapeHtml(text).split('\n');
+    let html = '';
+    let inList = false;
+    function closeList() { if (inList) { html += '</ul>'; inList = false; } }
+    lines.forEach(function (line) {
+      const h2 = line.match(/^##\s+(.*)/);
+      const h3 = line.match(/^###\s+(.*)/);
+      const bullet = line.match(/^\s*-\s+(.*)/);
+      const hr = /^-{3,}$/.test(line.trim());
+      if (hr) { closeList(); html += '<hr>'; }
+      else if (h2) { closeList(); html += '<h3>' + inline(h2[1]) + '</h3>'; }
+      else if (h3) { closeList(); html += '<h4>' + inline(h3[1]) + '</h4>'; }
+      else if (bullet) {
+        if (!inList) { html += '<ul>'; inList = true; }
+        html += '<li>' + inline(bullet[1]) + '</li>';
+      } else if (line.trim() === '') {
+        closeList();
+      } else {
+        closeList();
+        html += '<p>' + inline(line) + '</p>';
+      }
+    });
+    closeList();
+    return html;
+  }
+
+  function addMessage(role, text) {
+    const div = document.createElement('div');
+    div.className = 'tg4-page-msg ' + role;
+    div.textContent = text;
+    messagesEl.appendChild(div);
+    window.scrollTo(0, document.body.scrollHeight);
+    return div;
+  }
+
+  function renderSources(container, pages) {
+    if (!pages || !pages.length) return;
+    const wrap = document.createElement('div');
+    wrap.className = 'tg4-sources';
+    pages.forEach((p) => {
+      const num = String(p).padStart(3, '0');
+      const a = document.createElement('a');
+      a.href = '#';
+      a.className = 'tg4-source-thumb';
+      a.innerHTML = '<img src="data/tg4-pages/' + num + '.jpg" loading="lazy" alt="TG4 page ' + p + '"><span>Page ' + p + '</span>';
+      a.addEventListener('click', function (e) {
+        e.preventDefault();
+        lightboxImg.src = 'data/tg4-pages/' + num + '.jpg';
+        lightbox.classList.add('open');
+      });
+      wrap.appendChild(a);
+    });
+    container.appendChild(wrap);
+    window.scrollTo(0, document.body.scrollHeight);
+  }
+
+  async function ask(question) {
+    addMessage('user', question);
+    const botDiv = addMessage('bot', '…');
+    const submitBtn = form.querySelector('button');
+    submitBtn.disabled = true;
+
+    try {
+      const res = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ question: question }),
+      });
+      if (!res.ok || !res.body) {
+        botDiv.textContent = 'Sorry, something went wrong. Please try again.';
+        return;
+      }
+      let sourcePages = [];
+      try { sourcePages = JSON.parse(res.headers.get('X-Source-Pages') || '[]'); } catch (_err) {}
+
+      const reader = res.body.getReader();
+      const decoder = new TextDecoder();
+      let text = '';
+      botDiv.textContent = '';
+      while (true) {
+        const chunk = await reader.read();
+        if (chunk.done) break;
+        text += decoder.decode(chunk.value, { stream: true });
+        botDiv.textContent = text;
+        window.scrollTo(0, document.body.scrollHeight);
+      }
+      botDiv.innerHTML = renderMarkdown(text);
+      renderSources(botDiv, sourcePages);
+    } catch (err) {
+      botDiv.textContent = 'Sorry, something went wrong. Please try again.';
+    } finally {
+      submitBtn.disabled = false;
+    }
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    const question = input.value.trim();
+    if (!question) return;
+    input.value = '';
+    ask(question);
+  });
+
+  input.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && !e.shiftKey) {
+      e.preventDefault();
+      form.requestSubmit();
+    }
+  });
+
+  // Deep link from the floating widget: ?q=<question> auto-asks on load.
+  const params = new URLSearchParams(window.location.search);
+  const initialQ = params.get('q');
+  if (initialQ) {
+    input.value = '';
+    ask(initialQ);
+  }
+})();
+</script>
+</body>
+</html>
