@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Prep Notebook — ADC Study Bank</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;overflow:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  display:flex;flex-direction:column;font-size:15px;-webkit-font-smoothing:antialiased;}
+
+header{display:flex;align-items:center;gap:14px;padding:14px 20px;
+  border-bottom:1px solid var(--border);background:var(--card);flex-shrink:0;}
+.back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.back:hover{color:var(--text);}
+.title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;}
+.dl{font-size:12.5px;font-weight:600;color:var(--accent);text-decoration:none;
+  border:1px solid var(--border);border-radius:20px;padding:6px 14px;white-space:nowrap;}
+.dl:hover{background:var(--border);}
+
+.viewer-wrap{flex:1;min-height:0;}
+.viewer-wrap iframe{width:100%;height:100%;border:none;display:block;}
+
+.fallback{padding:40px 20px;text-align:center;color:var(--muted);font-size:13.5px;}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="/exam-craft" class="back">← Back</a>
+  <div class="title">Prep Notebook</div>
+  <div class="sub">Full searchable scan — use your browser's find (Ctrl/Cmd+F) inside the viewer</div>
+  <a href="/data/examcraft-notebook.pdf" download class="dl">⭳ Download</a>
+</header>
+
+<div class="viewer-wrap">
+  <iframe src="/data/examcraft-notebook.pdf" title="Prep notebook PDF">
+    <div class="fallback">
+      Your browser can't display embedded PDFs.
+      <a href="/data/examcraft-notebook.pdf">Open the PDF directly</a> instead.
+    </div>
+  </iframe>
+</div>
+
+</body>
+</html>
