@@ -1762,13 +1762,17 @@ body{display:flex;}
   search.addEventListener('input',function(){
     var q=search.value.trim().toLowerCase();
     document.querySelectorAll('.ch-group').forEach(function(group){
-      var links=group.querySelectorAll('.cs-link'),anyVisible=false;
+      var links=group.querySelectorAll('.cs-link'),anyVisible=0,countEl=group.querySelector('.ch-count');
       links.forEach(function(a){
         var match=a.textContent.toLowerCase().indexOf(q)!==-1;
         a.classList.toggle('filtered-out',!match);
-        if(match)anyVisible=true;
+        if(match)anyVisible++;
       });
-      group.classList.toggle('all-filtered',!anyVisible);
+      if(countEl){
+        if(!countEl.dataset.total)countEl.dataset.total=countEl.textContent;
+        countEl.textContent=q?anyVisible:countEl.dataset.total;
+      }
+      group.classList.toggle('all-filtered',anyVisible===0);
     });
   });
 
