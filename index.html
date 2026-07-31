@@ -195,6 +195,14 @@ tr:hover td{background:rgba(0,0,0,.03);}
 .killer-box li{color:#e2d8cc;font-size:13.5px;line-height:1.65;margin-bottom:8px;}
 .killer-box li em{color:#a89070;font-style:italic;}
 
+/* NOTEBOOK CROSS-CHECK BOX */
+.nb-box{background:#f2f7f4;border:1px solid #2a604933;border-radius:10px;padding:22px 26px;margin-top:24px;}
+.nb-title{font-family:var(--font-sans);font-size:10px;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;color:#2a6049;
+  margin-bottom:14px;border:none;padding:0;text-align:left;}
+.nb-box ul{margin:0 0 4px 16px;}
+.nb-box li{color:#1c1917;font-size:13.5px;line-height:1.65;margin-bottom:8px;}
+
 /* MOBILE */
 @media(max-width:768px){
   #sidebar{transform:translateX(-100%);}
@@ -314,7 +322,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 <aside id="sidebar">
 <div class="sb-brand">
   <div class="sb-logo">⚕</div>
-  <div><div class="sb-title">OSCE Reference</div><div class="sb-sub">ADC Study Bank · 147 Stations</div></div>
+  <div><div class="sb-title">OSCE Reference</div><div class="sb-sub">ADC Study Bank · 148 Stations</div></div>
 </div>
 <div class="sb-search-wrap">
   <input type="text" id="sb-search" placeholder="Search stations…" autocomplete="off">
@@ -322,11 +330,13 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </div>
 <a href="/tg4-bible" class="sb-tg4-link">📖 TG4 Bible <span>ask &amp; cite the guidelines</span></a>
 <a href="/exam-craft" class="sb-tg4-link">🎯 Exam Craft <span>prep strategy &amp; crib notes</span></a>
+<a href="/naz-notes" class="sb-tg4-link">📓 Naz Notes <span>digitized case-by-case notebook</span></a>
+<a href="/ideal-answers" class="sb-tg4-link">💡 Ideal Answers <span>model answers for all 59 stations</span></a>
 <nav id="sb-nav"><div class="ch-group" data-chapter="aw">
   <div class="ch-hdr" onclick="toggleChapter('aw')">
     <span class="ch-emoji">📚</span>
     <span class="ch-name">Past Questions</span>
-    <span class="ch-count">59</span>
+    <span class="ch-count">60</span>
     <span class="ch-arrow" id="arrow-aw">▾</span>
   </div>
   <div class="ch-stations" id="ch-aw"><div class="aw-mod-sep">Module 1</div>
@@ -389,6 +399,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 <a href="#station-aw-57" class="st-link" data-sid="AW-57" onclick="activateLink(this)">PQ-57: 16-Year-Old with Rampant Caries &amp; Erosion — Dietary + Lifestyle Causes</a>
 <a href="#station-aw-58" class="st-link" data-sid="AW-58" onclick="activateLink(this)">PQ-58: Drug-Seeking Behaviour — Opioid Request for Dental Pain</a>
 <a href="#station-aw-59" class="st-link" data-sid="AW-59" onclick="activateLink(this)">PQ-59: MIH in an 11-Year-Old — Second Opinion on GA Extraction</a>
+<a href="#station-aw-60" class="st-link" data-sid="AW-60" onclick="activateLink(this)">PQ-60: Caries Risk Assessment in a Cooperative 8-Year-Old</a>
   </div>
 </div>
 <div class="ch-group" data-chapter="p">
@@ -8882,6 +8893,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Jordan, thanks for coming in — before we talk braces, there's something in your gum measurements today that I need to flag straight away, because it changes what happens next.&quot; <em>Why it works: Names the real agenda in the first sentence, before Jordan can assume this is a routine ortho chat.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>CPITN score of 4 means pocketing of 6 mm or greater — finding this in all posterior sextants of a 17-year-old with radiographic bone loss is not within the range of normal variation and cannot be managed as routine adult periodontitis.</li>
 <li>The differential for generalised severe periodontitis in a teenager includes Stage III Grade C periodontitis — formerly called aggressive periodontitis — which has a strong familial component and a characteristically rapid rate of bone destruction disproportionate to local factors.</li>
@@ -8927,6 +8939,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mrs Chen, thank you for bringing Liam in — there's no judgement here at all, we're just going to work out together what's going on.&quot; <em>Why it works: Defuses parental guilt before it can turn into defensiveness, in the very first line.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;The pattern we see — decay on the upper front teeth but the lower front teeth being relatively protected — is a classic sign of what we call prolonged nocturnal bottle caries. The lower lip and tongue physically shield the lower teeth, while the upper front teeth sit right where the bottle teat rests.&quot;</li>
 <li>&quot;During sleep, saliva flow drops to almost nothing. That means milk — which contains lactose, a natural sugar — can sit against the upper teeth for six to eight hours without being washed away, which is exactly the environment bacteria need to produce acid and cause decay.&quot;</li>
@@ -8970,6 +8983,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mrs Walsh, thank you for coming in — before we talk about a new denture, I want to understand exactly what's been going on with this one, and with your mouth underneath it.&quot; <em>Why it works: Signals you won't just reflexively remake the denture — sets up the real diagnostic agenda (hygiene, candida) immediately.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>An HbA1c of 8.2% indicates poorly controlled diabetes — this impairs neutrophil function and cell-mediated immunity, significantly increasing susceptibility to oral candidal infection.</li>
 <li>This is Newton's Type II denture stomatitis — diffuse erythema of the denture-bearing mucosa — most commonly caused by Candida albicans proliferating in the biofilm on the fitting surface of the denture.</li>
@@ -9014,6 +9028,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mr Smith, I can see you're uncomfortable — before I explain the tooth, I need to run through everything you're taking, because two of your medications directly change how safely we can treat you today.&quot; <em>Why it works: Flags medication-safety stakes before the exam even starts, rather than as an afterthought.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Warfarin does not need to be stopped for a simple dental extraction provided the INR is within the therapeutic range and confirmed at or below 3.5 to 4.0 — we manage bleeding risk locally with sutures, oxidised cellulose such as Surgicel, and tranexamic acid mouthwash.</li>
 <li>Denosumab — brand name Prolia — is a RANK-L inhibitor that suppresses osteoclast activity. Unlike bisphosphonates, it does not permanently bind to bone, but the risk of MRONJ is still clinically significant, particularly in the period immediately following an injection. With the last dose given only two days ago, this patient is at elevated risk and specialist liaison is required before we proceed with definitive extraction.</li>
@@ -9058,6 +9073,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mr Smith, I can see you're uncomfortable today — before we talk about that tooth, I need to understand everything you're taking, starting with the denosumab, since it changes our whole plan.&quot; <em>Why it works: Names the highest-risk medication by name in the opening line, not buried in a general history question.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Current Australian guidelines support continuing warfarin for simple dental extractions without dose alteration, provided the INR is 3.5 or below on the day of the procedure — stopping warfarin increases thromboembolic risk and is not indicated here.</li>
 <li>Denosumab is an anti-RANKL monoclonal antibody that suppresses osteoclast activity; with the last dose administered only two days ago, the patient is at peak antiresorptive effect, placing them in the highest-risk window for MRONJ following dentoalveolar surgery.</li>
@@ -9102,6 +9118,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Sharon, I need to stop and tell you honestly what's just happened — the crown of the tooth has broken off during the extraction.&quot; <em>Why it works: Immediate, unhedged disclosure — no small talk delaying bad news the patient needs to hear right away.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Crown fracture during extraction of a heavily decayed tooth is a recognised intraoperative complication — the roots must be removed but the approach must change: a surgical technique involving a mucoperiosteal flap and root sectioning is indicated, not continued forceps pressure on the remaining root stumps.</li>
 <li>The radiograph shows three divergent, bulbous roots with apices in close proximity to the maxillary sinus floor — this significantly increases the risk of oroantral communication during surgical removal, and the patient must be counselled about this before we proceed.</li>
@@ -9146,6 +9163,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;That's a great question, and I'm really glad you asked — before I answer it, tell me a bit about what happened to that tooth in the first place.&quot; <em>Why it works: Turns a casual aside into a structured consult by asking for history before jumping straight to options.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The implant option is generally considered the gold standard for single tooth replacement because it preserves the adjacent teeth, maintains bone volume, and has a reported survival rate of over 95% at ten years with good oral hygiene.</li>
 <li>A three-unit fixed bridge would use teeth 34 and 36 as abutments — however, because both of those teeth are minimally restored and otherwise healthy, we would need to permanently reduce them by approximately 1.5 to 2 millimetres circumferentially to accommodate the bridge crowns, which is an irreversible step worth considering carefully.</li>
@@ -9190,6 +9208,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thank you for bringing Stevie in today — and Stevie, you're not in any trouble at all, we just want to make sure your teeth are looked after.&quot; <em>Why it works: Reassures the child directly in the opening line, important given her likely history of medical mistrust.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Hutchinson's incisors are pathognomonic of congenital syphilis — they appear as notched, barrel- or screwdriver-shaped permanent central incisors due to Treponema pallidum disrupting ameloblast function during tooth development.</li>
 <li>Mulberry molars — hypoplastic first permanent molars with multiple poorly formed cusps — together with Hutchinson's incisors form Hutchinson's triad when combined with interstitial keratitis and eighth nerve deafness.</li>
@@ -9210,6 +9229,16 @@ tr:hover td{background:rgba(0,0,0,.03);}
 <div class="complete-answer-body">
 <div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: Introduction & Rapport</div><p class="answer-speech">"Hi there, I'm Dr [Name], one of the dentists here. You must be Stevie — it's really nice to meet you. And thank you for bringing her in today. Can I check — you're Stevie's foster carer? Lovely, thank you. Stevie, I'm going to have a little chat with your carer first, and then I'd love to talk to you too, okay? You're not in any trouble at all — we just want to make sure your teeth are being looked after really well."</p><p class="answer-action">Establish eye contact with both child and carer. Seat the carer at the same level. Note Stevie's comfort and ensure she feels safe. Confirm the carer's primary concern is the appearance of the teeth.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Focused History</div><p class="answer-speech">"Thank you for sharing that with me. I'd like to ask a few background questions — some of them might seem a little unusual for a dental visit, but they'll help me understand what's going on with Stevie's teeth. Is that okay? Do you know anything about Stevie's early life — was she born in Australia? Do you know whether her mum had any check-ups during the pregnancy, or whether any blood tests were done? And when Stevie was a baby, did she have any skin rashes that came and went? Has anyone ever mentioned concerns about her eyesight or hearing? I understand you may not have all of this information, and that's completely fine — anything you can share is helpful."</p><p class="answer-action">Listen actively. Note: limited antenatal care, refugee background, no syphilis screening, resolved infantile skin rashes, left eye keratitis scar, right ear hearing difficulty. Do not express alarm. Document responses carefully.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Explaining the Findings & Diagnosis</div><p class="answer-speech">"Thank you — that's really helpful. I want to explain what I've found in Stevie's mouth, and I want to be honest with you because I think you deserve to know. Stevie's front teeth have a very specific shape — they're notched at the edge and slightly narrower in the middle, a bit like a screwdriver. Her back teeth also have an unusual bumpy surface. These are very particular patterns that dentists are trained to recognise, and they tell us something important about what happened before Stevie was born. These tooth shapes are caused by an infection called syphilis — it's a bacterial infection that can pass from a mother to her baby during pregnancy, often without the mother even knowing she has it, especially if she didn't have the chance to have routine blood tests during pregnancy. I want to be very clear: this is absolutely not anything Stevie has done, it is not contagious now, and it is not your fault or her mum's fault. It is something that happened before she was born, and the good news is that it is well understood and there is help available."</p><p class="answer-action">Pause after delivering the diagnosis. Allow the carer to respond. Maintain calm, warm eye contact. Be prepared for an emotional reaction. Do not rush to the next step.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Investigations, Referral & Next Steps</div><p class="answer-speech">"What I'd like to do today is arrange for Stevie to see a specialist — a children's doctor who specialises in infections — as soon as possible, ideally this week. They will do a simple blood test to confirm everything, and they will check that Stevie's whole body is healthy, including her eyes and ears, which you mentioned have had some concerns. If treatment is needed, they will organise that too — it is very effective. I also need to let you know that because this is a notifiable condition in Australia, I have a responsibility to inform the public health team — this is completely confidential and routine, and it is done to make sure anyone who may need support is offered it. It is not about getting anyone into trouble. I will write a referral letter today marked urgent, and I will give you a copy. Do you have any questions for me right now? And Stevie — you've been so patient. You're doing really well."</p><p class="answer-action">Write urgent referral to paediatric infectious diseases. Notify state/territory public health unit as per mandatory notification requirements. Arrange dental follow-up for restorative management of Hutchinson's incisors and mulberry molars. Provide written summary for the carer. Document all findings and actions in the patient record.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>Don't name the diagnosis to the carer until you've confirmed what authority they actually have — a foster carer typically holds consent for investigation only, while treatment consent usually sits with the long-term carer or the placing organisation; until that's confirmed, use "developmental defect" rather than "syphilis" out loud.</li>
+<li>The full triad worth knowing beyond the two dental signs: Hutchinson's incisors + mulberry molars are the dental stigmata, but interstitial keratitis and eighth cranial nerve (CN VIII) deafness complete Hutchinson's triad — Stevie's partial eyesight/hearing loss in the brief is this triad playing out, not an incidental detail.</li>
+<li>Practically: confirm with the fostering organisation whether they already hold a medical diagnosis or records for her before assuming the carer knows nothing — "Could you check with the organisation whether there's an existing diagnosis on file?" is a safe, non-presumptuous way to ask.</li>
+<li>If cost/access comes up: this referral pathway is normally seen on a priority basis with no public hospital wait (specially funded), and orthodontic treatment is NOT normally covered under the Child Dental Benefit Schedule unless there's a craniofacial condition, cleft lip, multiple missing teeth, or another qualifying medical condition — worth knowing before promising the carer what's covered.</li>
+<li>Quick mental bucket for tooth-shape curveballs: "shape" abnormalities (Hutchinson's incisors, mulberry molars, peg laterals, dentigerous cyst) are a different differential category from "gap" abnormalities (widely-spaced teeth, supernumeraries, delayed eruption, abnormal frenum) — useful if the examiner pivots to a different finding mid-station.</li>
+</ul>
 </div>
 </div>
 
@@ -9234,6 +9263,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mr Argenti, I can hear you're in a lot of pain and feeling really frustrated — that's completely understandable, and I want to make sure we sort this out properly for you.&quot; <em>Why it works: Names his anger out loud before he has to escalate it — de-escalation in the very first sentence.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A temporary dressing such as Cavit or IRM has a clinical lifespan of approximately four to six weeks — beyond that, microleakage significantly increases the risk of recontamination of the root canal system and potential vertical root fracture.</li>
 <li>Studies consistently show that root canal treatment has a success rate of approximately 85–95% when completed to a high standard in a tooth with no pre-existing periapical pathology — which is the situation we have here.</li>
@@ -9277,6 +9307,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thank you for coming in — before we look at anything, I'd love to hear in your own words what's been on your mind about your smile.&quot; <em>Why it works: Lets her set the agenda in her own words, rather than assuming she's comfortable with how others have framed it.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Peg lateral incisors result from a developmental anomaly of the permanent dentition — the tooth bud fails to fully differentiate, producing a conical or peg-shaped crown with normal root morphology.</li>
 <li>Composite resin build-up for peg laterals is considered additive and reversible — no enamel preparation is required in most cases, preserving the full biological width of the natural tooth.</li>
@@ -9321,6 +9352,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're dealing with quite a bit of discomfort — before I explain what I've found, can I just confirm a couple of things about your health, since they may well be connected?&quot; <em>Why it works: Signals early that her medical history — not just her gums — is central to the diagnosis here.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Tooth 22 has approximately 90% bone loss with Grade 3 mobility — by definition this tooth is hopeless and extraction is indicated; there is no periodontal or restorative treatment that can predictably retain it.</li>
 <li>Smokers have a two- to three-fold increased risk of periodontal disease progression and implant failure rates are significantly higher — up to 20% higher than non-smokers — which is why smoking cessation is not optional, it is a prerequisite for implant success.</li>
@@ -9365,6 +9397,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Sarah, I can see you've had a rough afternoon — can you tell me exactly what happened, and did anything hit your mouth directly?&quot; <em>Why it works: Goes straight for mechanism of injury, the single most important history question in any dental trauma case.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Tooth 11 has a complicated crown fracture with pulp exposure — because the apex is still open and the root is immature, a Cvek partial pulpotomy using MTA is the treatment of choice to preserve pulp vitality and allow continued apexogenesis.</li>
 <li>Calcium hydroxide is an acceptable alternative but MTA is preferred due to superior sealing ability and evidence of better long-term pulp survival in immature permanent teeth.</li>
@@ -9409,6 +9442,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mrs Joshi, I can see you're quite uncomfortable — can you tell me when the pain and swelling started, and has it been getting worse?&quot; <em>Why it works: Opens with onset and trajectory — the two facts that determine whether this is a same-day emergency.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Given Mrs Joshi's penicillin allergy, I would prescribe metronidazole 400mg three times daily for five to seven days as my first-line antibiotic — if broader gram-positive coverage is needed, clindamycin 300mg TDS is the alternative.</li>
 <li>I need to specifically check for floor-of-mouth elevation, dysphagia, and any signs of airway compromise — these would indicate a spreading deep space infection requiring immediate hospital transfer.</li>
@@ -9453,6 +9487,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Before we talk about the extraction, I need to ask about your medications — specifically how long you've been on Actonel and on Prednisolone — because that changes how we plan this safely.&quot; <em>Why it works: Puts the medication-duration question — the actual risk driver in this case — ahead of any procedural talk.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The risk of MRONJ with oral bisphosphonates is estimated at less than 0.1%, but concurrent corticosteroid use and duration of therapy beyond three to four years are recognised risk-elevating factors according to the 2022 AAOMS position paper.</li>
 <li>Seven years of Prednisolone at 10 mg daily is sufficient to suppress the hypothalamic-pituitary-adrenal axis; for minor oral surgery under local anaesthesia, current guidelines recommend doubling the usual morning dose on the day of the procedure after liaising with the prescribing physician.</li>
@@ -9472,6 +9507,15 @@ tr:hover td{background:rgba(0,0,0,.03);}
 <div class="complete-answer-body">
 <div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: Introduction and Medication History</div><p class="answer-speech">"Good morning, Mrs William. I'm Dr [Name]. I understand you've been having some pain and your tooth has been feeling loose — I'm sorry to hear that. Before we talk about what we're going to do today, I'd like to ask you a few questions about your health and the medications you're taking, so I can make sure we look after you as safely as possible. Is that okay?"</p><p class="answer-action">Confirm: (1) Actonel (risedronate) 150 mg once monthly for osteoporosis, taken for 4 years. (2) Prednisolone 10 mg daily for rheumatoid arthritis, taken for 7 years. Note both are current and compliant. Ask about any other medications, supplements, allergies, and previous dental extractions since starting bisphosphonates.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Explaining MRONJ Risk</div><p class="answer-speech">"I can see you've done some reading about a condition called osteonecrosis of the jaw — and I want to be honest with you about that. The bone tablet you're taking, Actonel, works by slowing down the natural process your body uses to remodel bone. That's great for your osteoporosis, but it does mean that if we do dental surgery, the bone in your jaw can sometimes be a little slower to heal. In rare cases — and I want to emphasise this is uncommon with the tablet form, we're talking about less than one in a thousand patients — the bone can become exposed and not heal properly. The fact that you've been on it for four years, and that you're also taking Prednisolone, does slightly increase that risk compared to someone who has only just started. But this is a manageable risk, not a reason to avoid treatment you need."</p><p class="answer-action">Reassure that MRONJ risk with oral bisphosphonates is low (&lt;0.1%) but is elevated by concurrent corticosteroid use and duration &gt;3–4 years. Do not recommend stopping risedronate without specialist input. Address her online concerns directly and empathetically.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Adrenal Suppression and Steroid Cover</div><p class="answer-speech">"There's one more important thing I need to discuss with you about your Prednisolone. When you take a steroid tablet like Prednisolone every day for a long time — and you've been on it for seven years — your body's own stress response system can become a little quieter, because it's been relying on the tablet. Dental surgery, even a straightforward extraction, is a small stress on the body. To make sure your body handles that safely, I'd like to speak with your GP or rheumatologist before we go ahead, to arrange a small increase in your Prednisolone dose on the day of the procedure. This is a routine precaution and nothing to be alarmed about."</p><p class="answer-action">Identify HPA axis suppression from 7 years of Prednisolone 10 mg daily. Plan to liaise with prescribing doctor prior to extraction. For minor oral surgery under local anaesthesia, standard approach is to double the morning dose on the day of surgery. Do not proceed without this step confirmed.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Consent, Management Plan, and Post-operative Instructions</div><p class="answer-speech">"So here is what I'm proposing. We will go ahead with removing the tooth, because leaving it is not a safe option either — infection in the jaw is also a risk to the bone. I will be as gentle as possible during the procedure to minimise trauma to the surrounding bone and gum, and I'll aim to close the wound with a stitch to help it heal well. I'll also prescribe a chlorhexidine mouthwash and, given your medications, I'll likely recommend a short course of antibiotics as a precaution. Depending on how things look, I may also suggest we refer you to an oral surgeon who specialises in these situations — I want to make the safest choice for you. After the extraction, I'd like to see you back in one week to check healing. If at any point you notice any bone becoming visible in the socket, or the pain gets worse rather than better, or healing seems to be taking longer than expected, I want you to call us straight away. Do you have any questions about anything I've explained?"</p><p class="answer-action">Document informed consent including: indication for extraction, MRONJ risk (low but present), adrenal suppression risk and steroid cover plan, management strategy (atraumatic technique, primary closure, chlorhexidine, antibiotics), option of specialist referral, and post-operative safety netting. Confirm patient understanding before proceeding.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>CTx (C-terminal telopeptide) blood test is the relevant bone-turnover marker if risk stratification comes up: a level above roughly 150 pg/mL suggests adequate bone turnover to proceed with standard precautions; below that, a longer healing/drug-holiday discussion with the prescribing physician is warranted first.</li>
+<li>Rheumatoid arthritis itself (independent of the prednisolone) is also a periodontitis risk factor worth naming in the history — and a smoking history matters too, since smoking can mask the clinical signs of gum disease that would otherwise prompt earlier review.</li>
+<li>If she asks "why did my GP not tell me about this side effect?" — acknowledge it plainly rather than getting defensive: it's a known but under-discussed risk, and the job now is managing it properly, not assigning blame.</li>
+<li>Useful diagnostic aside: pulpitis pain is never constant (it's triggered/episodic) — if a differential ever turns on this, constant dull pain points away from simple reversible pulpitis.</li>
+</ul>
 </div>
 </div>
 
@@ -9496,6 +9540,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;You must be Lily! I love your hair clip — and Mum, thank you so much for bringing her in. Lily, we're just going to have a little look, nothing scary, I promise.&quot; <em>Why it works: Builds instant rapport with the child before any clinical questions — essential for cooperation at this age.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A toothache that resolves on its own in a child's baby tooth is actually a warning sign — it often means the nerve inside the tooth has died, so the tooth can no longer feel pain, but the infection continues silently at the root tip.</li>
 <li>The pimple you're seeing is called a sinus tract or parulis — it's a small channel the body has created to drain the infection away from the tooth root. Because it's draining, Lily isn't in acute pain right now, but the infection itself has not gone away.</li>
@@ -9540,6 +9585,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mrs Hayes, I can see you're worried about the swelling and bruising — that's completely understandable. When did you first notice it starting?&quot; <em>Why it works: Names her visible anxiety before asking the timeline question, so she feels heard before being interrogated.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The bruising is tracking down toward the neck because blood follows gravity through the tissue planes — this is expected and does not by itself indicate a dangerous complication, but I will monitor it closely.</li>
 <li>Aspirin reduces platelet aggregation, which means the blood did not clot as quickly in the small vessels, allowing it to spread more widely into the surrounding tissues — this is why the bruising looks more extensive than you might expect.</li>
@@ -9585,6 +9631,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thanks for coming in — before I explain what I've found on your X-ray, I'd like to ask a few questions, including about your general health, since it's relevant here.&quot; <em>Why it works: Plants the seed that a systemic referral is coming, before the periodontal diagnosis is even delivered.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Stage III Grade C periodontitis is characterised by generalised bone loss exceeding 33% of root length, probing depths of 5mm or more, clinical attachment loss of 4mm or greater, and in this case tooth mobility — these findings together indicate a complex case beyond routine general practice management.</li>
 <li>An HbA1c of 8.2% represents suboptimal glycaemic control. The relationship between diabetes and periodontitis is bidirectional — active periodontal infection drives systemic inflammation that impairs insulin sensitivity, and poor blood sugar control creates an environment that accelerates bone destruction and impairs periodontal healing.</li>
@@ -9628,6 +9675,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thanks so much for filling in that diet chart — you've clearly put a lot of thought into your diet, and that really helps me give you targeted advice today.&quot; <em>Why it works: Praises his effort before pointing out the sports-drink issue, keeping a health-conscious patient receptive rather than defensive.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Sports drinks typically have a pH between 2.9 and 3.7 — well below the critical pH of 5.5 at which enamel begins to dissolve — and sipping them throughout a workout means the teeth are under continuous acid attack rather than a single brief exposure.</li>
 <li>Salbutamol (Ventolin) reliever inhalers are themselves acidic, and the propellant can lower the oral pH directly; rinsing with plain water and spitting immediately after each puff is a simple but evidence-based step to reduce this risk.</li>
@@ -9672,6 +9720,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thank you so much for making time to come in — I know how busy you are looking after your community. Please stop me anytime if you'd like more detail.&quot; <em>Why it works: Acknowledges her professional role and invites active participation — appropriate for a health-worker patient who will probe clinically.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Apixaban is a direct oral anticoagulant — unlike warfarin, we do not check an INR and we do not need to stop it for a straightforward dental extraction. Current Australian Dental Association and haematology guidelines support continuing DOACs for simple procedures with local haemostatic measures.</li>
 <li>Given that Kylie has both atrial fibrillation and a previous pulmonary embolism, her CHA₂DS₂-VASc score is 4, which places her at high risk of stroke if anticoagulation is interrupted — stopping apixaban without specialist input would be inappropriate and potentially dangerous.</li>
@@ -9716,6 +9765,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thanks for coming in — can you tell me when you first noticed this, and has anything about it changed since then?&quot; <em>Why it works: Opens with duration and change-over-time — the two questions that separate a benign ulcer from one needing biopsy.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;An ulcer that has been present for more than three weeks, is enlarging, has indurated and rolled margins, and is associated with a palpable ipsilateral lymph node must be considered squamous cell carcinoma until proven otherwise.&quot;</li>
 <li>&quot;With approximately 37.5 pack-years of smoking and alcohol intake exceeding Australian guidelines of no more than 10 standard drinks per week, Mr Chen has two of the strongest independent risk factors for oral squamous cell carcinoma acting synergistically.&quot;</li>
@@ -9771,6 +9821,7 @@ tr:hover td{background:rgba(0,0,0,.03);}
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Ella, I love your shoes! Mrs Thompson, I can see you're worried about that gap — we're going to work through it together today.&quot; <em>Why it works: Rapport with the child, then direct acknowledgement of the parent's worry — the same pattern that works across paediatric stations.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The radiograph confirms absence of the permanent tooth buds for teeth 12 and 22 — this is bilateral hypodontia, the congenital absence of two or more permanent teeth, and it is one of the most common developmental dental anomalies, affecting approximately 2–3% of the population.</li>
 <li>Implants are absolutely contraindicated in a growing child — in females, we typically wait until facial growth is complete, which is around 18 to 21 years of age, confirmed ideally with serial cephalometric records showing no change.</li>
@@ -9825,6 +9876,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're in quite a bit of discomfort — can you tell me when the pain started and what it feels like?&quot; <em>Why it works: Gets straight to onset and character of pain — the fastest route to separating periodontal from pulpal origin.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The tooth is vital on pulp sensibility testing, which rules out a periapical abscess — this is a periodontal abscess arising from a pre-existing 9 mm pocket with purulent discharge.</li>
 <li>Her HbA1c of 8.2% indicates suboptimal glycaemic control, which impairs neutrophil function and increases the risk of systemic spread — this is why I am prescribing antibiotics in addition to local drainage.</li>
@@ -9845,6 +9897,14 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 <div class="complete-answer-body">
 <div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: History Taking</div><p class="answer-speech">"Hi Mrs Chen, I'm Dr [Name], one of the dentists here today. I can see you're in quite a bit of discomfort — I want to make sure we sort this out for you as quickly as possible. Can you tell me when the pain started and what it feels like?"</p><p class="answer-action">Listen for: onset 2 days ago, worsening yesterday, throbbing 8/10. Then ask specifically: "Have you noticed any swelling? Any bad taste in your mouth? Any fever, chills, or difficulty swallowing?" Confirm bad taste (purulent discharge), swelling appeared yesterday afternoon, no fever, swallowing normal. Then transition to medical history: "I need to ask about your general health — do you have any medical conditions or take any regular medications?" Elicit Type 2 diabetes, metformin 1000 mg BD, HbA1c 8.2% six months ago, no drug allergies. Note: suboptimal glycaemic control is a critical risk modifier for this case.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Clinical Examination and Diagnosis</div><p class="answer-speech">"I'm going to have a careful look and feel around that tooth, and I'll do a couple of quick tests to check the nerve is healthy. Let me know if anything is uncomfortable."</p><p class="answer-action">Inspect buccal aspect of 46: erythema, localised swelling. Palpate: assess for fluctuance. Vitality testing: electric pulp test and cold test — tooth 46 responds positively, confirming vitality. Assess mobility: grade II. Probe disto-buccal aspect: 9 mm pocket with purulent discharge on probing. Review radiograph: 60% bone loss around 46, vertical defect distally, no periapical radiolucency. Diagnosis: acute periodontal abscess tooth 46, arising from pre-existing deep pocket. Underlying diagnosis: generalised chronic periodontitis Stage III Grade B. Differential excluded: periapical abscess — ruled out by positive vitality and absence of periapical pathology on radiograph.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Immediate Management</div><p class="answer-speech">"Mrs Chen, the good news is that the nerve of this tooth is alive and healthy, so we don't need to do a root canal. What's happened is that the infection has built up in a very deep gum pocket around this tooth. I need to drain that infection today — it will give you much faster relief than antibiotics alone. I'll numb the area first so you won't feel anything sharp."</p><p class="answer-action">Administer local anaesthesia (inferior alveolar nerve block). Establish drainage via the 9 mm pocket using a curette, gently debriding the pocket and expressing purulent exudate. If fluctuant swelling is present, perform incision and drainage with a No. 15 blade. Irrigate thoroughly with sterile saline followed by 0.12% chlorhexidine gluconate. Prescribe amoxicillin 500 mg orally three times daily for five days — rationale: suboptimal diabetes control (HbA1c 8.2%) impairs immune response and increases risk of systemic spread, making antibiotics clinically indicated alongside local drainage. Advise paracetamol 1 g every six hours as needed for analgesia and warm saline rinses three times daily.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Definitive Plan and Patient Communication</div><p class="answer-speech">"I'd like to see you again in two to three days to make sure the infection is settling. Once it has, we'll plan a thorough clean of all your gums under local anaesthetic — that's the proper treatment for the gum disease that caused this in the first place. I also want to mention something important: your diabetes and your gum disease actually affect each other. When your blood sugar is not well controlled, it makes gum disease harder to treat and easier to get worse. And active gum infection can actually push your blood sugar higher. So getting your diabetes checked by your GP is really important — not just for your general health, but for your teeth as well. Would you be okay with making an appointment with your GP soon?"</p><p class="answer-action">Book review appointment in 2–3 days to assess resolution of acute infection. Schedule comprehensive periodontal therapy: full-mouth debridement under local anaesthesia in quadrant appointments once acute phase resolves. Reinstate 3-monthly periodontal maintenance recall. Provide oral hygiene instruction including interdental brushing and flossing technique. Issue GP referral letter requesting HbA1c review and optimisation of diabetes management. Document all findings, diagnosis, treatment provided, prescriptions, and follow-up plan in patient records.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>Contrast worth holding in your head for this station type: a purely localised periodontal abscess with no systemic risk modifier generally does NOT need antibiotics — drainage alone suffices. What tips this case into needing amoxicillin is specifically the poorly controlled diabetes (HbA1c 8.2%) impairing the immune response — be ready to justify the antibiotic decision on that basis rather than reflexively prescribing for every abscess.</li>
+<li>If the presenting tooth is mobile or extruded rather than just tender, say so out loud as a finding — extrusion/mobility of a tooth is itself a sign of significant underlying bone loss, not a separate acute issue, and should shape how you frame the "background disease" part of the diagnosis.</li>
+<li>Smoking-cessation framing that lands better than a lecture (useful if smoking comes up in the history): acknowledge quitting alone is hard — cite that only a small minority manage to quit through willpower alone — and offer a warm referral to cessation support rather than a bare instruction to stop.</li>
+</ul>
 </div>
 </div>
 
@@ -9869,6 +9929,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're in discomfort, so let's get to the bottom of this quickly — can you tell me about the pain, when it started and what it feels like?&quot; <em>Why it works: "Quickly" explicitly acknowledges his flight in the very first line, which frames the whole station.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;The spontaneous throbbing pain that wakes you at night tells me the nerve is irreversibly inflamed — it will not settle on its own regardless of how much pain relief you take.&quot;</li>
 <li>&quot;When cabin pressure drops during your flight, the gas pressure inside that inflamed tooth can expand and cause severe, sudden pain that no over-the-counter medication will adequately control at altitude — this is called barodontalgia.&quot;</li>
@@ -9912,6 +9973,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I'm really glad you came in today rather than waiting — can you tell me more about the pain you've been having since the treatment?&quot; <em>Why it works: Praises her decision to seek care promptly before she can vent about the previous dentist, keeping the consult forward-focused.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The widened PDL space on the X-ray tells me there is some inflammation around the root tip, which is a normal finding in the first one to two weeks after root canal treatment — it does not mean the treatment has failed.</li>
 <li>The most important finding today is that your bite is slightly high on the temporary filling — this is putting extra pressure on the tooth every time you close, which is very likely the main reason your pain is so severe, and I can adjust that for you right now.</li>
@@ -9956,6 +10018,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Mrs Collins, thank you for taking time off work for this — I want to make good use of it and make sure you're completely comfortable with everything before we go ahead.&quot; <em>Why it works: Acknowledges the real cost of her attending, building goodwill before a long risk-disclosure conversation.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The roots of your upper back molar sit very close to a sinus cavity just above — there is a small risk of a connection forming between the socket and that sinus, which we would need to manage if it occurred.</li>
 <li>Dry socket occurs when the blood clot in the socket breaks down before healing is complete — it causes a deep, throbbing pain usually starting around day three, and smoking significantly increases that risk, which is why I strongly recommend avoiding cigarettes for at least 48 to 72 hours.</li>
@@ -9999,6 +10062,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Welcome to the practice — I understand you've noticed a swelling on the roof of your mouth. How long have you been aware of it?&quot; <em>Why it works: Opens with duration of a slow-growing lesion — the single most important differentiating fact for this case.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The adjacent teeth 25, 26, and 27 are all vital and non-tender to percussion, which effectively rules out an odontogenic or periapical origin for this swelling — this shifts my primary differential to a minor salivary gland neoplasm.</li>
 <li>The palate posterior to the rugae contains the highest density of minor salivary glands in the oral cavity, making it the most common intraoral site for salivary gland tumours, the majority of which are pleomorphic adenomas.</li>
@@ -10043,6 +10107,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I understand you're keen to get implants sorted — before we talk treatment, I need to understand your health properly, starting with that heart valve surgery.&quot; <em>Why it works: Names the cardiac history as the priority ahead of her expectation of a quick implant conversation.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>An HbA1c above 7.5 to 8 percent is associated with impaired wound healing and a higher risk of implant failure — we would want to see a current result and ideally optimise your diabetes control before proceeding with surgery.</li>
 <li>Alendronate is a bisphosphonate medication that affects bone turnover. When taken for more than two years, it carries a risk of a serious complication called medication-related osteonecrosis of the jaw — where the jawbone can fail to heal properly after surgery. We need to discuss this with your GP before we can safely place implants.</li>
@@ -10063,6 +10128,14 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 <div class="complete-answer-body">
 <div class='answer-stage-block'><div class='answer-stage-label'>STAGE 1: Introduction and Opening</div><p class='answer-speech'>'Hello Mrs Chen, my name is Dr [Name] — lovely to meet you. I understand you're interested in having dental implants to replace your missing back teeth. Before we talk about any treatment, I'd like to ask you some questions about your health and dental history so I can make sure we find the safest and best option for you. Is that okay?'</p><p class='answer-action'>Establish rapport. Confirm chief complaint. Note patient expects immediate treatment — manage this expectation gently throughout.</p></div><div class='answer-stage-block'><div class='answer-stage-label'>STAGE 2: Medical History — Cardiac, Anticoagulation, and Medications</div><p class='answer-speech'>'You mentioned you had a heart valve replacement about two years ago — that's really important for us to know. Are you under the care of a cardiologist at the moment? You also mentioned you take two small tablets for your blood — do you happen to know the name of those? It's quite possible one of them is a blood-thinning medication like warfarin. Before any surgical procedure, we'd need to check your current blood levels and liaise with your cardiologist to make sure it's safe. Now, I'd like to ask about all your other medications — including any tablets you might take for your bones or for osteoporosis. Do you take anything like that?'</p><p class='answer-action'>Targeted prompt for bisphosphonates is essential here — patient will not volunteer alendronate without this specific question. On eliciting alendronate: note oral route, 3-year duration — elevated MRONJ risk. Document for GP liaison letter.</p></div><div class='answer-stage-block'><div class='answer-stage-label'>STAGE 3: Diabetes History and Counselling on Medical Risks</div><p class='answer-speech'>'I can also see from your records that you manage type 2 diabetes with metformin — that's great that it's being managed. Have you had a blood test recently to check your diabetes control? It's called an HbA1c — it gives us an average of your blood sugar over the past three months. When was that last done, and do you remember the result? The reason I ask is that if blood sugar levels aren't well controlled, it can affect how well the bone heals around an implant and increase the risk of infection or implant failure. We'd ideally want your HbA1c to be below about 7.5 to 8 percent before we consider surgery. Regarding your bone tablet — alendronate is a type of medication called a bisphosphonate. It's very effective for protecting your bones, but it does affect how bone heals after surgery. There is a small but serious risk of a condition called osteonecrosis of the jaw, where the bone doesn't heal properly. We would need to write to your GP to discuss this before we could safely go ahead with implants.'</p><p class='answer-action'>Check patient understanding after each key point. Use teach-back: 'Can I just check — what's your understanding of why we need to speak to your GP before we go ahead?' Avoid alarming language while being honest about risk.</p></div><div class='answer-stage-block'><div class='answer-stage-label'>STAGE 4: Investigations, Treatment Options, and Closing</div><p class='answer-speech'>'Before we can plan anything, we'll need to take an X-ray called an OPG — it gives us a full picture of your jaw, the bone levels, and the important structures nearby like the sinus and the nerve. We may also need a more detailed 3D scan called a CBCT to measure the bone precisely. I want to be upfront with you — implants are a wonderful option, but the process does take time. After the assessment, we may need to do some bone grafting if there isn't enough bone. Then the implant is placed and needs three to six months to fuse to the bone before we can attach the crown. The whole process from start to finish can take anywhere from nine to eighteen months. I also want to make sure you know about the alternatives — a fixed bridge, which uses the neighbouring teeth for support, or a removable partial denture. Both are valid options and we can discuss what suits you best. Do you have any questions about what I've explained so far? I'll also write a letter to your GP today to get an updated HbA1c result and to discuss your alendronate before we proceed.'</p><p class='answer-action'>Summarise next steps clearly: GP referral letter, OPG, blood tests. Provide written information if available. Schedule follow-up once medical clearance is obtained. Document all findings and patient counselling in notes.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>Three-factor suitability framework worth stating explicitly as your assessment structure, beyond just the medical-risk checklist: (1) no abnormal occlusal forces — ask about grinding/clenching, since tooth wear faster than expected for age points to parafunction; (2) gum health — active periodontal disease must be controlled first; (3) adequate remaining bone volume — this is exactly what the OPG/CBCT is for.</li>
+<li>When she can't name her cardiac medication ("two little pills"), don't guess what they are — ask permission to confirm directly with her cardiologist rather than assuming warfarin, since anticoagulant choice changes the periop plan.</li>
+<li>Manage the expectation-of-speed issue early and explicitly, before investigations come back: implants are a staged process, not a same-day fix — set this up front rather than let her assume otherwise.</li>
+</ul>
 </div>
 </div>
 
@@ -10087,6 +10160,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're in a lot of pain — has the swelling been getting bigger over the last day or two, and have you had any fever or chills?&quot; <em>Why it works: Opens with the exact red-flag screening questions that determine same-day management versus urgent referral.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>This patient has a spreading odontogenic cellulitis with systemic signs — temperature 38.4°C, tachycardia, trismus, and failure of oral antibiotics — in the context of poorly controlled type 2 diabetes with an HbA1c of 9.2%. This combination mandates immediate hospital admission; this cannot be managed in a primary care dental setting.</li>
 <li>I would commence IV amoxicillin-clavulanate 1.2g eight-hourly as first-line, or IV amoxicillin 2g plus metronidazole 500mg eight-hourly as an alternative. If the patient had a penicillin allergy, I would use IV clindamycin 600mg eight-hourly.</li>
@@ -10131,6 +10205,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;You must be Mia! I love your shoes — I'm just going to play a little tooth-counting game with you today, is that okay?&quot; <em>Why it works: Frames the exam as a game before she can refuse to sit down — the highest-yield behaviour-management move at this age.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The bedtime bottle is the highest-risk habit here — when Mia falls asleep with milk, saliva flow drops and the lactose sits on her teeth all night, which is exactly how early childhood caries develops so rapidly in the molars.</li>
 <li>For children under six, we recommend a low-fluoride toothpaste containing 400 to 550 parts per million fluoride — products like Colgate Minifluoride are specifically formulated for this age group and are safe even if a small amount is swallowed.</li>
@@ -10175,6 +10250,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can hear how distressing this has been — two nights without sleep is really tough. Let's get to the bottom of this and get you some relief.&quot; <em>Why it works: Names the sleep-deprivation specifically, not just "pain" — the detail that signals genuine empathy rather than a script.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A lingering cold response lasting more than 10 seconds, combined with spontaneous nocturnal pain, is diagnostic of irreversible pulpitis — the pulp cannot recover and root canal treatment or extraction is the only definitive management.</li>
 <li>The radiograph shows the restoration base is within 0.5 mm of the pulp with no periapical radiolucency at this stage, meaning we are dealing with pulpal pathology without periapical spread — this is still a restorable tooth with a good prognosis for root canal treatment.</li>
@@ -10218,6 +10294,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're in quite a bit of discomfort — before we look at the tooth, I need to check a few things about your health and medications, since that changes how we manage you safely today.&quot; <em>Why it works: Flags medication safety (asthma, penicillin allergy) before the exam, since antibiotic choice is the crux of this station.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>This infection has spread beyond the tooth itself into the surrounding soft tissues and is causing systemic signs — a temperature of 38.2°C, swollen lymph nodes, and difficulty swallowing. That means oral antibiotics at home are no longer safe or sufficient, and you need IV antibiotics in hospital today.</li>
 <li>Because you had a rash to penicillin as a child, that is a true allergic reaction and I cannot prescribe amoxicillin or any penicillin-based antibiotic. The appropriate alternative for a dental infection of this severity in a penicillin-allergic patient is clindamycin, given intravenously.</li>
@@ -10262,6 +10339,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you've had a difficult few days since your extraction — can you tell me exactly what's been happening?&quot; <em>Why it works: Acknowledges the days-long ordeal before diving into differential-diagnosis questions.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The socket shows exposed bone with a greyish appearance and no residual clot — this is consistent with alveolar osteitis, or dry socket, which typically presents three to five days post-extraction with pain that is disproportionate to the clinical findings and not relieved by simple analgesia.</li>
 <li>Her HbA1c of 8.2% indicates poorly controlled diabetes, which impairs neutrophil function and angiogenesis — both critical to clot organisation and socket healing — so optimising her glycaemic control is part of the treatment plan, not just background history.</li>
@@ -10306,6 +10384,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;You've come in for a lower denture today, but I've also noticed something else I want to make sure we look at properly before you go.&quot; <em>Why it works: Surfaces the incidental ulcer immediately rather than letting the consult end at the denture request — critical given he's away for 3 months.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Any oral ulcer persisting beyond 3 weeks without a clear benign cause must be referred urgently for incisional biopsy to exclude oral squamous cell carcinoma.</li>
 <li>The combination of raised rolled borders, irregular shape, size greater than 1 cm, and 2-month duration are clinical features that cannot be attributed to trauma alone without histological confirmation.</li>
@@ -10350,6 +10429,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;And what's your name, mate? Mum, thank you for coming in — I just want to ask a few questions about what happened before I take a look.&quot; <em>Why it works: Engages the toddler directly by name before addressing the parent — standard paediatric rapport-building opener.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Intrusion of a primary tooth is managed by passive monitoring and allowing spontaneous re-eruption — immediate extraction is not indicated unless there is clinical or radiographic evidence of infection, failure to re-erupt, or risk to the permanent successor.</li>
 <li>Black discolouration of a primary tooth following trauma indicates pulp necrosis; this alone is not an immediate indication for extraction but requires close monitoring for signs of infection such as a sinus tract, swelling, or periapical pathology on radiograph.</li>
@@ -10412,6 +10492,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thank you for bringing this up — I can hear it's been on your mind, and I want you to know I take your concern seriously.&quot; <em>Why it works: Validates a concern that could easily be dismissed as internet misinformation, before offering any factual correction.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;The mercury in your amalgam fillings is in an inorganic, chemically bound form — it behaves very differently in the body compared to the organic methylmercury found in contaminated fish, which is the type linked to neurological harm.&quot;</li>
 <li>&quot;Interestingly, the highest release of mercury vapour actually occurs at the moment of drilling out an amalgam filling — so removing them unnecessarily would expose you to more mercury, not less.&quot;</li>
@@ -10455,6 +10536,7 @@ The most important next step is a referral to an orthodontist — ideally soon, 
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Before we talk about the treatment plan, I need to ask about your joint replacement and your medications, since that changes what we do today.&quot; <em>Why it works: Surfaces the antibiotic-prophylaxis question up front, since current guidance may surprise him later if not framed early.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Current Australian guidelines — consistent with the ADA and AAOS — do not recommend routine antibiotic prophylaxis for patients with uncomplicated joint replacements who are immunocompetent, particularly when the replacement is more than two years old with no history of infection or revision.</li>
 <li>The estimated risk of a prosthetic joint infection arising from a dental procedure is approximately 0.3%, whereas the risk of a significant adverse drug reaction from an unnecessary antibiotic in a penicillin-allergic patient is approximately 3% — meaning prophylaxis is statistically more likely to harm Mark than to protect him.</li>
@@ -10526,6 +10608,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're concerned about the bleeding around your implant bridge — how long have you noticed it, and has chewing been uncomfortable?&quot; <em>Why it works: Opens with duration and functional impact — the two facts that stage the severity of peri-implantitis.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Peri-implantitis is diagnosed when there is bleeding on probing or suppuration, probing depths of 6 mm or greater, and radiographic bone loss exceeding 2 mm beyond the expected crestal remodelling seen after initial implant placement.</li>
 <li>Non-surgical debridement must use implant-compatible instruments — carbon fibre curettes, titanium scalers, or ultrasonic devices with plastic or titanium tips — to avoid scratching the implant surface and creating a rougher biofilm-retentive surface.</li>
@@ -10570,6 +10653,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thanks for coming in — I understand you've had pain on the lower right for about two weeks. Is it a constant ache, or does it come on when you bite?&quot; <em>Why it works: Distinguishes constant versus bite-triggered pain immediately — the key differentiator in this case.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A large MOD amalgam on a lower molar leaves the cusps unsupported and at high risk of fracture — this is why we prefer to protect the tooth with a crown or onlay rather than simply replacing the filling like-for-like.</li>
 <li>Before I can tell you exactly what treatment you need, I need to take two X-rays — a bitewing and a periapical — and do a simple cold test on the tooth to check whether the nerve is still healthy. Without those, I'd just be guessing.</li>
@@ -10613,6 +10697,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I'm so sorry to hear Alice had such a rough night — that must have been really worrying. Alice, you're being so brave coming in today.&quot; <em>Why it works: Addresses the parent's worry and the child's bravery in the same breath — covers both audiences in one line.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The infection has spread beyond the tooth into the surrounding bone — this is called a dentoalveolar abscess, and because there is fluctuant swelling today, this needs to be treated surgically today, not just with antibiotics.</li>
 <li>MIH — Molar Incisor Hypomineralisation — is a developmental condition where the enamel doesn't mineralise properly, most likely related to illness or antibiotic use in the first three years of life. It makes these teeth softer, more sensitive, and much more prone to rapid decay.</li>
@@ -10657,6 +10742,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're not happy with how your teeth look — before I explain what's going on, I'd like to ask a couple of quick questions so I get this right.&quot; <em>Why it works: Acknowledges her urgency with "quick questions" without promising a same-visit fix, setting expectations early.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Dental fluorosis occurs during the secretory and maturation phases of amelogenesis — the critical window is birth to approximately age eight for permanent teeth, with the upper incisors most vulnerable between six months and two years of age.</li>
 <li>The combination of naturally fluoridated rural water, concurrent fluoride tablet supplementation, and toothpaste ingestion represents cumulative fluoride excess — no single source is solely responsible.</li>
@@ -10677,6 +10763,14 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 <div class="complete-answer-body">
 <div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: Greeting and Focused History</div><p class="answer-speech">"Hi Isla, hi — lovely to meet you both. Isla, I can see you've come in today because you're not happy with the appearance of your teeth, and I completely understand that. Before I explain what I think is going on, I'd like to ask you both a few questions so I can give you the most accurate information. Is that okay?"</p><p class="answer-action">Take a focused fluoride exposure history. Ask: Where did Isla live from birth to age ten, and what was the water source — town water, tank water, or bore water? Were fluoride tablets or drops given, and from what age until what age? Did she use fluoride toothpaste as a young child, and did she tend to swallow it? Also ask about any serious childhood illnesses, high fevers, courses of antibiotics (particularly tetracyclines), or any injury to the front teeth — this helps exclude molar-incisor hypomineralisation or amelogenesis imperfecta as alternative diagnoses. Document that Isla lived in a rural area with likely naturally fluoridated water and took fluoride tablets until age ten, representing cumulative fluoride exposure during the critical window of tooth development.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Explaining the Diagnosis</div><p class="answer-speech">"Thank you — that's really helpful. I can now tell you what I think is happening. The white and brown patches on your teeth are called dental fluorosis. This is not a disease, and your teeth are not damaged or weak — in fact, they're actually very healthy with no decay at all, which is great news. What happened is that when your teeth were forming under the gum — when you were a very young child — the cells that were building your enamel were exposed to slightly higher levels of fluoride than they needed. This caused a change in the appearance of the enamel as it was forming. It's completely set in now — it won't get worse — and it doesn't affect the strength of your teeth or your risk of getting cavities. It's purely a cosmetic concern."</p><p class="answer-action">Reassure the parent directly: "This is something that happened during a very specific window of early childhood development. You were following advice to protect Isla's teeth, and the combination of the local water supply and the supplements together was more than her developing enamel needed at that time. There is no single thing that caused this, and this is absolutely not a reflection of anything you did wrong." Allow time for questions before moving to management.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Management Options</div><p class="answer-speech">"Now, the good news is that there are several things we can do, and importantly, Isla, you mentioned you don't want any drilling or needles — so let me start with the options that don't involve any of that. The first option is simply to monitor — your teeth are healthy, and some people choose to leave things as they are, especially knowing the teeth are strong. The second option, and the one I think might suit you best given your sister's wedding coming up, is called resin infiltration. We use a special liquid resin that soaks into the white patches and fills them in so they blend with the rest of your tooth. It takes one or two appointments, there's no drilling, no needle, and results can be quite good. It won't make your teeth look completely uniform, but it can make a real difference. There's also a technique called microabrasion, where we gently polish the surface of the enamel to reduce the appearance of the spots — again, no drilling or anaesthesia needed. Further down the track, when you're a bit older — around eighteen or so — we could also look at options like tooth-coloured coverings called veneers if you wanted a more complete change, but I wouldn't recommend that just yet."</p><p class="answer-action">Recommend resin infiltration (Icon, DMG) as the most appropriate immediate option given Isla's age, stated preferences, and timeline. Explain that composite or porcelain veneers are deferred until adulthood to preserve tooth structure and allow gingival margin stability. Document the discussion and options offered.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Shared Decision-Making and Closing</div><p class="answer-speech">"Isla, I want to make sure you're part of this decision — these are your teeth and your smile. How are you feeling about what I've described? I know the wedding is coming up soon, so if you'd like to go ahead with the resin infiltration, we can look at getting you in as soon as possible. I also want you to know that it's completely okay to take some time to think about it — there's no urgency from a health point of view. Whatever you decide, I'll be here to support you. Do you have any questions for me?"</p><p class="answer-action">Acknowledge Isla's self-consciousness with empathy and validate that her feelings about her appearance are completely understandable. Provide written information about resin infiltration if available. Schedule a follow-up appointment and document the diagnosis, aetiology discussion, management options offered, and Isla's preferences in the clinical notes. Reassure both Isla and her parent that ongoing monitoring will be part of her routine dental care.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>Quick differentiation cue if an examiner probes the differential: a symmetrical, generalised pattern across most teeth points to fluorosis, whereas molar-incisor hypomineralisation is typically more asymmetric and patchy, and hygiene-related demineralisation tends to follow the gumline rather than the whole crown.</li>
+<li>If a parent expresses guilt about supplemental fluoride, normalise it directly: "this is a really common, well-meaning mix-up when a child gets fluoride from more than one source at once — it's not something you did wrong."</li>
+<li>Because of the time-pressured wedding photoshoot, be explicit about what won't be finished in time: whitening alone may not fully resolve brown mottling, while the option that resolves it best (veneers) isn't achievable on that timeline — offer the least invasive option that's realistic for the window available rather than overpromising.</li>
+</ul>
 </div>
 </div>
 
@@ -10701,6 +10795,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Thank you for coming in — I understand you've had pain around one of your upper back teeth. Can you tell me what it feels like, and when it started?&quot; <em>Why it works: Standard, unhurried opener that sets up the pocket-depth/fracture reveal later without giving away the diagnosis prematurely.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The isolated narrow pocket of 6–7 mm on a single root surface, with normal probing depths on all adjacent teeth, is a hallmark finding of vertical root fracture rather than generalised periodontal disease.</li>
 <li>The J-shaped radiolucency tracking along the mesial root surface — distinct from a periapical lesion — combined with an intact root filling and no caries, is pathognomonic for vertical root fracture in a root-canal-treated tooth.</li>
@@ -10745,6 +10840,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;We've just finished today — before you go, I want to make sure you know exactly what to expect over the next few days, especially given you're on Eliquis.&quot; <em>Why it works: Names the anticoagulant explicitly in the opening line, since bleeding risk is the whole point of this station.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Using a straw creates negative intraoral pressure that can physically dislodge the blood clot from the socket, exposing the underlying bone — this is called dry socket, or alveolar osteitis, and it typically presents as severe, throbbing pain starting around day two to four.</li>
 <li>Because both sides were done surgically — with bone removal and flaps — swelling will peak around 48 to 72 hours and then gradually improve; this is normal and expected, not a sign of infection.</li>
@@ -10789,6 +10885,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I understand you've got a painful ulcer that's been bothering you for a few days — how long have you been getting these, and how often do they come back?&quot; <em>Why it works: Opens with recurrence pattern — the fact that separates simple aphthous ulceration from something needing further workup.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Minor aphthous ulcers are typically less than 10 mm in diameter, heal within 7–14 days without scarring, and recur at intervals of weeks to months — Charlotte's presentation is entirely consistent with this pattern.</li>
 <li>To exclude Behçet's syndrome, I specifically ask about recurrent genital ulcers, uveitis or eye redness, and skin lesions such as erythema nodosum or pseudofolliculitis — the absence of all three makes Behçet's very unlikely here.</li>
@@ -10833,6 +10930,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I understand some of your adult teeth haven't come through yet, and Mum's noticed your front teeth look a bit spread out — is that right?&quot; <em>Why it works: Names both concerns in one sentence, showing you've grasped the full picture before examining.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The absence of a buccal bulge in the upper jaw, combined with a retained deciduous canine beyond the age of 11, is a strong clinical indicator of palatal impaction of the permanent canine — this requires an OPG to confirm position and assess for root resorption of the lateral incisor and first premolar.</li>
 <li>On the OPG, tooth 13 is lying horizontally at the level of the apices of 12 and 14 with the crown pointing mesially — this is a high-risk position for root resorption of adjacent teeth, and the absence of resorption at this stage means we have a good window for intervention.</li>
@@ -10877,6 +10975,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see in your notes you have a penicillin allergy — can you tell me what happens when you take it, before we go any further?&quot; <em>Why it works: Checks the allergy immediately, since he was just prescribed penicillin by his GP — a safety contradiction that must be caught in minute one.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The classic triad of ANUG is punched-out interdental papillae necrosis, a grey-yellow pseudomembrane, and severe halitosis — all three are present here.</li>
 <li>Because John has a documented penicillin allergy, the correct antibiotic is metronidazole 400 milligrams three times daily for three to five days — amoxicillin is contraindicated.</li>
@@ -10921,6 +11020,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I know it can feel a bit strange coming to a new dentist after 20 years with the same person — I want to make sure you feel comfortable today.&quot; <em>Why it works: Names the emotional context of switching dentists explicitly, building trust before periodontal bad news.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;Mrs Wilson, based on your pocket depths of 5 to 6 millimetres, the bone loss I can see on your X-ray, and the recession on your lower front teeth, this is consistent with Stage III generalised periodontitis — a significant form of gum disease that has already caused lasting damage to the bone supporting your teeth.&quot;</li>
 <li>&quot;Smoking reduces the blood flow to your gums, which means your body is less able to fight the infection and heal after treatment. It also masks bleeding, so the disease can progress silently. This makes smoking the single most important thing we can address alongside your dental treatment.&quot;</li>
@@ -10964,6 +11064,7 @@ Does that make sense? Can I ask you to tell me in your own words what you've und
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can imagine it feels a bit strange coming to a new dentist after 20 years with the same person — I want to make sure you feel comfortable today.&quot; <em>Why it works: Names the emotional context of switching dentists explicitly, building trust before periodontal bad news.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Probing depths of 5–6 mm with bone loss on the OPG confirm a diagnosis of chronic generalised periodontitis — this is beyond gingivitis and requires active treatment, not just a scale and clean.</li>
 <li>Smoking reduces blood flow to the gums, which can mask bleeding and suppress the immune response — it is one of the strongest modifiable risk factors for periodontitis and significantly reduces the success of treatment.</li>
@@ -11036,6 +11137,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Good to see you again — I know you've been in pain, and I want to make sure we go through everything clearly today before we decide anything.&quot; <em>Why it works: Signals shared decision-making right away — important since he's already expressed a strong preference against extraction.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;The roots of this particular tooth sit very close to your maxillary sinus — that's the air space just above your upper back teeth. There is a small risk that during treatment we could create a communication between the tooth and the sinus, which we would manage at the time, but it is something I need to make you aware of.&quot;</li>
 <li>&quot;Root canal treatment has a success rate of approximately 85 to 95 percent, meaning there is a 5 to 10 percent chance the treatment may not fully resolve the problem and further intervention such as retreatment or a small surgical procedure called an apicectomy may be needed.&quot;</li>
@@ -11054,6 +11156,14 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 <div class="complete-answer-body">
 <div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: Introduction & Identity Confirmation</div><p class="answer-speech">"Good morning, Mr Jonathan — lovely to see you again. Before we get started, can I just confirm your full name and date of birth for our records? Thank you. So today we're here to talk about the root canal treatment for your upper right back molar — that's tooth 16 — which we discussed at your last visit. Is that right? I know you've been in some pain, and I really want to make sure we go through everything clearly today so you feel completely comfortable before we make any decisions. Does that sound okay?"</p><p class="answer-action">Confirm patient identity and correct tooth. Establish rapport. Acknowledge pain and any anxiety before proceeding.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Diagnosis in Plain Language</div><p class="answer-speech">"So at your last visit, I diagnosed what we call irreversible pulpitis — let me explain what that means in plain terms. Inside every tooth there is a nerve and blood supply, which we call the pulp. In your case, that nerve has become so severely inflamed — likely from the deep decay in the tooth — that it can no longer heal itself. That's why you've been getting that intense pain with hot and cold, and why it's been waking you up at night. Now, I know you might be wondering — why can't we just do a filling? The reason is that a filling only repairs the outer part of the tooth. The problem here is deep inside, in the nerve itself. No filling or crown placed on the surface will remove that source of pain. The only way to save this tooth is to treat the nerve directly — and that's what root canal treatment does."</p><p class="answer-action">Explain irreversible pulpitis clearly. Proactively address the filling question — a common patient misconception and a rubric requirement.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Procedure, Specific Risks & Benefits</div><p class="answer-speech">"Let me walk you through what root canal treatment actually involves. First, we'll give you a local anaesthetic injection to completely numb the tooth and the area around it — so you won't feel pain during the procedure. Once you're numb, we make a small opening in the top of the tooth to access the nerve space inside. We then carefully remove the inflamed nerve tissue, clean and shape the canals using very fine instruments, and disinfect everything thoroughly. Once the canals are clean, we seal them with a special filling material. After that, we'll place a permanent restoration — usually a crown — to protect the tooth long-term. This typically takes two to three appointments. Now, I do need to go through some important risks with you. Looking at your X-ray, the roots of this tooth sit very close to your maxillary sinus — that's the air space just above your upper back teeth. There is a small risk that during treatment we could create a small communication between the tooth and the sinus. If that were to happen, we would manage it at the time and monitor it closely. Other risks include: the treatment not fully working — root canal treatment has a success rate of around 85 to 95 percent, so there is a 5 to 10 percent chance we may need to retreat the tooth or perform a small surgical procedure called an apicectomy. There is also a small risk of a fine instrument breaking inside the canal, a perforation of the root, or the tooth cracking over time. The benefits, though, are significant — relief of your pain, and keeping your natural tooth, which is always our preference."</p><p class="answer-action">Cover all procedural steps, sinus proximity risk (case-specific), standard material risks with realistic percentages, and benefits. This is the highest-density rubric section.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Alternatives, Pain Management & Consent Confirmation</div><p class="answer-speech">"I also want to make sure you know your alternatives. If you decided not to go ahead with root canal treatment, the other option would be to extract the tooth — remove it entirely. If we did that, we could discuss replacing it with a dental implant, a bridge, or a partial denture. The downside is that losing a tooth can affect your bite and the surrounding teeth over time. The third option is to do nothing for now, but I have to be honest with you — without treatment, the infection will spread, the pain will worsen, and there is a risk of a dental abscess, which can become a more serious problem. Regarding pain during the procedure — I want to reassure you. With modern local anaesthesia, root canal treatment is generally very comfortable. Most patients tell us it feels similar to having a filling. If you feel anything at all during treatment, just raise your hand and we'll stop. Afterwards, it's normal to have some mild soreness for a day or two — paracetamol or ibuprofen taken regularly will manage that well. So, I've covered quite a bit today. Can I ask — is there anything you'd like me to go over again, or any questions you have? And how are you feeling about going ahead with the treatment?"</p><p class="answer-action">Present all alternatives with consequences. Address pain management with specific reassurance and post-operative analgesia advice. Use teach-back and open invitation for questions. Confirm consent or willingness to proceed. Document discussion in notes.</p></div>
 </div>
+</div>
+<div class="nb-box">
+<div class="nb-title">FROM A STUDY PARTNER'S PREP NOTEBOOK</div>
+<ul>
+<li>If Jonathan pushes back and says he'd rather have it out, ask directly why: "is there a particular reason you'd rather have it removed?" — surfacing the hidden concern (cost, fear, a bad past experience) is usually more productive than repeating the recommendation to save the tooth.</li>
+<li>Frame the sinus proximity as changing the calculus in RCT's favour, not against it: because the roots sit close to the sinus, extraction is arguably the riskier of the two options here (surgical sinus complications), which is part of why saving the tooth via RCT is generally preferred in this specific case.</li>
+<li>The permanent cap/crown afterward is not optional — worth stating why explicitly: it seals the tooth coronally and prevents recontamination/fracture. Mention timing (ideally within about 6 weeks of completing RCT) — a longer gap raises the risk of the tooth breaking down or reinfecting before it's protected.</li>
+</ul>
 </div>
 </div>
 
@@ -11078,6 +11188,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Marion, I need to pause and be completely honest with you about something that happened during the extraction.&quot; <em>Why it works: Direct, unhedged disclosure with no euphemism — the model way to open a complication conversation.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Small apical root fragments of 3–4 mm that are asymptomatic, free of infection, and not communicating with the maxillary sinus may be safely left in situ and monitored — this is consistent with current evidence and accepted Australian oral surgery practice.</li>
 <li>Attempting retrieval of a fragment in close proximity to the maxillary sinus floor carries a real risk of iatrogenic sinus perforation, which would convert a minor complication into a significantly more complex one requiring specialist referral.</li>
@@ -11122,6 +11233,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;While I was having a look around your mouth today, I noticed something I want to tell you about — you may not have been aware of it at all.&quot; <em>Why it works: Delivers an incidental finding calmly and normalises the fact she didn't know about it herself.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A non-removable white lesion in a patient over 45 with a 20-plus pack-year smoking history must be referred for specialist assessment and biopsy within two weeks — observation alone is not appropriate.</li>
 <li>The prior white patch on the contralateral buccal mucosa two years ago raises the possibility of field cancerisation — a process where the entire oral mucosa has been exposed to carcinogens and may harbour dysplastic change at multiple sites simultaneously.</li>
@@ -11166,6 +11278,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I understand you're here for a second opinion, and I want to give you straight answers today — can I ask a few questions first so I have the full picture?&quot; <em>Why it works: Explicitly promises directness, which matters most when the patient may already distrust advice they've been given elsewhere.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>The bone that anchors your teeth has reduced by roughly half in most areas — that is a consequence of longstanding gum disease, and it explains why several teeth have already been lost.</li>
 <li>Smokers have approximately double the implant failure rate compared to non-smokers — that is not a reason to rule implants out, but it is a reason to take smoking cessation seriously before we go down that path.</li>
@@ -11210,6 +11323,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I understand you've also been having some discomfort on your upper left side — can you tell me more about that in your own words?&quot; <em>Why it works: Elevates the "also mentioned" symptom to equal priority alongside the routine check-up, since it's actually the real diagnosis.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A prolonged response lasting more than three seconds after the stimulus is removed at 35°C is consistent with pulpal inflammation — this points toward reversible pulpitis, but we need to monitor closely because irreversible pulpitis cannot be ruled out at this stage.</li>
 <li>Interproximal caries hidden beneath a contact point is not visible on direct clinical examination — a bitewing radiograph is specifically indicated to detect this type of lesion, which is why it can be missed without one.</li>
@@ -11253,6 +11367,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Sophie, I love your shoes! Jenny, I understand you've got two things on your mind today — let's go through both properly.&quot; <em>Why it works: Names explicitly that there are two separate concerns, preventing either the sensitivity or the appearance issue from being glossed over.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Tooth 26 shows Molar Incisor Hypomineralisation — the enamel didn't mineralise properly during a specific window between birth and about age three, which is exactly when Sophie was having those ear infections and courses of antibiotics.</li>
 <li>The front teeth show a different pattern — generalised, rough, full-crown opacities affecting all the permanent incisors with no sharp borders. That distribution, combined with the fact that Sophie's baby teeth looked normal, is characteristic of Amelogenesis Imperfecta, which is a hereditary condition affecting how the enamel-forming genes work.</li>
@@ -11297,6 +11412,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you've been wondering whether this could be something serious — so let me answer that directly: this is not cancer.&quot; <em>Why it works: Leads with the reassurance the patient actually wants, rather than making him wait through a differential list first.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>'Geographic tongue — formally called benign migratory glossitis — is characterised by loss of filiform papillae in well-demarcated zones with a raised white or yellowish serpiginous border; the patches appear to move because affected areas regenerate while new areas are transiently involved nearby.'</li>
 <li>'There is no induration, no ulceration, no fixed lesion, and no lymphadenopathy — none of the features that would prompt me to consider malignancy or arrange a biopsy at this stage.'</li>
@@ -11341,6 +11457,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Before you go, I need to sit down with you and explain exactly what happened during the procedure today — I want to be completely open with you.&quot; <em>Why it works: Immediate, unhedged disclosure that sets the tone for honest complication reporting from the first sentence.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>A root fragment of one to two millimetres, sitting close to the sinus floor, carries a higher risk of being displaced into the sinus during retrieval than of causing harm if left and monitored by a specialist — that is why we are not attempting to remove it today.</li>
 <li>The oroantral communication was confirmed by the Valsalva test — when you breathed out gently through your nose with it pinched, air bubbled through the socket, which tells us there is a direct opening between your mouth and the sinus above.</li>
@@ -11385,6 +11502,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I know you've got a wedding next week — I want to make sure we address that directly before you leave today, alongside understanding what's causing this.&quot; <em>Why it works: Names his real timeline pressure in the opening line rather than leaving it for the end of the consult.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Both cyclosporine — your anti-rejection medication — and nifedipine — your blood pressure tablet — are independently known to cause gum overgrowth, and when taken together the effect is significantly worse than either drug alone.</li>
 <li>The timeline is very telling: your gums were stable for 15 years on cyclosporine, and the swelling began 8 months ago — which maps exactly to when nifedipine was introduced. That is not a coincidence.</li>
@@ -11430,6 +11548,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;Sam, I'm going to direct most of my questions to you today, since you know your own body best — Mr Tran, I'll make sure we get your input too.&quot; <em>Why it works: Explicitly sets the communication hierarchy for a 16-year-old with a parent present — signals respect for his autonomy from the outset.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>Brushing within 30 to 60 minutes of acidic drink consumption abrades enamel that has been chemically softened by the acid — this accelerates erosive tooth surface loss and is one of the most damaging habits we can correct today.</li>
 <li>Caries and erosion are two different diseases happening at the same time. Caries is caused by bacteria in your mouth fermenting sugar and producing acid. Erosion is caused by the acid in the drink itself directly dissolving your enamel — no bacteria involved. Both are being driven by the same drinks, but they need to be understood separately.</li>
@@ -11476,8 +11595,9 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I can see you're in a lot of pain and you've come in hoping for something strong — let's talk about what's actually going to fix this properly.&quot; <em>Why it works: Names her expectation directly and non-judgementally before pivoting to safe alternatives, avoiding a defensive standoff at the start.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
-<li>Ibuprofen 400 mg combined with paracetamol 1000 mg alternating every 3–4 hours provides superior analgesia to opioids for acute dental pain and is the evidence-based first-line regimen per ADA and ANZAAS guidelines.</li>
+<li>Ibuprofen 400 mg combined with paracetamol 1000 mg alternating every 3–4 hours provides superior analgesia to opioids for acute dental pain and is the evidence-based first-line regimen per Australian Therapeutic Guidelines (eTG) and ADA guidance.</li>
 <li>Prescribing opioids alongside an existing fentanyl transdermal patch creates a clinically significant risk of opioid toxicity and respiratory depression — this combination is contraindicated without specialist review.</li>
 </ul></div>
 <div class="killer-section"><div class="killer-label">Curveball Deflectors</div><ul>
@@ -11517,6 +11637,7 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </ol>
 <div class="killer-box">
 <div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Opening Line — First 30 Seconds</div><ul><li>&quot;I hear your back teeth have been giving you trouble — when do they hurt, is it all the time or does something set it off?&quot; <em>Why it works: Talks directly to the child patient first, even though most of the substantive discussion will be with his parents about the GA decision.</em></li></ul></div>
 <div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
 <li>&quot;Because Liam has no spontaneous pain and no pain at night, the pulps of these teeth are most likely still healthy — that means extraction is not indicated at this stage.&quot;</li>
 <li>&quot;MIH affects only the permanent teeth because the mineralisation disturbance occurs in early childhood, after the primary teeth have already formed — that's why his baby teeth look completely normal in the photograph.&quot;</li>
@@ -11540,6 +11661,51 @@ Does that all make sense? Do you have any questions before we get started? I'm h
 </div>
 </div>
 
+
+<div class="s-card" id="station-aw-60" data-station="AW-60" data-search="station-aw-60: caries risk assessment in a cooperative 8-year-old">
+<div class="s-hdr"><span class="s-badge">PQ-60</span>
+<div class="s-title">Caries Risk Assessment in a Cooperative 8-Year-Old</div></div>
+<div class="s-meta">Station 60 &nbsp;|&nbsp; Past Questions</div>
+<div style="display:inline-flex;align-items:center;gap:7px;background:#eff6ff;border:1px solid #1d4ed833;border-radius:6px;padding:5px 12px;font-size:11.5px;font-weight:600;color:#1d4ed8;margin-bottom:18px;">
+  <span>&#9632;</span> Cluster 2 — Balanced (History informs management)
+</div>
+<h3>CANDIDATE BRIEF</h3>
+<p>Mehmet Askoff, an 8-year-old boy, attends today with his father. His father is worried about black holes in Mehmet's teeth. On examination you find multiple grossly carious primary molars — an intraoral photo is provided, and a bitewing radiograph may sometimes be given. Mehmet is a cooperative child. Conduct a consultation with the father covering the caries risk assessment and management.</p>
+<h3>MODEL ANSWER STRUCTURE</h3>
+<p><strong>Stage 1 — Rapport and History (0–3 min)</strong></p><p>Greet Mehmet directly before turning to his father — signals to the examiner that the child is included, not just discussed over his head. Take a structured caries-risk history: drinks (type, frequency, sipped vs with meals), snacks (type and frequency between meals), brushing (frequency, toothpaste, supervised or not), fluoride exposure (toothpaste strength, home water source), and last dental visit. <span class="ip-badge">INFLECTION 1</span> — Asking specifically about the home water source (town supply vs tank/bore) is the differentiating question here; most candidates ask about diet but skip fluoride exposure entirely.</p><p><strong>Stage 2 — Explain the Diagnosis (3–5 min)</strong></p><p>Use the photo (and X-ray if taken) to show the father the carious lesions. Explain the mechanism in plain language: bacteria feed on sugars/carbohydrates and produce acid that breaks down enamel — and critically, it is the <em>frequency</em> of exposure through the day, not the total amount of sugar, that drives the disease. Reassure the father this is common and very manageable, without assigning blame.</p><p><strong>Stage 3 — Address "Can We Just Watch Them?" (5–7 min)</strong></p><p><span class="ip-badge">INFLECTION 2</span> — This is the key pivot of the station. The father will ask whether cavitated primary teeth need active treatment given they'll fall out anyway. The candidate must explain the real consequences of leaving them untreated: progression to pulpal involvement and abscess, space loss for the permanent successor if a primary molar is lost early, and impact on eating, nutrition and sleep from ongoing pain.</p><p><strong>Stage 4 — Management Plan (7–9 min)</strong></p><p>Restorative: glass ionomer or composite restorations for the carious primary molars under local anaesthetic given Mehmet's cooperation; consider a stainless steel crown (Hall technique or conventional) for more extensively broken-down teeth. Preventive: standard-strength fluoride toothpaste (1000–1450 ppm, appropriate for age 8) twice daily supervised, in-chair fluoride varnish today, water as the default drink with sugary drinks/snacks confined to mealtimes, and fissure sealants for permanent first molars as they erupt.</p><p><strong>Stage 5 — Recall and Close (9–10 min)</strong></p><p>Arrange a 3-monthly recall given the high caries risk identified today. Give the father one or two concrete, realistic first steps rather than an overwhelming list. Check understanding and invite questions.</p>
+<h3>KEY POINTS</h3>
+<ol>
+<li>✅ Takes a structured dietary and oral hygiene history — frequency of sugary/acidic drinks and snacks, brushing supervision, and fluoride exposure via toothpaste <em>and</em> water source — not a generic "what does he eat" question</li>
+<li>✅ Explains the diagnosis in plain, non-judgemental language using the photo as a visual aid, without assigning blame to the father</li>
+<li>✅ Explicitly identifies frequency (not total amount) of sugar/acid exposure as the key driver, and connects this to the reported snacking and drinking pattern</li>
+<li>✅ Identifies the non-fluoridated home water supply as a risk factor and recommends an age-appropriate standard-strength fluoride toothpaste plus in-chair varnish</li>
+<li>✅ Outlines a restorative plan appropriate for a cooperative child (GIC/composite, or stainless steel crowns for extensive breakdown) and considers sealants for erupting permanent molars</li>
+<li>✅ Directly answers "they're just baby teeth, can we watch them?" with the real consequences of non-treatment — pain, abscess risk, space loss, nutrition/sleep impact</li>
+</ol>
+<div class="killer-box">
+<div class="killer-title">KILLER LINES — SECURE YOUR PASS</div>
+<div class="killer-section"><div class="killer-label">Clinical Authority</div><ul>
+<li>What drives caries is how <em>often</em> teeth are exposed to sugars and acids through the day, not just the total amount — sipping juice or cordial between meals keeps the mouth in an acid attack for most of Mehmet's waking hours, which overwhelms his saliva's ability to repair the enamel in between.</li>
+<li>A non-fluoridated home water supply is a real, addressable risk factor here — I'd recommend a standard-strength fluoride toothpaste, 1000 to 1450 parts per million, which is appropriate at Mehmet's age, used twice daily, plus a fluoride varnish application today and at each future visit.</li>
+<li>Because Mehmet is cooperative, most of these carious primary molars can be restored under local anaesthetic with glass ionomer or composite; where breakdown is more extensive, a stainless steel crown gives a more predictable, longer-lasting result than a large filling in a primary tooth.</li>
+<li>Primary molars aren't replaced until around age 10 to 11 — losing one early to untreated decay can cause the neighbouring teeth to drift into the space, which affects how the permanent premolar comes through underneath.</li>
+<li>Given the risk factors identified today, I'd like to see Mehmet every three months rather than the standard six, until we've confirmed the new habits are sticking and no new lesions are appearing.</li>
+</ul></div>
+<div class="killer-section"><div class="killer-label">Curveball Deflectors</div><ul>
+<li><em>Father asks: 'They're just baby teeth though — can't we just keep an eye on them and let them fall out naturally?'</em> → Acknowledge the logic in his question, then explain clearly: 'I understand why that seems reasonable, but these particular teeth won't be replaced for another two to three years, and if we leave the decay to progress, it can reach the nerve and cause a real infection — which means pain, possible swelling, and sometimes an emergency extraction. If a molar is lost early because of that, the teeth around it can drift into the gap, which affects how his adult tooth comes through underneath. Treating them now is actually about protecting his comfort today and his bite later on.'</li>
+<li><em>Candidate focuses only on "less sugar" without asking about frequency or fluoride exposure</em> → This is the most common shortfall in this station. A candidate who only advises "cut down on sugar" misses the two highest-yield points: that frequency of exposure matters more than total amount, and that the family's water source is non-fluoridated. Always ask directly: "How often through the day does he have something sugary or acidic?" and "What's your water supply at home — town water, tank, or bore?"</li>
+</ul></div>
+</div>
+<div class="complete-answer">
+<div class="complete-answer-header">
+  <span class="complete-answer-title">&#10022; Complete Model Answer — Verbatim Script</span>
+  <span class="complete-answer-chevron">&#9658;</span>
+</div>
+<div class="complete-answer-body">
+<div class="answer-stage-block"><div class="answer-stage-label">STAGE 1: Rapport and History</div><p class="answer-speech">"Hi Mehmet — I'm just going to have a look at your teeth in a minute, and I bet you're going to do a great job. Mr Askoff, thanks for bringing him in — I can see you're worried, and I want us to work out together what's going on and what we can do about it. Can I ask a few questions first? What does Mehmet usually drink through the day — is it mostly water, or juice and cordial too? And roughly how often? Does he snack between meals — things like lollies, chips, or biscuits — and how often would that be, say after school? How's his brushing going — how many times a day, and is it supervised, or does he mostly do it himself? What toothpaste does he use, and — this one might seem like an odd question — what's your water supply at home? Town water, tank, or bore? And when was his last dental check-up?"</p><p class="answer-action">Listen for: frequent juice/cordial, afternoon snacking on lollies/chips after school, once-daily unsupervised brushing, non-fluoridated bore/tank water, and a check-up gap of over 18 months. Note these as a cluster of modifiable risk factors rather than singling out any one as "the cause."</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 2: Explaining the Diagnosis</div><p class="answer-speech">"Thank you — that's really helpful. So looking at this photo of Mehmet's teeth, these dark areas are decay. What happens is that the bacteria naturally living in the mouth feed on sugars from food and drink and produce an acid, and that acid slowly breaks down the tooth. The important thing to understand is that it's not really about how much sugar he's having overall — it's about how <em>often</em> his teeth are exposed to it through the day. Every time he has something sugary or acidic, the teeth are under acid attack for a little while afterwards, and if that keeps happening again and again, the mouth doesn't get a chance to recover in between. I want to reassure you — this is really common, and it doesn't mean you've done anything wrong. It just means there are a few things we can adjust that will make a real difference."</p><p class="answer-action">Deliver this in a warm, non-judgemental tone. Avoid language that implies parental blame. Use the photo as a visual anchor throughout.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 3: Addressing "Can We Just Watch Them?"</div><p class="answer-speech">"Mr Askoff, I imagine you might be wondering — since these are baby teeth, could we just keep an eye on them and let them fall out on their own? It's a really fair question, and I want to explain why I wouldn't recommend that here. These particular back teeth won't actually be replaced by adult teeth for another two to three years, so they've got an important job to do in the meantime — chewing, holding space, and guiding his adult teeth into the right position. If we leave this decay untreated, it can progress deeper into the tooth and reach the nerve, which causes real pain and can lead to a dental abscess — that's a proper infection, sometimes with swelling, and in a young child it can mean an emergency visit or even having the tooth taken out under more difficult circumstances. If a molar is lost too early because of that, the teeth on either side can drift into the gap, which then affects how his adult tooth comes through underneath. So treating these now is really about protecting his comfort today and setting his adult teeth up properly for later."</p><p class="answer-action">This is the highest-yield section of the station — do not skip or rush it. Address the question directly rather than waiting to be asked.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 4: Management Plan</div><p class="answer-speech">"Here's what I'd suggest. Because Mehmet's such a cooperative little patient, we can treat most of these teeth in the chair with a local anaesthetic — a numbing injection — and a tooth-coloured or cement filling. For a couple of the more broken-down teeth, I'd actually recommend a small stainless steel crown rather than a filling — it fits over the whole tooth like a cap, and for a baby molar with this much decay it tends to last much better and more predictably than a large filling would. On the prevention side: let's make water his main drink through the day, and keep the juice and cordial to mealtimes only rather than sipping between meals. For snacks, swapping the afternoon lollies and chips for things like cheese, fruit, or plain crackers makes a real difference. I'd like him on a regular-strength fluoride toothpaste — that's the normal adult-strength one, which is actually right for his age — twice a day, and I'll apply a fluoride varnish to his teeth today as an extra layer of protection. As his adult back teeth come through over the next year or two, we'll also put protective sealants on them before they have a chance to decay."</p><p class="answer-action">Prescribe/recommend standard 1000–1450 ppm fluoride toothpaste (not the low-fluoride under-6 formulation). Apply fluoride varnish in the same visit. Plan restorative treatment appropriate to each tooth's extent of breakdown.</p></div><div class="answer-stage-block"><div class="answer-stage-label">STAGE 5: Recall and Closing</div><p class="answer-speech">"Because of what we've found today, I'd like to see Mehmet every three months for a little while, rather than the usual six — just until we're confident the new routine is sticking and no new spots are appearing. I know that's a few changes at once, so if it helps, let's start with just two things: swap the after-school snack for something like cheese or fruit, and keep the juice to mealtimes only. We can build on that at the next visit. Does that all make sense? Do you have any questions for me before you go?"</p><p class="answer-action">Give the father a manageable, prioritised starting point rather than an overwhelming list. Confirm understanding, book the restorative appointment and the 3-month recall, and document the diet, hygiene and fluoride-exposure history along with the management plan.</p></div>
+</div>
+</div>
+</div>
 
 <div id="no-results" style="display:none;text-align:center;padding:60px 20px;color:#78716c;">
   <p style="font-size:28px;">🔍</p>
