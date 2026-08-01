@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Antibiotics in TG — ADC Study Bank</title>
+<meta name="description" content="The Therapeutic Guidelines decision tree for dental practice, in one place — when Therapeutic Guidelines says yes, no and rarely, with page references.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf; --border-light:#ece8e2;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --badge-bg:#3d3935; --badge-text:#f5f2ed;
+  --tg4-bg:#fdf8f0; --tg4-border:#c4a97a; --h3-bar:#b5a897;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  min-height:100vh;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+header.ec-header{display:flex;align-items:center;gap:14px;padding:14px 20px;
+  border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:30;}
+.ec-back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.ec-back:hover{color:var(--text);}
+.ec-title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.ec-sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;max-width:280px;}
+
+main{max-width:820px;margin:0 auto;padding:28px 20px 90px;}
+
+.ec-intro{background:var(--tg4-bg);border:1px solid var(--tg4-border);border-radius:12px;
+  padding:16px 20px;margin-bottom:28px;font-size:13.5px;color:var(--text);}
+.ec-intro strong{font-weight:700;}
+
+nav.ec-toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;position:sticky;top:57px;
+  background:var(--bg);padding:10px 0;z-index:20;}
+nav.ec-toc a{font-size:12px;font-weight:600;color:var(--accent);background:var(--card);
+  border:1px solid var(--border);border-radius:20px;padding:6px 13px;text-decoration:none;}
+nav.ec-toc a:hover{background:var(--border-light);}
+
+.mod-hdr{font-family:var(--font-serif);font-size:15px;font-weight:700;color:var(--text);
+  margin:38px 0 14px;padding-top:16px;border-top:2px solid var(--text);
+  display:flex;align-items:center;gap:10px;}
+.mod-hdr .mod-num{background:var(--badge-bg);color:var(--badge-text);font-family:var(--font-sans);
+  font-size:10px;font-weight:800;letter-spacing:.6px;padding:3px 10px;border-radius:20px;}
+
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:22px 24px;margin-bottom:20px;}
+.case-card h3{font-family:var(--font-serif);font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text);}
+.pq-badge{display:inline-block;vertical-align:middle;background:#2A6049;color:#fff;
+  font-family:var(--font-sans);font-size:10px;font-weight:800;letter-spacing:.4px;
+  padding:3px 9px;border-radius:20px;margin-left:9px;}
+.case-vignette{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px;
+  padding-bottom:14px;border-bottom:1px solid var(--border-light);}
+
+.case-card h4{font-family:var(--font-serif);font-size:.8rem;font-weight:700;
+  color:var(--accent);letter-spacing:.5px;text-transform:uppercase;
+  margin:20px 0 8px;padding-left:11px;border-left:3px solid var(--h3-bar);}
+.case-card h4:first-of-type{margin-top:0;}
+.case-card p{margin-bottom:8px;font-size:13.5px;line-height:1.65;}
+.case-card ul, .case-card ol{margin:0 0 8px 20px;font-size:13.5px;line-height:1.6;}
+.case-card li{margin-bottom:5px;}
+.case-card ul:last-child, .case-card ol:last-child, .case-card p:last-child{margin-bottom:0;}
+.case-card .script{color:var(--text);}
+.case-card .script em{color:var(--muted);font-style:italic;}
+
+/* KILLER LINES BOX (matches station-card styling on the main site) */
+.killer-box{background:#2a2522;border-radius:10px;padding:18px 22px;}
+.killer-title{font-family:var(--font-sans);font-size:10px;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;color:#c9a96e;margin-bottom:12px;}
+.killer-box ul{margin:0 0 0 16px;}
+.killer-box li{color:#e2d8cc;font-size:13.5px;line-height:1.65;margin-bottom:8px;}
+.killer-box li:last-child{margin-bottom:0;}
+.killer-box li strong{color:#f2ead9;}
+
+.ec-source-note{font-size:11px;color:var(--muted);margin-top:24px;padding-top:14px;
+  border-top:1px solid var(--border-light);}
+
+.ec-schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
+.ec-schedule-table th, .ec-schedule-table td{text-align:left;padding:6px 10px;
+  border-bottom:1px solid var(--border-light);}
+.ec-schedule-table th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;}
+
+@media(max-width:640px){
+  nav.ec-toc{top:53px;}
+  .case-card{padding:16px 16px;}
+}
+
+:root{
+  --sidebar-bg:#eeeae3; --sidebar-hover:#e5e1da; --link-active-bg:#e0dbd3;
+  --sidebar-w:260px;
+}
+body{display:flex;}
+
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:210;
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  width:36px;height:36px;font-size:16px;cursor:pointer;color:var(--text);}
+
+#overlay{display:none;position:fixed;inset:0;background:rgba(28,25,23,.4);
+  z-index:190;backdrop-filter:blur(2px);}
+#overlay.visible{display:block;}
+
+#sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--sidebar-bg);
+  display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;
+  overflow:hidden;z-index:200;border-right:1px solid var(--border);
+  transition:transform .28s cubic-bezier(.4,0,.2,1);}
+.sb-brand{display:flex;align-items:center;gap:11px;padding:20px 16px 15px;
+  border-bottom:1px solid var(--border);flex-shrink:0;}
+.sb-logo{width:36px;height:36px;border-radius:9px;background:var(--badge-bg);
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.sb-title{font-family:var(--font-serif);font-size:14.5px;font-weight:700;color:var(--text);}
+.sb-sub{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.3px;}
+.sb-search-wrap{padding:10px 12px;border-bottom:1px solid var(--border);flex-shrink:0;}
+#sb-search{width:100%;background:#fff;border:1px solid var(--border);border-radius:7px;
+  padding:7px 11px;color:var(--text);font-size:12.5px;font-family:var(--font-sans);outline:none;}
+#sb-search:focus{border-color:var(--accent);}
+#sb-nav{overflow-y:auto;flex:1;padding-bottom:20px;}
+#sb-nav::-webkit-scrollbar{width:3px;}
+#sb-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.ch-group{border-bottom:1px solid var(--border-light);}
+.ch-hdr{display:flex;align-items:center;gap:8px;padding:9px 12px;
+  color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;}
+.ch-count{background:var(--border);color:var(--muted);border-radius:10px;
+  padding:1px 6px;font-size:10px;font-weight:600;}
+.cs-link{display:block;padding:5.5px 12px 5.5px 20px;color:var(--muted);font-size:12px;
+  text-decoration:none;transition:all .12s;border-left:2px solid transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cs-link:hover{color:var(--text);background:var(--sidebar-hover);}
+.cs-link.active{color:var(--text);border-left-color:var(--accent);
+  background:var(--link-active-bg);font-weight:600;}
+.cs-link.filtered-out{display:none;}
+.ch-group.all-filtered{display:none;}
+
+#main-wrap{margin-left:var(--sidebar-w);flex:1;min-width:0;}
+
+@media(max-width:860px){
+  #menu-btn{display:block;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #main-wrap{margin-left:0;}
+}
+
+
+
+/* Antibiotics guide */
+.abx-rule{background:var(--badge-bg);color:var(--badge-text);border-radius:12px;
+  padding:18px 22px;margin:22px 0;}
+.abx-rule-h{font-family:var(--font-serif);font-size:19px;font-weight:700;line-height:1.35;}
+.abx-rule-b{font-size:13.5px;line-height:1.65;margin-top:9px;opacity:.85;}
+.abx-callout{border:1px solid;border-radius:10px;padding:13px 16px;margin:16px 0;
+  font-size:13.5px;line-height:1.65;display:flex;gap:11px;align-items:flex-start;}
+.abx-ico{font-weight:700;flex-shrink:0;opacity:.75;}
+.abx-drug{background:#f2f7f4;border:1px solid #2a604933;border-radius:10px;
+  padding:14px 18px;margin:14px 0;font-size:13.5px;line-height:1.7;}
+.abx-drug div{padding:3px 0;}
+.abx-drug div+div{border-top:1px dashed #2a604933;margin-top:6px;padding-top:9px;}
+.abx-note{font-size:13px;color:var(--muted);border-left:3px solid var(--border);
+  padding-left:13px;margin:13px 0;}
+.abx-tw{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch;}
+.abx-t{border-collapse:collapse;width:100%;font-size:13px;min-width:520px;}
+.abx-t th{background:var(--border-light);text-align:left;padding:9px 12px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  border:1px solid var(--border);vertical-align:top;}
+.abx-t td{padding:10px 12px;border:1px solid var(--border);vertical-align:top;line-height:1.6;}
+.abx-t b.yes{color:#1d7a3e;} .abx-t b.no{color:#b3402c;} .abx-t b.rare{color:#9a6b00;}
+.cite{font-size:11px;color:var(--muted);white-space:nowrap;}
+.abx-sec{scroll-margin-top:74px;}
+h4{font-family:var(--font-sans);font-size:13px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.7px;color:var(--accent);margin:22px 0 9px;}
+main p{margin:11px 0;}
+main ul{margin:11px 0 14px 20px;} main li{margin-bottom:7px;line-height:1.65;}
+
+</style>
+</head>
+<body>
+
+<button id="menu-btn" aria-label="Toggle contents">☰</button>
+<div id="overlay"></div>
+<aside id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo">💊</div>
+    <div>
+      <div class="sb-title">Antibiotics in TG</div>
+      <div class="sb-sub">7 sections · decision guide</div>
+    </div>
+  </div>
+  <div class="sb-search-wrap">
+    <input id="sb-search" type="text" placeholder="Find a section...">
+  </div>
+  <nav id="sb-nav">
+      <div class='ch-group'>
+        <div class='ch-cases'>
+          <a href='#severity' class='cs-link' data-target='severity'>🔥 1. Acute odontogenic infection: the three tiers</a>
+          <a href='#indications' class='cs-link' data-target='indications'>✅ 2. The only three indications in acute infection</a>
+          <a href='#regimens' class='cs-link' data-target='regimens'>💊 3. What to actually prescribe</a>
+          <a href='#surgical' class='cs-link' data-target='surgical'>🔪 4. Surgical prophylaxis — almost never</a>
+          <a href='#endocarditis' class='cs-link' data-target='endocarditis'>❤️ 5. Endocarditis prophylaxis — both boxes must tick</a>
+          <a href='#named' class='cs-link' data-target='named'>📋 6. Named conditions — yes, no, rarely</a>
+          <a href='#traps' class='cs-link' data-target='traps'>🎯 7. The traps, collected</a>
+        </div>
+      </div>
+  </nav>
+</aside>
+
+<div id="main-wrap">
+
+<header class="ec-header">
+  <a href="/" class="ec-back">← Back</a>
+  <div class="ec-title">Antibiotics in TG</div>
+  <div class="ec-sub">The Therapeutic Guidelines decision tree for dental practice, in one place</div>
+</header>
+
+<main>
+  <div class="ec-intro">
+    <strong>When Do We Actually Give Antibiotics?</strong><br>
+    Compiled from the Therapeutic Guidelines Oral and Dental corpus behind the
+    <a href="/tg4-bible" style="color:var(--accent);font-weight:600;">TG4 Bible</a> on this site.
+    Page numbers cite that document so you can check the original wording.
+    <a class="ia-dl" href="/antibiotics-in-tg.pdf" download
+       style="display:inline-flex;align-items:center;gap:8px;margin-top:12px;background:var(--badge-bg);color:var(--badge-text);text-decoration:none;padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;">⬇ Download the PDF</a>
+  </div>
+
+  <p>TG's answer to "when do we give antibiotics" is scattered across about fifty pages — acute infections in one chapter, prophylaxis in another, necrotising gingivitis and peri-implantitis somewhere else again. In the exam it comes at you as a single question. This pulls the whole decision into one place, with page references back to TG so you can check anything that matters.</p>
+  <div class='abx-rule'><div class='abx-rule-h'>Antibiotics are not a substitute for dental treatment.</div><div class='abx-rule-b'>Drainage and source control are the treatment. Antibiotics are an adjunct, and only in specific situations. If you remember one sentence from this document, make it that one — it is the sentence TG itself keeps repeating, and it answers more exam questions than any drug name.</div></div>
+  <div class='case-card abx-sec' id='severity'>
+    <h3>🔥 1. Acute odontogenic infection: the three tiers</h3>
+    <p>Everything in acute infection follows from which of three tiers the patient is in. TG classifies by <b>facial swelling</b> and <b>severe local or systemic features</b> — not by how sore the tooth is. <span class='cite'>Table 13.19, p126–127</span></p>
+    <div class='abx-tw'><table class='abx-t'><thead><tr><th>Tier</th><th>What you see</th><th>What you do</th></tr></thead><tbody><tr><td><b>Localised</b></td><td>Dental pain, often marked tenderness to percussion. Abscess or pus may be visible. <b>No facial swelling.</b> No severe features.</td><td>A dental procedure in the community. <b>No antibiotics</b> if that procedure happens within 24 hours.</td></tr><tr><td><b>Spreading,</b> no severe features</td><td><b>Facial swelling.</b> Dental or facial pain. Abscess or pus may be visible. No severe features.</td><td>Dental procedure <b>plus</b> oral antibiotics. This is the main indication for antibiotics.</td></tr><tr><td><b>Spreading with severe local or systemic features</b></td><td>See the red-flag list below.</td><td><b>Urgent transfer to hospital</b> with an OMFS/anaesthetic/emergency facility. IV antibiotics and urgent surgery.</td></tr></tbody></table></div>
+    <h4>The red flags that make it tier three</h4>
+    <p><b>Severe local features (airway risk):</b> difficulty breathing · difficulty swallowing · swelling of the floor of the mouth · trismus · neck swelling · significant facial swelling and pain, especially with any of the above. Swelling of the upper third of the face occluding the eye is rare and may indicate cavernous sinus thrombosis.</p>
+    <p><b>Systemic features:</b> pallor · sweating · tachycardia · temperature above 38°C or below 36°C.</p>
+    <p><b>Signs of sepsis in adults:</b> impaired consciousness · respiratory rate 22+ · systolic BP under 90 mmHg · poor peripheral perfusion or mottled skin · acute drop in urine output.</p>
+    <div class='abx-callout' style='background:#fdf6e3;border-color:#e0c06a'><span class='abx-ico'>⚠</span><div>While you wait for transfer: give oxygen by mask if they are struggling to breathe or look blue, let them adopt a position of comfort, and phone ahead to the receiving service both to alert them and to get advice on prehospital management.</div></div>
+    <p class='abx-note'>TG's own caveat: acute odontogenic infections are a continuum. If you are unsure of the severity, seek expert advice — saying that out loud in a station is a strength, not a hedge.</p>
+  </div>
+  <div class='case-card abx-sec' id='indications'>
+    <h3>✅ 2. The only three indications in acute infection</h3>
+    <p>This is the list to be able to recite. <span class='cite'>p127–128</span></p>
+    <p><b>Antibiotic therapy is not a routine adjunct in managing acute odontogenic infections.</b> Antibiotics are indicated:</p>
+    <ul><li>as an <b>adjunct to a dental procedure</b> in managing <b>spreading</b> odontogenic infections</li><li>if a dental procedure to drain the infection <b>is not likely to take place within 24 hours</b></li><li>if a <b>fragment or root of an infected tooth is retained</b> during extraction and complete extraction is delayed</li></ul>
+    <div class='abx-callout' style='background:#fdefec;border-color:#d99080'><span class='abx-ico'>✕</span><div><b>The trap:</b> antibiotics are <i>not</i> indicated if a <b>non-infected</b> tooth fragment or root is retained during an extraction. Examiners like this one because it sounds like it should be a yes.</div></div>
+    <p>Spreading infection is the main indication, because of the risk of airway compromise or sepsis. Where treatment is delayed or a fragment is retained, the antibiotic is buying time — it aims to stop a localised infection becoming a spreading one.</p>
+    <div class='abx-callout' style='background:#eef4f9;border-color:#7ba7c7'><span class='abx-ico'>ℹ</span><div>Tell the patient explicitly that dental treatment is still essential as soon as possible <b>regardless of how much better they feel</b> on the antibiotic. TG calls this out specifically, and it is an easy communication mark.</div></div>
+    <h4>Two situations that override the tiers</h4>
+    <ul><li><b>Profound immune compromise</b> — at risk of rapidly spreading infection even from a localised one. Urgent management, and make the antibiotic/timing decision <b>in consultation with their specialist or medical practitioner</b>.</li><li><b>Recurrent infection already treated with antibiotics but no dental treatment</b> — seek expert advice.</li></ul>
+  </div>
+  <div class='case-card abx-sec' id='regimens'>
+    <h3>💊 3. What to actually prescribe</h3>
+    <p>For spreading odontogenic infection <b>without</b> severe features, managed in the community. <span class='cite'>p132–134</span></p>
+    <h4>If the dental procedure happens within 24 hours — penicillin monotherapy</h4>
+    <div class='abx-drug'><div>phenoxymethylpenicillin 500 mg (child: 12.5 mg/kg up to 500 mg) orally, 6-hourly for 5 days</div><div>OR amoxicillin 500 mg (child: 15 mg/kg up to 500 mg) orally, 8-hourly for 5 days</div></div>
+    <p class='abx-note'>Phenoxymethylpenicillin is <b>preferred</b> over amoxicillin because its spectrum is narrower. Both can be taken with or without food.</p>
+    <h4>If the procedure is delayed beyond 24 hours or incomplete — add anaerobic cover</h4>
+    <div class='abx-drug'><div>metronidazole 400 mg (child: 10 mg/kg up to 400 mg) orally, 12-hourly for 5 days</div><div>PLUS phenoxymethylpenicillin 500 mg 6-hourly, OR amoxicillin 500 mg 8-hourly, for 5 days</div><div>OR as a single drug: amoxicillin + clavulanate 875 + 125 mg orally, 8-hourly for 5 days</div></div>
+    <p class='abx-note'>Amoxicillin + clavulanate is an acceptable alternative if adherence to a two-drug regimen is unlikely, but it is <b>broader spectrum and therefore not preferred</b> on stewardship grounds. Metronidazole <b>alone</b> is never right for odontogenic infection — no aerobic activity.</p>
+    <h4>Penicillin hypersensitivity</h4>
+    <div class='abx-drug'><div><b>Non-severe reaction</b> (urticaria, mild immediate rash, benign childhood rash, maculopapular rash): cephalexin 500 mg (child: 12.5 mg/kg up to 500 mg) orally, 6-hourly for 5 days</div><div><b>Severe reaction</b> (anaphylaxis, airway compromise/angioedema, hypotension, collapse; or DRESS, SJS/TEN, severe blistering rash, organ involvement): clindamycin 300 mg (child: 10 mg/kg up to 300 mg) orally, 8-hourly for 5 days</div></div>
+    <div class='abx-callout' style='background:#fdf6e3;border-color:#e0c06a'><span class='abx-ico'>⚠</span><div>Clindamycin — even short courses — raises the risk of <i>Clostridioides difficile</i> diarrhoea. Tell the patient: if diarrhoea starts, stop the clindamycin and contact you and their GP.</div></div>
+    <p class='abx-note'>Both cephalexin and clindamycin are broader than penicillin, so they are alternatives rather than equals — stewardship again. And before you reach for either: <b>verify the allergy</b>. TG devotes several pages to the fact that most reported penicillin allergy is not real.</p>
+    <h4>Follow-up</h4>
+    <p>If the response to penicillin monotherapy is inadequate at <b>48 hours</b> after the dental procedure, that is the trigger to add metronidazole.</p>
+  </div>
+  <div class='case-card abx-sec' id='surgical'>
+    <h3>🔪 4. Surgical prophylaxis — almost never</h3>
+    <div class='abx-rule'><div class='abx-rule-h'>Surgical antibiotic prophylaxis is rarely indicated for dental procedures.</div><div class='abx-rule-b'>This is the heading TG uses. In general dental practice the indications are rare enough that the safe default is no.</div></div>
+    <p><span class='cite'>Table 13.12, p76–77</span></p>
+    <div class='abx-tw'><table class='abx-t'><thead><tr><th>Does NOT need surgical prophylaxis</th><th>DOES need surgical prophylaxis</th></tr></thead><tbody><tr><td>third molar (wisdom tooth) surgery<br>tooth extractions<br>insertion or removal of dental implants, and peri-implant surgery<br>periodontal surgery<br>periapical surgery<br>soft- and hard-tissue removal (biopsies, exostoses, alveoloplasty)</td><td>some OMFS procedures only:<br>• insertion of prosthetic material — <b>except dental implants</b><br>• ORIF of mandibular or midfacial (Le Fort, zygomatic) fractures<br>• intraoral bone grafting<br>• orthognathic surgery<br>• cleft lip and palate repair</td></tr></tbody></table></div>
+    <div class='abx-callout' style='background:#fdefec;border-color:#d99080'><span class='abx-ico'>✕</span><div><b>Joint prostheses, breast implants, ventriculoperitoneal and ventriculo-atrial shunts, and deep brain stimulators do NOT change the advice.</b> The hip replacement patient who has been told by someone to always take antibiotics before the dentist is a stock ADC station. The answer is no.</div></div>
+    <div class='abx-callout' style='background:#fdefec;border-color:#d99080'><span class='abx-ico'>✕</span><div><b>Do not use prophylactic antibiotics to prevent dry socket.</b> Alveolar osteitis is premature clot lysis, not infection, and antibiotics do not prevent it.</div></div>
+    <p class='abx-note'>Implants specifically: prophylaxis does not reduce postoperative infection. It is associated with a marginal 1–2% increase in implant retention — which is not an infection indication.</p>
+    <p>Before you even ask about prophylaxis, <b>treat existing infection</b> — an acute periapical infection or necrotising gingivitis is a treatment question, not a prophylaxis one.</p>
+  </div>
+  <div class='case-card abx-sec' id='endocarditis'>
+    <h3>❤️ 5. Endocarditis prophylaxis — both boxes must tick</h3>
+    <div class='abx-rule'><div class='abx-rule-h'>Prophylaxis needs a high-risk PROCEDURE and a high-risk CARDIAC CONDITION.</div><div class='abx-rule-b'>One without the other is not an indication. Candidates lose marks by remembering the valve list and forgetting that a non-invasive procedure needs nothing at all. </div></div>
+    <p><span class='cite'>Table 2.59, p82–83</span></p>
+    <h4>Procedures that qualify</h4>
+    <p>Dental procedures <b>only those involving manipulation of gingival or periapical tissue, or perforation of the oral mucosa</b> — extractions, implant placement, biopsy, removal of soft tissue or bone, scaling (supra- and subgingival debridement), replanting avulsed teeth.</p>
+    <h4>Cardiac conditions that qualify</h4>
+    <ul><li>prosthetic cardiac valve, including transcatheter-implanted prosthesis or homograft</li><li>prosthetic material used for cardiac valve repair (annuloplasty rings, chords)</li><li>previous infective endocarditis</li><li>ventricular assist devices</li><li>congenital heart disease, <b>but only</b> unrepaired cyanotic defects (including palliative shunts and conduits), or repaired defects with residual defects at or adjacent to a prosthetic patch or device</li><li>rheumatic heart disease</li></ul>
+    <div class='abx-callout' style='background:#eef4f9;border-color:#7ba7c7'><span class='abx-ico'>ℹ</span><div><b>This one has changed.</b> Endocarditis prophylaxis was previously recommended for rheumatic heart disease only in Aboriginal and Torres Strait Islander peoples, or considered for people at significant socioeconomic disadvantage. It now applies to <b>rheumatic heart disease in anyone</b> — RHD is an independent risk factor. If you learned the old rule, relearn this one.</div></div>
+    <div class='abx-callout' style='background:#fdefec;border-color:#d99080'><span class='abx-ico'>✕</span><div><b>Not indicated</b> for mitral valve prolapse, septal defects, or cardiac implantable electronic devices (pacemakers, ICDs). Heart transplant patients who have developed cardiac valvulopathy may be high risk — consult their cardiologist.</div></div>
+    <h4>The regimen</h4>
+    <div class='abx-drug'><div>amoxicillin 2 g (child: 50 mg/kg up to 2 g) orally, <b>60 minutes before</b> the procedure</div><div><b>Non-severe penicillin reaction:</b> cephalexin 2 g (child: 50 mg/kg up to 2 g) orally, 60 minutes before</div><div><b>Severe penicillin reaction:</b> doxycycline 100 mg orally, or azithromycin 500 mg (child: 10 mg/kg up to 500 mg) orally, 60 minutes before</div></div>
+    <div class='abx-callout' style='background:#fdf6e3;border-color:#e0c06a'><span class='abx-ico'>⚠</span><div><b>Clindamycin is no longer recommended for endocarditis prophylaxis</b> — the rate of severe adverse reactions, mostly <i>C. difficile</i>, is higher than the alternatives. If your notes still say clindamycin, they are out of date.</div></div>
+    <p class='abx-note'>Practical points on the alternatives: doxycycline can cause oesophageal ulceration — take with a large glass of water, stay upright 30 minutes. Azithromycin prolongs QT — check with the patient's doctor before prescribing. If oral is impossible, amoxicillin or ampicillin 2 g IM 30 minutes before, or IV within 60 minutes before (cefazolin 2 g for non-severe penicillin allergy).</p>
+    <h4>The bit candidates skip</h4>
+    <p>TG is blunt that prophylaxis is the <i>weaker</i> half of prevention. Everyday toothbrushing and flossing produce bacteraemia at a rate comparable to most dental procedures, and they happen far more often — and that bacteraemia is strongly associated with <b>poor oral hygiene and gingival disease</b>. So maintaining good oral health is likely more important than the prophylactic dose. Also advise against tattooing and piercing, especially tongue piercing, and investigate any unexplained fever.</p>
+  </div>
+  <div class='case-card abx-sec' id='named'>
+    <h3>📋 6. Named conditions — yes, no, rarely</h3>
+    <div class='abx-tw'><table class='abx-t'><thead><tr><th>Condition</th><th>Antibiotics?</th><th>Detail</th></tr></thead><tbody><tr><td><b>Localised odontogenic infection</b><br>(periapical, periodontal or pericoronal abscess)</td><td><b class='no'>No</b></td><td>Not routinely — if a procedure can be done within 24 hours. Drainage removes the source and the bacteraemia resolves fast. <span class='cite'>p131</span></td></tr><tr><td><b>Pericoronitis</b> (localised)</td><td><b class='no'>No</b></td><td>Irrigate with sterile saline, rinse with warm saline or chlorhexidine. Extraction is the treatment of choice; consider removing/recontouring the opposing tooth. Irrigation alone may resolve mild cases. <span class='cite'>p130–131</span></td></tr><tr><td><b>Spreading odontogenic infection</b></td><td><b class='yes'>Yes</b></td><td>As an adjunct to the procedure. This is the main indication. <span class='cite'>p128</span></td></tr><tr><td><b>Necrotising gingivitis</b> (ANUG)</td><td><b class='yes'>Yes</b></td><td>One of the few clear yeses. Debridement + irrigation + antibiotics + analgesia + risk factors (smoking). <b>metronidazole 400 mg orally 12-hourly for 3–5 days</b>, or amoxicillin 500 mg 8-hourly if metronidazole unsuitable. <span class='cite'>p119–120</span></td></tr><tr><td><b>Periodontitis</b></td><td><b class='rare'>Rarely</b></td><td>Only if rapidly progressing, not responding to treatment, or in immune compromise including suboptimally managed diabetes — and preferably under a periodontist. <span class='cite'>p118</span></td></tr><tr><td><b>Peri-implant mucositis</b></td><td><b class='no'>No</b></td><td>Debridement, hygiene, smoking management, review. Not required. <span class='cite'>p122</span></td></tr><tr><td><b>Peri-implantitis</b></td><td><b class='rare'>Limited</b></td><td>Evidence is limited; consider specialist referral before prescribing. If used, alongside other interventions: amoxicillin 500 mg 8-hourly + metronidazole 400 mg 12-hourly, both for 7 days. <span class='cite'>p123</span></td></tr><tr><td><b>Alveolar osteitis (dry socket)</b></td><td><b class='no'>Never</b></td><td>"Antibiotic therapy has no place in the management of alveolar osteitis." It is failed healing, not infection — and it is commonly misdiagnosed as infection. Irrigate with warm saline, long-acting LA, analgesia, obtundent dressing. <span class='cite'>p90</span></td></tr><tr><td><b>Replanted avulsed tooth</b></td><td><b class='yes'>Consider</b></td><td>Consider after replanting and splinting: amoxicillin 500 mg (child: 15 mg/kg up to 500 mg) orally, 8-hourly for 7 days. Amoxicillin preferred on clinical experience. Check tetanus status. <span class='cite'>p234</span></td></tr><tr><td><b>Maxillary sinusitis</b> presenting as dental pain</td><td><b class='rare'>Rarely</b></td><td>Pain worse on bending forward. Symptomatic therapy; antibiotics rarely needed. Dental treatment not required. <span class='cite'>p194</span></td></tr><tr><td><b>Post-op pain and swelling</b> after oral surgery</td><td><b class='no'>No</b></td><td>Normal swelling peaks at up to 3 days. Suspect infection only if pain and swelling <b>worsen after day 4</b>, or there is purulent discharge, foul taste, progressive trismus, fluctuant swelling or fever. <span class='cite'>p89</span></td></tr></tbody></table></div>
+  </div>
+  <div class='case-card abx-sec' id='traps'>
+    <h3>🎯 7. The traps, collected</h3>
+    <p>If you are skimming this the night before, skim this bit.</p>
+    <ul><li><b>Antibiotics are not a substitute for dental treatment.</b> Say it in the station. It is the single most-repeated sentence in this chapter of TG.</li><li><b>The 24-hour rule.</b> Localised infection + procedure within 24 hours = no antibiotic. It is the delay that creates the indication, not the pus.</li><li><b>Non-infected retained fragment = no antibiotic.</b> Infected and delayed = yes.</li><li><b>Dry socket is not an infection.</b> No antibiotics to treat it, and none to prevent it.</li><li><b>Joint replacement changes nothing.</b> Nor do breast implants, shunts or deep brain stimulators.</li><li><b>Clindamycin is out for endocarditis prophylaxis.</b> Still in for severe penicillin allergy in spreading odontogenic infection.</li><li><b>Rheumatic heart disease now counts for everyone</b>, not just Aboriginal and Torres Strait Islander peoples.</li><li><b>Metronidazole alone is never right</b> for odontogenic infection — but it is the drug of <i>choice</i> for necrotising gingivitis.</li><li><b>Phenoxymethylpenicillin beats amoxicillin</b> when a procedure is prompt — narrower spectrum.</li><li><b>Verify the penicillin allergy</b> before you route around it.</li><li><b>Take the sample before the antibiotic.</b> Aspirate pus with a needle and syringe into a sterile jar; swabs do not preserve anaerobes and pick up oral flora.</li></ul>
+    <div class='abx-callout' style='background:#eef4f9;border-color:#7ba7c7'><span class='abx-ico'>ℹ</span><div><b>The stewardship sentence, for when an examiner asks why not just prescribe:</b> every unnecessary course carries real harms — diarrhoea, hypersensitivity, and resistance that outlasts the patient in front of you. TG's whole framing is that the narrowest effective drug, for the shortest effective time, only when there is a clear indication, <i>is</i> the standard of care — not a cost-saving compromise.</div></div>
+  </div>
+
+  <div class="abx-note" style="margin-top:34px;">Everything here is sourced from the TG Oral and Dental corpus that powers the TG4 Bible chatbot on this site — page numbers refer to that document, so you can go and read the original wording for anything you want to check. Guidelines change; the endocarditis and clindamycin advice above has already moved once. Treat this as a study aid for the ADC practical exam, not as a prescribing reference for real patients.</div>
+</main>
+
+<script>
+
+(function(){
+  var menuBtn=document.getElementById('menu-btn'),sidebar=document.getElementById('sidebar'),
+      overlay=document.getElementById('overlay'),search=document.getElementById('sb-search');
+
+  function openSidebar(){sidebar.classList.add('open');overlay.classList.add('visible');}
+  function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('visible');}
+  menuBtn.addEventListener('click',function(){
+    sidebar.classList.contains('open')?closeSidebar():openSidebar();
+  });
+  overlay.addEventListener('click',closeSidebar);
+  document.querySelectorAll('.cs-link').forEach(function(a){
+    a.addEventListener('click',closeSidebar);
+  });
+
+  search.addEventListener('input',function(){
+    var q=search.value.trim().toLowerCase();
+    document.querySelectorAll('.ch-group').forEach(function(group){
+      var links=group.querySelectorAll('.cs-link'),anyVisible=0,countEl=group.querySelector('.ch-count');
+      links.forEach(function(a){
+        var match=a.textContent.toLowerCase().indexOf(q)!==-1;
+        a.classList.toggle('filtered-out',!match);
+        if(match)anyVisible++;
+      });
+      if(countEl){
+        if(!countEl.dataset.total)countEl.dataset.total=countEl.textContent;
+        countEl.textContent=q?anyVisible:countEl.dataset.total;
+      }
+      group.classList.toggle('all-filtered',anyVisible===0);
+    });
+  });
+
+  // Scroll-spy: highlight whichever case card is currently most in view.
+  var links=Array.prototype.slice.call(document.querySelectorAll('.cs-link'));
+  var targets=links.map(function(a){return document.getElementById(a.dataset.target);}).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    var observer=new IntersectionObserver(function(entries){
+      var best=null,bestRatio=0;
+      entries.forEach(function(e){
+        if(e.isIntersecting && e.intersectionRatio>bestRatio){best=e.target;bestRatio=e.intersectionRatio;}
+      });
+      if(best){
+        links.forEach(function(a){a.classList.toggle('active',a.dataset.target===best.id);});
+      }
+    },{rootMargin:'-15% 0px -70% 0px',threshold:[0,0.25,0.5,0.75,1]});
+    targets.forEach(function(t){observer.observe(t);});
+  }
+})();
+
+</script>
+
+</div>
+</body>
+</html>
