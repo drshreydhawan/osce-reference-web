@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Dental Fee Ranges — ADC Study Bank</title>
+<meta name="description" content="Indicative private-practice fees in AUD — for informed-financial-consent stations">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf; --border-light:#ece8e2;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --badge-bg:#3d3935; --badge-text:#f5f2ed;
+  --tg4-bg:#fdf8f0; --tg4-border:#c4a97a; --h3-bar:#b5a897;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  min-height:100vh;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+header.ec-header{display:flex;align-items:center;gap:14px;padding:14px 20px;
+  border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:30;}
+.ec-back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.ec-back:hover{color:var(--text);}
+.ec-title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.ec-sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;max-width:280px;}
+
+main{max-width:820px;margin:0 auto;padding:28px 20px 90px;}
+
+.ec-intro{background:var(--tg4-bg);border:1px solid var(--tg4-border);border-radius:12px;
+  padding:16px 20px;margin-bottom:28px;font-size:13.5px;color:var(--text);}
+.ec-intro strong{font-weight:700;}
+
+nav.ec-toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;position:sticky;top:57px;
+  background:var(--bg);padding:10px 0;z-index:20;}
+nav.ec-toc a{font-size:12px;font-weight:600;color:var(--accent);background:var(--card);
+  border:1px solid var(--border);border-radius:20px;padding:6px 13px;text-decoration:none;}
+nav.ec-toc a:hover{background:var(--border-light);}
+
+.mod-hdr{font-family:var(--font-serif);font-size:15px;font-weight:700;color:var(--text);
+  margin:38px 0 14px;padding-top:16px;border-top:2px solid var(--text);
+  display:flex;align-items:center;gap:10px;}
+.mod-hdr .mod-num{background:var(--badge-bg);color:var(--badge-text);font-family:var(--font-sans);
+  font-size:10px;font-weight:800;letter-spacing:.6px;padding:3px 10px;border-radius:20px;}
+
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:22px 24px;margin-bottom:20px;}
+.case-card h3{font-family:var(--font-serif);font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text);}
+.pq-badge{display:inline-block;vertical-align:middle;background:#2A6049;color:#fff;
+  font-family:var(--font-sans);font-size:10px;font-weight:800;letter-spacing:.4px;
+  padding:3px 9px;border-radius:20px;margin-left:9px;}
+.case-vignette{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px;
+  padding-bottom:14px;border-bottom:1px solid var(--border-light);}
+
+.case-card h4{font-family:var(--font-serif);font-size:.8rem;font-weight:700;
+  color:var(--accent);letter-spacing:.5px;text-transform:uppercase;
+  margin:20px 0 8px;padding-left:11px;border-left:3px solid var(--h3-bar);}
+.case-card h4:first-of-type{margin-top:0;}
+.case-card p{margin-bottom:8px;font-size:13.5px;line-height:1.65;}
+.case-card ul, .case-card ol{margin:0 0 8px 20px;font-size:13.5px;line-height:1.6;}
+.case-card li{margin-bottom:5px;}
+.case-card ul:last-child, .case-card ol:last-child, .case-card p:last-child{margin-bottom:0;}
+.case-card .script{color:var(--text);}
+.case-card .script em{color:var(--muted);font-style:italic;}
+
+/* KILLER LINES BOX (matches station-card styling on the main site) */
+.killer-box{background:#2a2522;border-radius:10px;padding:18px 22px;}
+.killer-title{font-family:var(--font-sans);font-size:10px;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;color:#c9a96e;margin-bottom:12px;}
+.killer-box ul{margin:0 0 0 16px;}
+.killer-box li{color:#e2d8cc;font-size:13.5px;line-height:1.65;margin-bottom:8px;}
+.killer-box li:last-child{margin-bottom:0;}
+.killer-box li strong{color:#f2ead9;}
+
+.ec-source-note{font-size:11px;color:var(--muted);margin-top:24px;padding-top:14px;
+  border-top:1px solid var(--border-light);}
+
+.ec-schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
+.ec-schedule-table th, .ec-schedule-table td{text-align:left;padding:6px 10px;
+  border-bottom:1px solid var(--border-light);}
+.ec-schedule-table th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;}
+
+@media(max-width:640px){
+  nav.ec-toc{top:53px;}
+  .case-card{padding:16px 16px;}
+}
+
+:root{
+  --sidebar-bg:#eeeae3; --sidebar-hover:#e5e1da; --link-active-bg:#e0dbd3;
+  --sidebar-w:260px;
+}
+body{display:flex;}
+
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:210;
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  width:36px;height:36px;font-size:16px;cursor:pointer;color:var(--text);}
+
+#overlay{display:none;position:fixed;inset:0;background:rgba(28,25,23,.4);
+  z-index:190;backdrop-filter:blur(2px);}
+#overlay.visible{display:block;}
+
+#sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--sidebar-bg);
+  display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;
+  overflow:hidden;z-index:200;border-right:1px solid var(--border);
+  transition:transform .28s cubic-bezier(.4,0,.2,1);}
+.sb-brand{display:flex;align-items:center;gap:11px;padding:20px 16px 15px;
+  border-bottom:1px solid var(--border);flex-shrink:0;}
+.sb-logo{width:36px;height:36px;border-radius:9px;background:var(--badge-bg);
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.sb-title{font-family:var(--font-serif);font-size:14.5px;font-weight:700;color:var(--text);}
+.sb-sub{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.3px;}
+.sb-search-wrap{padding:10px 12px;border-bottom:1px solid var(--border);flex-shrink:0;}
+#sb-search{width:100%;background:#fff;border:1px solid var(--border);border-radius:7px;
+  padding:7px 11px;color:var(--text);font-size:12.5px;font-family:var(--font-sans);outline:none;}
+#sb-search:focus{border-color:var(--accent);}
+#sb-nav{overflow-y:auto;flex:1;padding-bottom:20px;}
+#sb-nav::-webkit-scrollbar{width:3px;}
+#sb-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.ch-group{border-bottom:1px solid var(--border-light);}
+.ch-hdr{display:flex;align-items:center;gap:8px;padding:9px 12px;
+  color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;}
+.ch-count{background:var(--border);color:var(--muted);border-radius:10px;
+  padding:1px 6px;font-size:10px;font-weight:600;}
+.cs-link{display:block;padding:5.5px 12px 5.5px 20px;color:var(--muted);font-size:12px;
+  text-decoration:none;transition:all .12s;border-left:2px solid transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cs-link:hover{color:var(--text);background:var(--sidebar-hover);}
+.cs-link.active{color:var(--text);border-left-color:var(--accent);
+  background:var(--link-active-bg);font-weight:600;}
+.cs-link.filtered-out{display:none;}
+.ch-group.all-filtered{display:none;}
+
+#main-wrap{margin-left:var(--sidebar-w);flex:1;min-width:0;}
+
+@media(max-width:860px){
+  #menu-btn{display:block;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #main-wrap{margin-left:0;}
+}
+
+
+
+/* Fee ranges */
+.fee-sec{scroll-margin-top:74px;}
+.fee-tw{overflow-x:auto;margin:10px 0 4px;-webkit-overflow-scrolling:touch;}
+.fee-t{border-collapse:collapse;width:100%;font-size:13.5px;min-width:420px;}
+.fee-t th{background:var(--border-light);text-align:left;padding:8px 12px;
+  font-size:10.5px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  border-bottom:1px solid var(--border);}
+.fee-t td{padding:8px 12px;border-bottom:1px solid var(--border-light);vertical-align:top;}
+.fee-t tr:last-child td{border-bottom:none;}
+.fee-t tr.hit td{background:#fdf6e3;}
+.fee-item{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;
+  color:var(--muted);white-space:nowrap;}
+.fee-price{text-align:right;white-space:nowrap;font-weight:600;
+  font-variant-numeric:tabular-nums;}
+.fee-flag{display:inline-block;margin-left:8px;font-size:10px;font-weight:700;
+  text-transform:uppercase;letter-spacing:.6px;color:#9a6b00;
+  background:#fdf6e3;border:1px solid #e0c06a;border-radius:999px;padding:2px 8px;
+  vertical-align:middle;}
+.fee-consent{background:#f2f7f4;border:1px solid #2a604933;border-radius:12px;
+  padding:18px 22px;margin:26px 0;}
+.fee-consent h3{margin:0 0 10px;font-size:15px;}
+.fee-say{font-size:14.5px;line-height:1.7;font-style:italic;
+  border-left:3px solid var(--h3-bar);padding-left:14px;margin:0 0 12px;}
+.fee-path{margin:10px 0 0;padding:0;list-style:none;}
+.fee-path li{margin-bottom:7px;line-height:1.6;font-size:13.5px;}
+.fee-path b{color:var(--accent);}
+.fee-disc{font-size:11.5px;line-height:1.6;color:var(--muted);
+  border-top:1px solid var(--border);padding-top:14px;margin-top:30px;}
+#fee-none{display:none;padding:28px 0;text-align:center;color:var(--muted);font-size:13.5px;}
+.filtered-row{display:none;}
+.ia-dl{display:inline-flex;align-items:center;gap:8px;margin-top:14px;
+  background:var(--badge-bg);color:var(--badge-text);text-decoration:none;
+  padding:9px 16px;border-radius:999px;font-size:13px;font-weight:600;}
+.ia-dl:hover{opacity:.88;}
+
+</style>
+</head>
+<body>
+
+<button id="menu-btn" aria-label="Toggle contents">☰</button>
+<div id="overlay"></div>
+<aside id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo">💲</div>
+    <div>
+      <div class="sb-title">Fee Ranges</div>
+      <div class="sb-sub">57 items · reviewed Jul 2026</div>
+    </div>
+  </div>
+  <div class="sb-search-wrap">
+    <input id="sb-search" type="text" placeholder="Find a procedure...">
+  </div>
+  <nav id="sb-nav">
+      <div class='ch-group'>
+        <div class='ch-cases'>
+          <a href='#diagnostic' class='cs-link' data-target='diagnostic'>🔎 Diagnostic &amp; Preventive <span style='color:var(--muted)'>(11)</span></a>
+          <a href='#restorative' class='cs-link' data-target='restorative'>🛠 Restorative <span style='color:var(--muted)'>(9)</span></a>
+          <a href='#endodontics' class='cs-link' data-target='endodontics'>🔬 Endodontics <span style='color:var(--muted)'>(7)</span></a>
+          <a href='#surgery' class='cs-link' data-target='surgery'>🦷 Oral Surgery <span style='color:var(--muted)'>(8)</span></a>
+          <a href='#periodontics' class='cs-link' data-target='periodontics'>🩸 Periodontics <span style='color:var(--muted)'>(5)</span></a>
+          <a href='#prostho' class='cs-link' data-target='prostho'>🦿 Prosthodontics &amp; Implants <span style='color:var(--muted)'>(8)</span></a>
+          <a href='#ortho' class='cs-link' data-target='ortho'>📐 Orthodontics &amp; Other <span style='color:var(--muted)'>(9)</span></a>
+        </div>
+      </div>
+  </nav>
+</aside>
+
+<div id="main-wrap">
+
+<header class="ec-header">
+  <a href="/" class="ec-back">← Back</a>
+  <div class="ec-title">Dental Fee Ranges</div>
+  <div class="ec-sub">Indicative private-practice fees in AUD — for informed-financial-consent stations</div>
+</header>
+
+<main>
+  <div class="ec-intro">
+    <strong>Australian Dental Fee Ranges — quick reference.</strong><br>
+    Indicative private-practice fees in AUD, no health-fund rebate applied. For OSCE informed-financial-consent, treatment-planning and referral stations. <b>Fees are set independently by each practice — quote a range and always offer a written estimate.</b>
+    <div><a class="ia-dl" href="/dental-fee-ranges.pdf" download>⬇ Download the one-page PDF</a></div>
+  </div>
+
+  <div class="sb-search-wrap" style="padding:0;margin:0 0 18px;">
+    <input id="fee-filter" type="text" placeholder="Filter every table — try 'crown', 'denture', 'RCT'…"
+      style="width:100%;padding:10px 14px;border:1px solid var(--border);border-radius:10px;
+             font-family:inherit;font-size:14px;background:var(--card);color:var(--text);">
+  </div>
+
+  <div class='case-card fee-sec' id='diagnostic'>
+    <h3>🔎 Diagnostic &amp; Preventive</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>011</td><td>Comprehensive oral examination</td><td class='fee-price'>$60 – $110</td></tr>
+        <tr class='fee-row'><td class='fee-item'>012</td><td>Periodic oral examination</td><td class='fee-price'>$55 – $95</td></tr>
+        <tr class='fee-row'><td class='fee-item'>013</td><td>Limited / emergency examination</td><td class='fee-price'>$55 – $110</td></tr>
+        <tr class='fee-row'><td class='fee-item'>014</td><td>Consultation — after hours</td><td class='fee-price'>$100 – $250</td></tr>
+        <tr class='fee-row'><td class='fee-item'>022</td><td>Intraoral periapical / bitewing (per film)</td><td class='fee-price'>$40 – $65</td></tr>
+        <tr class='fee-row'><td class='fee-item'>037</td><td>Panoramic radiograph (OPG)</td><td class='fee-price'>$120 – $200</td></tr>
+        <tr class='fee-row'><td class='fee-item'>088</td><td>Cone-beam CT (small volume)</td><td class='fee-price'>$250 – $450</td></tr>
+        <tr class='fee-row'><td class='fee-item'>111/114</td><td>Scale &amp; clean (removal of calculus)</td><td class='fee-price'>$120 – $250</td></tr>
+        <tr class='fee-row'><td class='fee-item'>121</td><td>Topical fluoride application</td><td class='fee-price'>$30 – $55</td></tr>
+        <tr class='fee-row'><td class='fee-item'>161</td><td>Fissure sealant (per tooth)</td><td class='fee-price'>$50 – $90</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Check-up + clean + fluoride (bundled)</td><td class='fee-price'>$180 – $320</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='restorative'>
+    <h3>🛠 Restorative</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>511/512</td><td>Composite, anterior, 1–2 surface</td><td class='fee-price'>$150 – $280</td></tr>
+        <tr class='fee-row'><td class='fee-item'>513/514</td><td>Composite, anterior, 3+ surface</td><td class='fee-price'>$250 – $420</td></tr>
+        <tr class='fee-row'><td class='fee-item'>531/532</td><td>Composite, posterior, 1–2 surface</td><td class='fee-price'>$170 – $320</td></tr>
+        <tr class='fee-row'><td class='fee-item'>533+</td><td>Composite, posterior, 3+ surface / cusp</td><td class='fee-price'>$280 – $450</td></tr>
+        <tr class='fee-row'><td class='fee-item'>572</td><td>Glass ionomer / temporary restoration</td><td class='fee-price'>$100 – $200</td></tr>
+        <tr class='fee-row'><td class='fee-item'>613/615</td><td>Full crown — indirect (PFM / zirconia / EMax)</td><td class='fee-price'>$1,200 – $2,300</td></tr>
+        <tr class='fee-row'><td class='fee-item'>618</td><td>Post &amp; core for crown</td><td class='fee-price'>$400 – $750</td></tr>
+        <tr class='fee-row'><td class='fee-item'>625/643</td><td>Fixed bridge, 3-unit (total)</td><td class='fee-price'>$3,000 – $6,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>577</td><td>Porcelain veneer (per tooth)</td><td class='fee-price'>$1,000 – $2,200</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='endodontics'>
+    <h3>🔬 Endodontics<span class='fee-flag'>Refer if complex</span></h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>414/415</td><td>RCT — anterior (single canal), complete</td><td class='fee-price'>$900 – $1,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>415/417</td><td>RCT — premolar</td><td class='fee-price'>$1,200 – $2,200</td></tr>
+        <tr class='fee-row'><td class='fee-item'>417/418</td><td>RCT — molar</td><td class='fee-price'>$1,500 – $3,400</td></tr>
+        <tr class='fee-row'><td class='fee-item'>411</td><td>Pulpotomy / emergency pulp extirpation</td><td class='fee-price'>$250 – $500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>419</td><td>Re-treatment of a root canal (per canal)</td><td class='fee-price'>+30–50% loading</td></tr>
+        <tr class='fee-row'><td class='fee-item'>431</td><td>Apicectomy / surgical endodontics</td><td class='fee-price'>$1,200 – $2,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Add definitive crown after RCT</td><td class='fee-price'>$1,200 – $2,300</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='surgery'>
+    <h3>🦷 Oral Surgery</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>311/314</td><td>Simple extraction (per tooth)</td><td class='fee-price'>$200 – $400</td></tr>
+        <tr class='fee-row'><td class='fee-item'>322</td><td>Sectional / surgical extraction</td><td class='fee-price'>$350 – $700</td></tr>
+        <tr class='fee-row'><td class='fee-item'>324</td><td>Removal of impacted tooth (per tooth)</td><td class='fee-price'>$400 – $900</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>4 impacted 3rd molars under GA (all-in)</td><td class='fee-price'>$2,500 – $5,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Relative analgesia (N₂O/O₂)</td><td class='fee-price'>$100 – $220</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>IV sedation (sedationist fee)</td><td class='fee-price'>$500 – $1,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>GA + day-surgery facility fee</td><td class='fee-price'>$1,500 – $3,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Biopsy / lesion excision</td><td class='fee-price'>$300 – $900</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='periodontics'>
+    <h3>🩸 Periodontics</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>221/222</td><td>Root planing / debridement (per quadrant)</td><td class='fee-price'>$150 – $350</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Full-mouth non-surgical perio therapy</td><td class='fee-price'>$600 – $1,400</td></tr>
+        <tr class='fee-row'><td class='fee-item'>232/238</td><td>Periodontal flap surgery (per quadrant)</td><td class='fee-price'>$600 – $1,800</td></tr>
+        <tr class='fee-row'><td class='fee-item'>245</td><td>Guided tissue regeneration / graft</td><td class='fee-price'>$1,200 – $3,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Supportive perio maintenance (3-monthly)</td><td class='fee-price'>$180 – $350</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='prostho'>
+    <h3>🦿 Prosthodontics &amp; Implants</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>711/712</td><td>Complete denture (per arch)</td><td class='fee-price'>$1,200 – $2,800</td></tr>
+        <tr class='fee-row'><td class='fee-item'>719</td><td>Complete upper + lower dentures</td><td class='fee-price'>$2,000 – $4,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>721/727</td><td>Partial denture — acrylic</td><td class='fee-price'>$800 – $1,800</td></tr>
+        <tr class='fee-row'><td class='fee-item'>727/733</td><td>Partial denture — cobalt-chrome</td><td class='fee-price'>$1,800 – $3,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>743/768</td><td>Denture reline / repair</td><td class='fee-price'>$250 – $700</td></tr>
+        <tr class='fee-row'><td class='fee-item'>684/688</td><td>Single implant + abutment + crown</td><td class='fee-price'>$4,500 – $7,300</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Bone graft / sinus lift</td><td class='fee-price'>$1,000 – $2,500</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Full-arch fixed implant bridge (All-on-4)</td><td class='fee-price'>$25,000 – $40,000</td></tr>
+      </tbody></table></div>
+  </div>
+  <div class='case-card fee-sec' id='ortho'>
+    <h3>📐 Orthodontics &amp; Other</h3>
+    <div class='fee-tw'><table class='fee-t'>
+      <thead><tr><th>Item</th><th>Procedure</th><th style='text-align:right'>Typical fee</th></tr></thead><tbody>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Orthodontic consultation + records</td><td class='fee-price'>$150 – $450</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Metal fixed appliances (full course)</td><td class='fee-price'>$6,000 – $10,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Ceramic fixed appliances</td><td class='fee-price'>$7,500 – $12,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Clear aligners (limited → comprehensive)</td><td class='fee-price'>$4,500 – $11,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Lingual appliances</td><td class='fee-price'>up to $15,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Retainers (per arch)</td><td class='fee-price'>$250 – $600</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>In-chair whitening / take-home kit</td><td class='fee-price'>$500–$1,000 / $300–$600</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Occlusal splint</td><td class='fee-price'>$500 – $1,000</td></tr>
+        <tr class='fee-row'><td class='fee-item'>—</td><td>Custom mouthguard</td><td class='fee-price'>$180 – $400</td></tr>
+      </tbody></table></div>
+  </div>
+
+  <p id="fee-none">No procedure matches that filter.</p>
+
+  <div class="fee-consent">
+    <h3>Informed financial consent — say this in the station</h3>
+    <p class="fee-say">“Before we start I'll give you a written treatment plan with the item numbers and the fee for each step, so there are no surprises. You can take that to your health fund for a pre-treatment estimate.”</p>
+    <p style="margin:0;font-size:13.5px;">Cover: total cost, staged costs, laboratory fees, what happens if the plan changes, and that a specialist fee is separate from yours.</p>
+  </div>
+
+  <div class="case-card">
+    <h3>🏛 Public &amp; subsidised pathways</h3>
+    <ul class="fee-path"><li><b>CDBS</b> — $1,158 per eligible child over 2 consecutive calendar years (2026 cap).</li><li><b>DVA</b> — Gold/White card holders, own fee schedule, pre-approval for major items.</li><li><b>State public dental</b> — Concession-card holders; emergency care prioritised, waiting lists for general care.</li><li><b>Health funds</b> — Extras cover only; annual limits and waiting periods apply.</li><li><b>Medicare</b> — Does <b>not</b> cover general dentistry.</li></ul>
+  </div>
+
+  <p class="fee-disc"><strong>Disclaimer.</strong> Figures are indicative ranges compiled July 2026 from published Australian practice price guides and health-fund data, for educational use in ADC OSCE preparation only. Fees vary by up to 40% between regional and metropolitan practices and between states. Item numbers follow the ADA Schedule of Dental Services and Glossary; verify current numbers before clinical use. Not financial or clinical advice.</p>
+</main>
+
+<script>
+
+(function(){
+  var menuBtn=document.getElementById('menu-btn'),sidebar=document.getElementById('sidebar'),
+      overlay=document.getElementById('overlay'),search=document.getElementById('sb-search');
+
+  function openSidebar(){sidebar.classList.add('open');overlay.classList.add('visible');}
+  function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('visible');}
+  menuBtn.addEventListener('click',function(){
+    sidebar.classList.contains('open')?closeSidebar():openSidebar();
+  });
+  overlay.addEventListener('click',closeSidebar);
+  document.querySelectorAll('.cs-link').forEach(function(a){
+    a.addEventListener('click',closeSidebar);
+  });
+
+  search.addEventListener('input',function(){
+    var q=search.value.trim().toLowerCase();
+    document.querySelectorAll('.ch-group').forEach(function(group){
+      var links=group.querySelectorAll('.cs-link'),anyVisible=0,countEl=group.querySelector('.ch-count');
+      links.forEach(function(a){
+        var match=a.textContent.toLowerCase().indexOf(q)!==-1;
+        a.classList.toggle('filtered-out',!match);
+        if(match)anyVisible++;
+      });
+      if(countEl){
+        if(!countEl.dataset.total)countEl.dataset.total=countEl.textContent;
+        countEl.textContent=q?anyVisible:countEl.dataset.total;
+      }
+      group.classList.toggle('all-filtered',anyVisible===0);
+    });
+  });
+
+  // Scroll-spy: highlight whichever case card is currently most in view.
+  var links=Array.prototype.slice.call(document.querySelectorAll('.cs-link'));
+  var targets=links.map(function(a){return document.getElementById(a.dataset.target);}).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    var observer=new IntersectionObserver(function(entries){
+      var best=null,bestRatio=0;
+      entries.forEach(function(e){
+        if(e.isIntersecting && e.intersectionRatio>bestRatio){best=e.target;bestRatio=e.intersectionRatio;}
+      });
+      if(best){
+        links.forEach(function(a){a.classList.toggle('active',a.dataset.target===best.id);});
+      }
+    },{rootMargin:'-15% 0px -70% 0px',threshold:[0,0.25,0.5,0.75,1]});
+    targets.forEach(function(t){observer.observe(t);});
+  }
+})();
+
+</script>
+<script>
+// Filter every fee table at once. A fee sheet is used by looking up one
+// procedure, so a global filter beats per-section navigation.
+(function(){
+  var input = document.getElementById('fee-filter');
+  var rows = [].slice.call(document.querySelectorAll('tr.fee-row'));
+  var cards = [].slice.call(document.querySelectorAll('.fee-sec'));
+  var none = document.getElementById('fee-none');
+  input.addEventListener('input', function(){
+    var q = input.value.trim().toLowerCase();
+    var total = 0;
+    rows.forEach(function(r){
+      var hit = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
+      r.classList.toggle('filtered-row', !hit);
+      r.classList.toggle('hit', !!q && hit);
+      if (hit) total++;
+    });
+    cards.forEach(function(c){
+      var any = c.querySelectorAll('tr.fee-row:not(.filtered-row)').length;
+      c.style.display = any ? '' : 'none';
+    });
+    none.style.display = total ? 'none' : 'block';
+  });
+})();
+</script>
+
+</div>
+</body>
+</html>
