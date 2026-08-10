@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Odell Pearls — ADC Study Bank</title>
+<meta name="description" content="High-yield clinical pearls mined from Odell's Clinical Problem Solving in Dentistry, matched against OSCE Coach past-question stations.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf; --border-light:#ece8e2;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --badge-bg:#3d3935; --badge-text:#f5f2ed;
+  --tg4-bg:#fdf8f0; --tg4-border:#c4a97a; --h3-bar:#b5a897;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  min-height:100vh;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+header.ec-header{display:flex;align-items:center;gap:14px;padding:14px 20px;
+  border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:30;}
+.ec-back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.ec-back:hover{color:var(--text);}
+.ec-title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.ec-sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;max-width:280px;}
+
+main{max-width:820px;margin:0 auto;padding:28px 20px 90px;}
+
+.ec-intro{background:var(--tg4-bg);border:1px solid var(--tg4-border);border-radius:12px;
+  padding:16px 20px;margin-bottom:28px;font-size:13.5px;color:var(--text);}
+.ec-intro strong{font-weight:700;}
+
+nav.ec-toc{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px;position:sticky;top:57px;
+  background:var(--bg);padding:10px 0;z-index:20;}
+nav.ec-toc a{font-size:12px;font-weight:600;color:var(--accent);background:var(--card);
+  border:1px solid var(--border);border-radius:20px;padding:6px 13px;text-decoration:none;}
+nav.ec-toc a:hover{background:var(--border-light);}
+
+.mod-hdr{font-family:var(--font-serif);font-size:15px;font-weight:700;color:var(--text);
+  margin:38px 0 14px;padding-top:16px;border-top:2px solid var(--text);
+  display:flex;align-items:center;gap:10px;}
+.mod-hdr .mod-num{background:var(--badge-bg);color:var(--badge-text);font-family:var(--font-sans);
+  font-size:10px;font-weight:800;letter-spacing:.6px;padding:3px 10px;border-radius:20px;}
+
+.case-card{background:var(--card);border:1px solid var(--border);border-radius:12px;
+  padding:22px 24px;margin-bottom:20px;}
+.case-card h3{font-family:var(--font-serif);font-size:18px;font-weight:700;margin-bottom:6px;color:var(--text);}
+.pq-badge{display:inline-block;vertical-align:middle;background:#2A6049;color:#fff;
+  font-family:var(--font-sans);font-size:10px;font-weight:800;letter-spacing:.4px;
+  padding:3px 9px;border-radius:20px;margin-left:9px;}
+.case-vignette{font-size:13px;color:var(--muted);font-style:italic;margin-bottom:16px;
+  padding-bottom:14px;border-bottom:1px solid var(--border-light);}
+
+.case-card h4{font-family:var(--font-serif);font-size:.8rem;font-weight:700;
+  color:var(--accent);letter-spacing:.5px;text-transform:uppercase;
+  margin:20px 0 8px;padding-left:11px;border-left:3px solid var(--h3-bar);}
+.case-card h4:first-of-type{margin-top:0;}
+.case-card p{margin-bottom:8px;font-size:13.5px;line-height:1.65;}
+.case-card ul, .case-card ol{margin:0 0 8px 20px;font-size:13.5px;line-height:1.6;}
+.case-card li{margin-bottom:5px;}
+.case-card ul:last-child, .case-card ol:last-child, .case-card p:last-child{margin-bottom:0;}
+.case-card .script{color:var(--text);}
+.case-card .script em{color:var(--muted);font-style:italic;}
+
+/* KILLER LINES BOX (matches station-card styling on the main site) */
+.killer-box{background:#2a2522;border-radius:10px;padding:18px 22px;}
+.killer-title{font-family:var(--font-sans);font-size:10px;font-weight:800;
+  letter-spacing:1.2px;text-transform:uppercase;color:#c9a96e;margin-bottom:12px;}
+.killer-box ul{margin:0 0 0 16px;}
+.killer-box li{color:#e2d8cc;font-size:13.5px;line-height:1.65;margin-bottom:8px;}
+.killer-box li:last-child{margin-bottom:0;}
+.killer-box li strong{color:#f2ead9;}
+
+.ec-source-note{font-size:11px;color:var(--muted);margin-top:24px;padding-top:14px;
+  border-top:1px solid var(--border-light);}
+
+.ec-schedule-table{width:100%;border-collapse:collapse;font-size:13px;}
+.ec-schedule-table th, .ec-schedule-table td{text-align:left;padding:6px 10px;
+  border-bottom:1px solid var(--border-light);}
+.ec-schedule-table th{color:var(--muted);font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.4px;}
+
+@media(max-width:640px){
+  nav.ec-toc{top:53px;}
+  .case-card{padding:16px 16px;}
+}
+
+:root{
+  --sidebar-bg:#eeeae3; --sidebar-hover:#e5e1da; --link-active-bg:#e0dbd3;
+  --sidebar-w:260px;
+}
+body{display:flex;}
+
+#menu-btn{display:none;position:fixed;top:12px;left:12px;z-index:210;
+  background:var(--card);border:1px solid var(--border);border-radius:8px;
+  width:36px;height:36px;font-size:16px;cursor:pointer;color:var(--text);}
+
+#overlay{display:none;position:fixed;inset:0;background:rgba(28,25,23,.4);
+  z-index:190;backdrop-filter:blur(2px);}
+#overlay.visible{display:block;}
+
+#sidebar{width:var(--sidebar-w);flex-shrink:0;background:var(--sidebar-bg);
+  display:flex;flex-direction:column;position:fixed;top:0;left:0;height:100vh;
+  overflow:hidden;z-index:200;border-right:1px solid var(--border);
+  transition:transform .28s cubic-bezier(.4,0,.2,1);}
+.sb-brand{display:flex;align-items:center;gap:11px;padding:20px 16px 15px;
+  border-bottom:1px solid var(--border);flex-shrink:0;}
+.sb-logo{width:36px;height:36px;border-radius:9px;background:var(--badge-bg);
+  display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;}
+.sb-title{font-family:var(--font-serif);font-size:14.5px;font-weight:700;color:var(--text);}
+.sb-sub{font-size:10px;color:var(--muted);margin-top:2px;letter-spacing:.3px;}
+.sb-search-wrap{padding:10px 12px;border-bottom:1px solid var(--border);flex-shrink:0;}
+#sb-search{width:100%;background:#fff;border:1px solid var(--border);border-radius:7px;
+  padding:7px 11px;color:var(--text);font-size:12.5px;font-family:var(--font-sans);outline:none;}
+#sb-search:focus{border-color:var(--accent);}
+#sb-nav{overflow-y:auto;flex:1;padding-bottom:20px;}
+#sb-nav::-webkit-scrollbar{width:3px;}
+#sb-nav::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px;}
+.ch-group{border-bottom:1px solid var(--border-light);}
+.ch-hdr{display:flex;align-items:center;gap:8px;padding:9px 12px;
+  color:var(--accent);font-size:11px;font-weight:700;letter-spacing:.4px;text-transform:uppercase;}
+.ch-count{background:var(--border);color:var(--muted);border-radius:10px;
+  padding:1px 6px;font-size:10px;font-weight:600;}
+.cs-link{display:block;padding:5.5px 12px 5.5px 20px;color:var(--muted);font-size:12px;
+  text-decoration:none;transition:all .12s;border-left:2px solid transparent;
+  white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cs-link:hover{color:var(--text);background:var(--sidebar-hover);}
+.cs-link.active{color:var(--text);border-left-color:var(--accent);
+  background:var(--link-active-bg);font-weight:600;}
+.cs-link.filtered-out{display:none;}
+.ch-group.all-filtered{display:none;}
+
+#main-wrap{margin-left:var(--sidebar-w);flex:1;min-width:0;}
+
+@media(max-width:860px){
+  #menu-btn{display:block;}
+  #sidebar{transform:translateX(-100%);}
+  #sidebar.open{transform:translateX(0);}
+  #main-wrap{margin-left:0;}
+}
+
+
+
+/* Antibiotics guide */
+.abx-rule{background:var(--badge-bg);color:var(--badge-text);border-radius:12px;
+  padding:18px 22px;margin:22px 0;}
+.abx-rule-h{font-family:var(--font-serif);font-size:19px;font-weight:700;line-height:1.35;}
+.abx-rule-b{font-size:13.5px;line-height:1.65;margin-top:9px;opacity:.85;}
+.abx-callout{border:1px solid;border-radius:10px;padding:13px 16px;margin:16px 0;
+  font-size:13.5px;line-height:1.65;display:flex;gap:11px;align-items:flex-start;}
+.abx-ico{font-weight:700;flex-shrink:0;opacity:.75;}
+.abx-drug{background:#f2f7f4;border:1px solid #2a604933;border-radius:10px;
+  padding:14px 18px;margin:14px 0;font-size:13.5px;line-height:1.7;}
+.abx-drug div{padding:3px 0;}
+.abx-drug div+div{border-top:1px dashed #2a604933;margin-top:6px;padding-top:9px;}
+.abx-note{font-size:13px;color:var(--muted);border-left:3px solid var(--border);
+  padding-left:13px;margin:13px 0;}
+.abx-tw{overflow-x:auto;margin:16px 0;-webkit-overflow-scrolling:touch;}
+.abx-t{border-collapse:collapse;width:100%;font-size:13px;min-width:520px;}
+.abx-t th{background:var(--border-light);text-align:left;padding:9px 12px;
+  font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;
+  border:1px solid var(--border);vertical-align:top;}
+.abx-t td{padding:10px 12px;border:1px solid var(--border);vertical-align:top;line-height:1.6;}
+.abx-t b.yes{color:#1d7a3e;} .abx-t b.no{color:#b3402c;} .abx-t b.rare{color:#9a6b00;}
+.cite{font-size:11px;color:var(--muted);white-space:nowrap;}
+.abx-sec{scroll-margin-top:74px;}
+h4{font-family:var(--font-sans);font-size:13px;font-weight:700;text-transform:uppercase;
+  letter-spacing:.7px;color:var(--accent);margin:22px 0 9px;}
+main p{margin:11px 0;}
+main ul{margin:11px 0 14px 20px;} main li{margin-bottom:7px;line-height:1.65;}
+
+</style>
+</head>
+<body>
+
+<button id="menu-btn" aria-label="Toggle contents">☰</button>
+<div id="overlay"></div>
+<aside id="sidebar">
+  <div class="sb-brand">
+    <div class="sb-logo">📖</div>
+    <div>
+      <div class="sb-title">Odell Pearls</div>
+      <div class="sb-sub">22 sections · 7 modules</div>
+    </div>
+  </div>
+  <div class="sb-search-wrap">
+    <input id="sb-search" type="text" placeholder="Find a topic...">
+  </div>
+  <nav id="sb-nav">
+      <div class='ch-group'>
+        <div class='ch-hdr'>🦷 Caries risk &amp; restorative <span class='ch-count'>6</span></div>
+        <div class='ch-cases'>
+          <a href='#high-caries-risk-diet-counselling' class='cs-link' data-target='high-caries-risk-diet-counselling'>High caries risk &amp; diet counselling</a>
+          <a href='#deep-caries-pulpitis-and-minimally-invasive-excavation' class='cs-link' data-target='deep-caries-pulpitis-and-minimally-invasive-excavation'>Deep caries, pulpitis, and minimally invasive excavation</a>
+          <a href='#cracked-tooth-syndrome-pain-on-biting' class='cs-link' data-target='cracked-tooth-syndrome-pain-on-biting'>Cracked tooth syndrome — pain on biting</a>
+          <a href='#erosive-tooth-wear-diagnosing-the-source' class='cs-link' data-target='erosive-tooth-wear-diagnosing-the-source'>Erosive tooth wear — diagnosing the source</a>
+          <a href='#the-5-rs-repair-vs-replace-a-failing-restoration' class='cs-link' data-target='the-5-rs-repair-vs-replace-a-failing-restoration'>The &quot;5 Rs&quot; — repair vs. replace a failing restoration</a>
+          <a href='#discoloured-anterior-teeth-hypoplasia-fluorosis-and-the-history-that-separates-them' class='cs-link' data-target='discoloured-anterior-teeth-hypoplasia-fluorosis-and-the-history-that-separates-them'>Discoloured anterior teeth — hypoplasia, fluorosis, and the history that separates them</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>🔪 Oral surgery <span class='ch-count'>3</span></div>
+        <div class='ch-cases'>
+          <a href='#mronj-medication-related-osteonecrosis-of-the-jaw' class='cs-link' data-target='mronj-medication-related-osteonecrosis-of-the-jaw'>MRONJ (medication-related osteonecrosis of the jaw)</a>
+          <a href='#oroantral-fistula-a-great-connect-the-dots-case' class='cs-link' data-target='oroantral-fistula-a-great-connect-the-dots-case'>Oroantral fistula — a great &quot;connect the dots&quot; case</a>
+          <a href='#anticoagulation-and-extraction-warfarin-and-prosthetic-heart-valves' class='cs-link' data-target='anticoagulation-and-extraction-warfarin-and-prosthetic-heart-valves'>Anticoagulation and extraction — warfarin and prosthetic heart valves</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>🩸 Periodontics <span class='ch-count'>1</span></div>
+        <div class='ch-cases'>
+          <a href='#staging-grading-and-planning-advanced-periodontitis' class='cs-link' data-target='staging-grading-and-planning-advanced-periodontitis'>Staging, grading, and planning advanced periodontitis</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>👅 Oral medicine <span class='ch-count'>3</span></div>
+        <div class='ch-cases'>
+          <a href='#recurrent-aphthous-stomatitis-history-driven-differential' class='cs-link' data-target='recurrent-aphthous-stomatitis-history-driven-differential'>Recurrent aphthous stomatitis — history-driven differential</a>
+          <a href='#oral-squamous-cell-carcinoma-staging-and-the-referral-pathway' class='cs-link' data-target='oral-squamous-cell-carcinoma-staging-and-the-referral-pathway'>Oral squamous cell carcinoma — staging and the referral pathway</a>
+          <a href='#diagnosing-an-oral-white-patch' class='cs-link' data-target='diagnosing-an-oral-white-patch'>Diagnosing an oral white patch</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>🧒 Paediatric dentistry <span class='ch-count'>2</span></div>
+        <div class='ch-cases'>
+          <a href='#managing-the-anxious-uncooperative-young-child' class='cs-link' data-target='managing-the-anxious-uncooperative-young-child'>Managing the anxious/uncooperative young child</a>
+          <a href='#molar-incisor-hypomineralisation-mih' class='cs-link' data-target='molar-incisor-hypomineralisation-mih'>Molar-incisor hypomineralisation (MIH)</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>🦴 Prosthodontics &amp; implants <span class='ch-count'>5</span></div>
+        <div class='ch-cases'>
+          <a href='#missing-lateral-incisors-space-opening-vs-closing-and-the-bridge-design-that-follows' class='cs-link' data-target='missing-lateral-incisors-space-opening-vs-closing-and-the-bridge-design-that-follows'>Missing lateral incisors — space opening vs. closing, and the bridge design that follows</a>
+          <a href='#planning-an-anterior-implant-case' class='cs-link' data-target='planning-an-anterior-implant-case'>Planning an anterior implant case</a>
+          <a href='#a-problem-denture-systematic-complaint-work-up' class='cs-link' data-target='a-problem-denture-systematic-complaint-work-up'>A problem denture — systematic complaint work-up</a>
+          <a href='#owning-an-error-and-working-with-a-lab-or-colleague' class='cs-link' data-target='owning-an-error-and-working-with-a-lab-or-colleague'>Owning an error and working with a lab or colleague</a>
+          <a href='#peri-implantitis-vs-peri-implant-mucositis' class='cs-link' data-target='peri-implantitis-vs-peri-implant-mucositis'>Peri-implantitis vs. peri-implant mucositis</a>
+        </div>
+      </div>
+      <div class='ch-group'>
+        <div class='ch-hdr'>🪥 Endodontics <span class='ch-count'>2</span></div>
+        <div class='ch-cases'>
+          <a href='#failed-root-canal-treatment-separated-instruments-and-disclosure' class='cs-link' data-target='failed-root-canal-treatment-separated-instruments-and-disclosure'>Failed root canal treatment, separated instruments, and disclosure</a>
+          <a href='#diagnosing-unclear-toothache' class='cs-link' data-target='diagnosing-unclear-toothache'>Diagnosing unclear toothache</a>
+        </div>
+      </div>
+  </nav>
+</aside>
+
+<div id="main-wrap">
+
+<header class="ec-header">
+  <a href="/" class="ec-back">← Back</a>
+  <div class="ec-title">Odell Pearls</div>
+  <div class="ec-sub">High-yield pearls from Odell's Clinical Problem Solving, matched to our stations</div>
+</header>
+
+<main>
+  <div class="ec-intro">
+    <strong>Clinical Problem Solving, cross-referenced to what you'll actually be asked.</strong><br>
+    <em>Odell's Clinical Problem Solving in Dentistry</em> (4th ed., Elsevier) is 75 worked cases of real clinical reasoning — history, examination, differential, investigation, management, all laid out the way an examiner thinks. We went through it looking specifically for cases that sharpen a station in this bank, and pulled out the facts, thresholds, and quotable lines that are genuinely worth knowing cold — not a chapter summary, a distillation of what would actually move your mark.
+    <br><br>
+    Each section below names the Odell case it's drawn from and the OSCE Coach station(s) it sharpens, so you can go read the original if you want the full worked reasoning.
+  </div>
+
+<div class='mod-hdr' id='caries-risk-restorative'><span class='mod-num'>🦷</span>Caries risk &amp; restorative</div>
+<div class="case-card" id="high-caries-risk-diet-counselling">
+  <h3>High caries risk &amp; diet counselling</h3>
+  <div class="case-vignette">Odell Case 1 — A High-Caries-Rate/High-Risk Patient &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-2, PQ-60 (Caries Risk Assessment, 8-Year-Old)</strong></div>
+  <ul>
+      <li>"High caries risk" has a working definition worth quoting: <strong>more than 2 new/active lesions in 2 years.</strong></li>
+      <li>The gold-standard diet history is a <strong>4-day written diary — 2 weekdays + 2 weekend days</strong> — not a 24-hour verbal recall (memory is unreliable, and weekday/weekend patterns differ).</li>
+      <li>WHO guidance: free sugars should be <strong>&lt;10% of total energy</strong>, roughly <strong>50g/day (18kg/year)</strong>. Frequency of exposure matters as much as total amount.</li>
+      <li>Watch for <strong>hidden-sugar foods</strong> parents don't think to mention: baked beans, breakfast cereal, tomato ketchup, "plain" biscuits.</li>
+      <li>A genuinely useful patient-facing line: <strong>damage to enamel continues for up to an hour after a sugary food or drink</strong> (the Stephan curve, without needing the jargon).</li>
+      <li>Treatment sequencing that examiners like to hear stated explicitly: <strong>immediate (pain/drainage) → stabilisation (temporary restorations, all quadrants) → prevention → definitive restoration → recall</strong>, in that order — prevention starts alongside stabilisation, not after.</li>
+      <li>If a sinus is present and the source tooth is ambiguous, a <strong>gutta percha point traced into the sinus tract on radiograph</strong> identifies the offending tooth.</li>
+      <li>For diet counselling framing: <strong>COM-B (capability, opportunity, motivation, behaviour)</strong> and <strong>GPS (goal-setting, planning, self-reflection)</strong> are named behaviour-change models — dropping the name shows structure, not just "eat less sugar."</li>
+  </ul>
+</div>
+<div class="case-card" id="deep-caries-pulpitis-and-minimally-invasive-excavation">
+  <h3>Deep caries, pulpitis, and minimally invasive excavation</h3>
+  <div class="case-vignette">Odell Case 9 — A Deep Carious Lesion &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-52 (Vague Pain, Interproximal Caries), any station with a pulpitis differential</strong></div>
+  <ul>
+      <li>Classic <strong>reversible pulpitis</strong>: brief pain episodes triggered by hot/cold/sweet, fading slowly, <strong>no pain on biting, no tenderness to percussion</strong>. Pain on biting or percussion tenderness points toward periapical involvement instead.</li>
+      <li>Strong line for a management explanation: <strong>pulpitis does not respond to analgesics</strong> — the treatment is removing the cause (caries), not painkillers. Useful when a patient asks "can't you just give me something for the pain."</li>
+      <li><strong>Eugenol-containing temporary materials are obtundent</strong> (genuinely pain-relieving) but <strong>must not be used if the definitive restoration will be bonded composite</strong> — eugenol inhibits resin polymerisation/bonding.</li>
+      <li>Caries dentine has two zones: <strong>infected</strong> (superficial + bacterial penetration — must be removed) and <strong>affected/demineralised</strong> (deeper, structurally intact, can remineralise — can be left over a vital pulp).</li>
+      <li>Clinical excavation endpoint is a texture, not a colour: dentine that is <strong>"scratchy and sticky" (leathery) to a sharp probe</strong>.</li>
+      <li><strong>Caries detector dyes are unreliable</strong> — they overstain and drive unnecessary excavation; largely superseded.</li>
+      <li><strong>Stepwise excavation (removing caries in two stages 6–9 months apart) is now considered unnecessary</strong> by current evidence — one-stage selective/minimally-invasive removal with a well-sealed adhesive restoration is preferred.</li>
+      <li><strong>Rubber dam is not just moisture control</strong> — it's infection control that protects a possible future RCT's prognosis if the pulp is exposed.</li>
+      <li>Medico-legal pearl worth remembering generally: when a minimally-invasive approach is used, <strong>document that it was discussed and offered as an alternative</strong> to full excavation — "ignorance of the technique is not a defence."</li>
+  </ul>
+</div>
+<div class="case-card" id="cracked-tooth-syndrome-pain-on-biting">
+  <h3>Cracked tooth syndrome — pain on biting</h3>
+  <div class="case-vignette">Odell Case 11 — Pain On Biting &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-52 (Vague Pain, Interproximal Caries), any "sharp pain on biting only" presentation</strong></div>
+  <ul>
+      <li>The signature history: <strong>sharp, electric-shock pain, poorly localized, only on biting or releasing biting pressure</strong> — not triggered by hot/cold. This pattern alone should move a cracked cusp/tooth to the top of the differential over pulpitis or periodontal pain.</li>
+      <li>Differential to state out loud: <strong>cracked cusp, electro-galvanic pain (dissimilar occluding metals), acute periodontitis from a high spot, and — rarely — trigeminal neuralgia</strong> if no dental cause is found.</li>
+      <li><strong>Always ask about bruxism/clenching</strong> — nocturnal parafunction is the classic predisposing factor, and <strong>partners often know about it when the patient doesn't</strong>.</li>
+      <li>Bite tests, in order of usefulness: <strong>cotton wool roll bite</strong> (confirms a cracked tooth in the quadrant, not selective), then a <strong>wooden wedge/tooth sleuth on individual cusps</strong> (localizes the cusp) — <strong>pain worse on release of pressure is characteristic of a crack</strong>.</li>
+      <li>Large existing restorations are the biggest risk factor — <strong>upper molars (largest restorations) and premolars (small crowns, cusps easily undermined) crack most often.</strong></li>
+      <li>Management line worth quoting: <strong>"no treatment" is not a safe option</strong> — an untreated crack can propagate into the pulp and devitalize the tooth even if the patient is willing to tolerate the pain.</li>
+      <li><strong>Never deliberately lever off a cracked fragment</strong> — it risks unpredictable catastrophic fracture into the pulp.</li>
+      <li>If the crack can't be located: <strong>remove restorations from suspect teeth in turn, or cement a temporary orthodontic/copper band around the most likely tooth for 3–4 weeks</strong> — if pain resolves, that's your tooth; if it persists, RCT is likely needed.</li>
+  </ul>
+</div>
+<div class="case-card" id="erosive-tooth-wear-diagnosing-the-source">
+  <h3>Erosive tooth wear — diagnosing the source</h3>
+  <div class="case-vignette">Odell Cases 60 &amp; 61 — Erosive Tooth Wear / Worn Front Teeth &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-57 (16-Year-Old Rampant Caries &amp; Erosion), PQ-18 (Dietary Advice for an Athletic Patient)</strong></div>
+  <ul>
+      <li>Define the three processes precisely — examiners reward the distinction: <strong>erosion = chemical dissolution by acid; attrition = tooth-on-tooth wear; abrasion = wear by something other than teeth (brushing, habits).</strong> Real cases are almost always multifactorial combinations.</li>
+      <li><strong>Erosion pattern tells you the acid source</strong>: dietary acid classically wears the <strong>labial/buccal surfaces of upper anteriors</strong>; gastric acid (GORD, bulimia, rumination, alcoholism) classically wears the <strong>palatal surfaces</strong> — because that's where regurgitated acid pools. If a patient rinses/swills acidic drinks palatally before swallowing, the pattern can mimic gastric erosion, so ask directly rather than assuming from pattern alone.</li>
+      <li><strong>Ask about reflux/heartburn even when the patient hasn't mentioned it</strong> — patients "become accustomed" to chronic low-grade regurgitation and won't volunteer it unless asked directly. A history of taking over-the-counter antacids is a useful indirect flag for undiagnosed GORD.</li>
+      <li>Differential for gastric-acid-in-mouth: <strong>GORD, an eating disorder, chronic alcoholism, or rumination</strong> (deliberate re-chewing of swallowed food — rare, but worth knowing the name).</li>
+      <li><strong>Eating disorders are a genuine "may be the first to notice" scenario</strong> — dental erosion can be an early sign, and eating disorders carry real mortality risk. If a patient (especially a minor) won't consent to you liaising with their GP, <strong>seek medico-legal advice rather than just dropping it.</strong></li>
+      <li>Diet analysis is done the same way as caries risk: <strong>4+ day diary including a weekend</strong>, and don't tip off which foods you're screening for in advance — it biases what gets recorded.</li>
+      <li>For localized anterior wear with short clinical crowns, two named techniques for gaining restorative space are genuinely exam-relevant to know by name: <strong>crown lengthening</strong> (surgical, removes bone/gingiva, biological width 3–4mm) and the <strong>Dahl technique/relative axial movement</strong> — an anterior bite platform that lets posterior teeth over-erupt while anteriors intrude, opening space without cutting tooth tissue. The Dahl approach is more minimally invasive; direct resin composite is now the usual way it's actually delivered (build up the anterior teeth directly rather than a separate appliance).</li>
+      <li><strong>Elective root treatment should be avoided in worn teeth just to gain retention</strong> — the extra occlusal load from a parafunctional habit risks post decementation or root fracture, and secondary dentine from the wear itself often sclerose the canal anyway.</li>
+  </ul>
+</div>
+<div class="case-card" id="the-5-rs-repair-vs-replace-a-failing-restoration">
+  <h3>The &quot;5 Rs&quot; — repair vs. replace a failing restoration</h3>
+  <div class="case-vignette">Odell Case 68 — Should I Repair or Replace These Restorations? &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-35 (Amalgam Replacement Discussion), PQ-38 (International Student, Large Silver Filling)</strong></div>
+  <ul>
+      <li>Name the framework — examiners like hearing it: <strong>Review, Refurbish, Reseal, Repair, Replace</strong>, in ascending order of invasiveness. Replace is the *last* resort, not the default answer to "this filling looks bad."</li>
+      <li>The single strongest fact to lead with: <strong>secondary caries (CARS) is the most commonly cited reason for replacement, but a discoloured margin is NOT, by itself, evidence of it.</strong> Marginal staining and secondary caries are routinely confused, and over-diagnosis of CARS is described as "epidemic."</li>
+      <li>Every unnecessary replacement makes the cavity <strong>bigger, not the same size</strong> — cavity overpreparation, weakened tooth structure, risk of cracks, risk of pulp damage, and (for proximal work) risk of biological width violation are all real costs of "just redoing it."</li>
+      <li>Practical rule for gap size: <strong>marginal gaps under ~250 μm are not, on their own, an indication to replace</strong> — they're candidates for reseal/refurbish first.</li>
+      <li>The line that reframes the "isn't this filling failing?" question a patient asks: <strong>"most restorations present with over- or under-filled margins — that alone isn't failure."</strong></li>
+      <li><strong>Repair is reported as dentists' LEAST favoured option despite good evidence for both amalgam and composite repairs</strong> — worth stating explicitly that repair is being under-used, not that it's inferior.</li>
+      <li>Consent for a "just leave it and monitor" (Review) decision still needs documentation — record the objective findings, why replacement isn't indicated now, and the plan for reassessment.</li>
+  </ul>
+</div>
+<div class="case-card" id="discoloured-anterior-teeth-hypoplasia-fluorosis-and-the-history-that-separates-them">
+  <h3>Discoloured anterior teeth — hypoplasia, fluorosis, and the history that separates them</h3>
+  <div class="case-vignette">Odell Case 27 — Discoloured Anterior Teeth &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-40 (Dental Fluorosis), PQ-10 (Peg Lateral Incisor), any discoloured-tooth presentation</strong></div>
+  <ul>
+      <li>Fluorosis has <strong>no definitive diagnostic test</strong> — diagnosis is made by excluding other causes through history: <strong>any fluoride supplementation, high-fluoride water area, or excess toothpaste swallowing during tooth development (birth–age 7)?</strong> No history of fluoride exposure argues strongly against fluorosis even with a fluorosis-like appearance.</li>
+      <li><strong>Ask about a family history of similar teeth</strong> — hereditary causes (amelogenesis imperfecta, dentinogenesis imperfecta, hypodontia) affect siblings; isolated, non-familial presentations point toward an acquired or idiopathic cause instead.</li>
+      <li>Quick differentiator table worth having ready: <strong>amelogenesis imperfecta = yellow-brown, enamel matrix/mineralization defect; dentinogenesis imperfecta = bluish-brown, opalescent, enamel chips to expose dentine; tetracycline staining = now rare given prescribing avoidance in pregnancy/childhood, but yellow/grey-brown banding tied to dosage timing.</strong></li>
+      <li><strong>Ask "what specifically bothers you, and what result are you hoping for?" before proposing treatment</strong> — this patient explicitly did NOT want a "perfect" match because she knew it would look odd against her other teeth. Treatment planning without asking this risks over- or under-treating relative to what the patient actually wants.</li>
+      <li>Management ladder from least to most invasive: <strong>bleaching (best for extrinsic/mild intrinsic stain, reversible, unpredictable duration) → resin infiltration (no prep, only for small/mild areas) → direct composite (no/minimal prep, needs future repolishing) → indirect veneers/crowns (best aesthetics, but real biological cost and irreversible tooth reduction).</strong></li>
+      <li>Consent checklist worth having memorised for any elective aesthetic case: <strong>options + risks/benefits, why this option is recommended, prognosis, cost, what happens if untreated, and whether the result is guaranteed</strong> — and give the patient a genuine reflection period before committing.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='oral-surgery'><span class='mod-num'>🔪</span>Oral surgery</div>
+<div class="case-card" id="mronj-medication-related-osteonecrosis-of-the-jaw">
+  <h3>MRONJ (medication-related osteonecrosis of the jaw)</h3>
+  <div class="case-vignette">Odell Case 23 — A Tooth Lost at Teatime &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-14 (Patient on Prednisone and Alendronate Requiring Extraction), PQ-4 (Denosumab and Warfarin)</strong></div>
+  <ul>
+      <li>The signature presentation: <strong>exposed, non-vital-looking bone that is painless and non-bleeding</strong>, often noticed after a tooth simply falls out or an area fails to heal — the absence of pain/bleeding is itself a clue (it points away from infection/osteomyelitis toward osteonecrosis).</li>
+      <li>Diagnosis by definition: <strong>exposed bone persisting &gt;8 weeks in a patient on a bone-modulating or antiangiogenic drug, with no history of radiotherapy to the area</strong> (which would instead suggest osteoradionecrosis).</li>
+      <li>Key drug classes to be able to name beyond "bisphosphonates": <strong>denosumab</strong> (monoclonal antibody, subcutaneous — for osteoporosis it's a 6-monthly dose, and there's a genuine window right before the next dose where extractions are lower-risk) and <strong>antiangiogenics</strong> (e.g. bevacizumab, sunitinib) — risk of MRONJ is under 1% alone but rises sharply (up to 14%) when combined with a bisphosphonate/denosumab.</li>
+      <li><strong>Risk thresholds worth quoting</strong>: roughly <strong>4 years of oral bisphosphonate use, or 4 months of IV use</strong>, before MRONJ risk becomes significant. Below that, routine dental treatment including extraction is not considered high-risk.</li>
+      <li><strong>A "drug holiday" (stopping bisphosphonates before extraction) does NOT reduce risk</strong> — they remain bound in bone for a very long time. This is the opposite of what many patients (and some clinicians) assume, and worth stating confidently.</li>
+      <li><strong>Antibiotics do not help and should not be prescribed for MRONJ itself</strong> — the disease isn't caused by bacterial infection of living bone; avascular bone simply can't be reached by circulating drug. (Antibiotics may still be reasonable if a patient is also immunosuppressed for an unrelated reason.)</li>
+      <li>Management of established MRONJ is conservative, not surgical: <strong>simple debridement of sharp edges, chlorhexidine, and time</strong> — aggressive resection is avoided because, unlike osteomyelitis, the necrotic zone isn't bordered by healthy bone that will heal once it's removed.</li>
+      <li><strong>You are not negligent if MRONJ develops after an indicated extraction</strong>, provided the risk was discussed, consent obtained, and it's documented — extraction is described as "unmasking" bone that may already have been silently necrotic, not causing the necrosis.</li>
+      <li>A genuinely good line for the consent conversation: complication risk after extraction in an at-risk patient is <strong>under 1%</strong> — reassuring, without denying the risk exists.</li>
+  </ul>
+</div>
+<div class="case-card" id="oroantral-fistula-a-great-connect-the-dots-case">
+  <h3>Oroantral fistula — a great &quot;connect the dots&quot; case</h3>
+  <div class="case-vignette">Odell Case 18 — Oroantral Fistula &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-55 (Oroantral Communication — Disclosure After Upper Molar Extraction)</strong></div>
+  <ul>
+      <li>Terminology precision examiners like: <strong>oroantral communication (OAC)</strong> = the fresh perforation at time of extraction; it becomes an <strong>oroantral fistula (OAF)</strong> only once <strong>epithelialized, which takes up to 7 days, and is defined as persisting beyond 48 hours.</strong></li>
+      <li>The classic symptom set to elicit in history: <strong>fluid escaping from mouth into nose while drinking, or air/fluid passing into the mouth when blowing the nose</strong> — pathognomonic enough to ask about directly.</li>
+      <li>Confirming a fresh OAC intraoperatively: <strong>listen for an echoing "wind tunnel" sound with suction in the socket</strong> — and <strong>never ask the patient to blow their nose to test it</strong>, since that pressure can burst an intact sinus lining and turn a small communication into a large one.</li>
+      <li>Rule of thumb for immediate management size threshold: <strong>communications ≤4mm often close with clot stabilisation, resorbable suture closure, and antral precautions alone; larger ones need immediate flap repair.</strong></li>
+      <li>The standard <strong>antral regime</strong> worth naming in full: <strong>no nose-blowing, sneeze with mouth open, nasal decongestant, decongestant inhalant</strong> — plus no mouth-rinsing for the first 18 hours post-repair.</li>
+      <li>Highest-yield risk factors to ask about/check radiographically before an upper molar extraction: <strong>root proximity to a large antrum, difficult/surgical extraction, periapical pathology, and periodontal bone loss.</strong></li>
+      <li>If sinusitis is already established, <strong>treat the sinusitis before/alongside closing the fistula</strong> — a fistula won't fully resolve until sinusitis settles, and closing over an actively infected sinus risks flap failure.</li>
+      <li><strong>Buccal advancement flap is first-line</strong> (simple, ~90%+ success), with the <strong>buccal fat pad technique as the next option</strong> for larger defects — both are worth being able to name even without describing full surgical technique.</li>
+  </ul>
+</div>
+<div class="case-card" id="anticoagulation-and-extraction-warfarin-and-prosthetic-heart-valves">
+  <h3>Anticoagulation and extraction — warfarin and prosthetic heart valves</h3>
+  <div class="case-vignette">Odell Case 44 — Anticoagulation for a Prosthetic Heart Valve &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-4 (Extraction Planning, Denosumab and Warfarin), PQ-27 (Patient Wants Implants, Heart Valve)</strong></div>
+  <ul>
+      <li><strong>The single most-tested modern fact here: do NOT stop or reduce warfarin for a routine extraction.</strong> Current UK guidance is to proceed with extraction provided the <strong>INR is checked within 24 hours and is ≤4.0</strong> — stopping anticoagulation carries a real thromboembolic risk that outweighs the (manageable) bleeding risk. This reverses older teaching that many candidates still default to.</li>
+      <li><strong>Antibiotic prophylaxis for infective endocarditis is NOT routinely recommended</strong>, even for prosthetic valves — a genuinely counterintuitive, frequently-tested fact. If a patient insists, involve their cardiologist rather than prescribing unilaterally; NICE guidance still allows for it in specific high-risk-patient-request scenarios.</li>
+      <li><strong>Chlorhexidine mouthwash is NOT an accepted substitute for antibiotic prophylaxis</strong> — it has no evidence of effect on endocarditis risk, worth stating clearly if a patient asks for it as an alternative.</li>
+      <li>Practical haemostasis measures to name for an anticoagulated extraction: <strong>atraumatic technique, a single interrupted or mattress suture, oxidised cellulose (Surgicel) packing, and tranexamic acid mouthwash (5%, four times daily for several days).</strong></li>
+      <li>If postoperative bleeding restarts hours later after initial haemostasis, the mechanism is worth explaining to a patient: <strong>the platelet plug (unaffected by warfarin) initially controls bleeding, but as the LA vasoconstrictor wears off and hyperaemia develops, unstabilised coagulation lets it start again</strong> — this is expected, not necessarily a sign something went wrong.</li>
+      <li><strong>Endocarditis symptom-awareness counselling is a real management step, not just a footnote</strong> — patients at risk should be told to seek advice for flu-like malaise, fever/night sweats, unexplained weight loss, and joint pains, since subacute presentations (typical of oral streptococci) can smoulder for weeks before cardiac signs appear.</li>
+      <li>For NOACs/DOACs (rivaroxaban, apixaban, dabigatran) — different management from warfarin: <strong>INR doesn't reflect their anticoagulation; they have short half-lives, so for extractions the usual approach is simply omitting the morning dose</strong> (or delaying a once-daily morning dose until 4 hours post-op) rather than any INR-style threshold.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='periodontics'><span class='mod-num'>🩸</span>Periodontics</div>
+<div class="case-card" id="staging-grading-and-planning-advanced-periodontitis">
+  <h3>Staging, grading, and planning advanced periodontitis</h3>
+  <div class="case-vignette">Odell Case 38 — Advanced Periodontitis &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-17/46/47 (Chronic Generalised Periodontitis), PQ-11/51 (Periodontitis with Replacement Options), PQ-1/PQ-1 Variation (Ortho Referral with Periodontal Problem), PQ-22 (Acute Periodontal Abscess)</strong></div>
+  <ul>
+      <li><strong>The 2017 classification in one line, worth being able to reproduce exactly</strong>: diagnosis = <strong>extent (localized &lt;30% of teeth / generalized &gt;30%) + stage (I–IV, based on interproximal bone loss: &lt;15%/coronal third/mid-third/apical third of root) + grade (A/B/C, based on rate of progression) + current status (stable/unstable, based on bleeding on probing and pocket depths).</strong></li>
+      <li><strong>Grading without old radiographs</strong>: use <strong>% bone loss ÷ age</strong>. Under 0.5 = Grade A (slow), 0.5–1.0 = Grade B (moderate), over 1.0 = Grade C (rapid). If old radiographs ARE available showing rapid destruction over a known interval, you don't need the ratio — direct evidence of rapid progression is sufficient on its own.</li>
+      <li><strong>"Unstable" has a precise definition worth quoting</strong>: any site with <strong>pocket depth ≥4mm AND bleeding on probing</strong>. A 5–6mm pocket with NO bleeding, especially soon after treatment, is not automatically active disease.</li>
+      <li>Ask about <strong>family history of premature tooth loss and how the patient copes with stress</strong> as genuine periodontal risk-factor questions — not just smoking and diabetes.</li>
+      <li><strong>Clinical appearance can be deceptive</strong>: minor visible plaque/inflammation with disproportionately severe attachment loss is itself a red flag for periodontitis susceptibility — this is exactly the "looks fine but isn't" pattern examiners like to test.</li>
+      <li>Practical target for oral hygiene before periodontal treatment can be expected to hold: <strong>full-mouth plaque score under 10%</strong> — and the specific brushing feedback worth giving is a <strong>switch from floss to interdental brushes</strong> for premolar/molar embrasures, reserving floss for spaces where a brush won't fit.</li>
+      <li><strong>A tooth with furcation and endo-perio involvement caused by periodontal disease (not primary endodontic failure) generally has a poor prognosis for RCT</strong> — restorative treatment on such a tooth is described as "highly unpredictable and likely to fail," which is a defensible, quotable line when justifying an extraction recommendation.</li>
+      <li>Replacement options for a lost molar/premolar in a periodontally compromised mouth, ranked by relevant trade-offs: <strong>removable partial denture (plaque retention risk) → conventional bridge (needs sound abutments — often excluded by exactly the periodontal disease that caused the gap) → cantilever adhesive bridge (minimal prep, good for a single missing premolar with sound abutment) → implant (higher peri-implantitis risk in periodontitis-susceptible patients) → leave the space</strong> (a genuinely legitimate option if function and hygiene access are acceptable to the patient).</li>
+      <li><strong>Patient-centred decision-making must be documented explicitly when the patient declines the "ideal" option</strong> — this patient refused extraction and a removable prosthesis; the record of that discussion is what protects the clinician, not just doing what's clinically optimal.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='oral-medicine'><span class='mod-num'>👅</span>Oral medicine</div>
+<div class="case-card" id="recurrent-aphthous-stomatitis-history-driven-differential">
+  <h3>Recurrent aphthous stomatitis — history-driven differential</h3>
+  <div class="case-vignette">Odell Case 19 — Troublesome Mouth Ulcers &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-43 (Recurrent Aphthous Ulceration), PQ-33 (Ulcer on the Gums), any recurrent-ulcer presentation</strong></div>
+  <ul>
+      <li><strong>History does almost all the diagnostic work here</strong> — appearance alone rarely distinguishes RAS from its mimics. Structure the history around: site, size, duration of each ulcer, number of ulcers at once, frequency of attacks, shape, whether preceded by vesicles, age of onset, family history, and exacerbating/relieving factors.</li>
+      <li>Quick reference worth memorising: <strong>minor RAS = 3–8mm, heals in 7–10 days, no scarring, single or small crops of 2–5; major RAS = &gt;1cm, weeks to months to heal, WITH scarring, one or two at a time; herpetiform RAS = 0.2–3mm but 30–100 ulcers at once, often coalescing.</strong> Major vs minor is a severity distinction, not one single defining feature.</li>
+      <li><strong>RAS classically spares the dorsum of the tongue and hard palate</strong> — those are keratinized sites. Ulceration there should prompt you to look harder at other causes.</li>
+      <li><strong>Two specific red flags that should trigger investigation for an underlying cause even with an otherwise-classic RAS history</strong>: <strong>onset after the second decade of life</strong>, and a <strong>significant recent change in ulcer size, duration, frequency, or severity</strong> — exactly the scenario in this case (established childhood RAS that's recently worsened).</li>
+      <li>Underlying causes worth naming as a checklist: <strong>haematinic deficiency (iron, B12, folate), coeliac disease and other GI disease (Crohn's, ulcerative colitis), Behçet's disease, smoking cessation, and new/changed medications</strong> (nicorandil and methotrexate are specifically flagged culprits).</li>
+      <li>A genuinely useful reassurance script for the patient: <strong>"RAS is a nuisance condition, not a sign of anything harmful — no treatment cures it, the goal is reducing how often and how badly it flares."</strong> Setting that expectation up front avoids a patient feeling let down when the first mouthwash doesn't "fix" it.</li>
+      <li><strong>Don't blame a nearby restoration/appliance for a lesion with a classic RAS history</strong> — but do note that new ulcers often appear at sites of minor trauma (a sharp margin, a bite during LA), which can explain *location* without meaning the material itself caused the ulcer.</li>
+  </ul>
+</div>
+<div class="case-card" id="oral-squamous-cell-carcinoma-staging-and-the-referral-pathway">
+  <h3>Oral squamous cell carcinoma — staging and the referral pathway</h3>
+  <div class="case-vignette">Odell Case 57 — Oral Cancer &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-20 (Ulcer on Lateral Border of Tongue)</strong></div>
+  <ul>
+      <li><strong>Earache from a tongue lesion is a genuine red flag, not an unrelated complaint</strong> — referred otalgia happens because the lingual and auriculo-temporal nerves share pathways with structures supplying the ear. If a patient with a tongue ulcer also mentions ear pain, connect the two rather than treating them as separate issues.</li>
+      <li>The examination findings that separate a worrying ulcer from a benign one: <strong>induration (firm/hard on palpation), everted/raised borders, a mass palpable beneath apparently intact adjacent mucosa, and reduced tongue mobility.</strong> These are the words to use in a written or spoken description to signal you know what you're looking for.</li>
+      <li><strong>TNM in outline is worth being able to reproduce</strong>: T is size AND depth of invasion (not size alone — depth of invasion over 10mm alone can make a small-diameter lesion a T3), N is nodal spread (single small node vs multiple vs bilateral vs extranodal extension all change the category), M is distant spread. <strong>Bone invasion automatically makes a tumour at least T4.</strong></li>
+      <li><strong>Survival is driven far more by nodal status than by primary tumour size</strong> — a genuinely quotable, sobering fact for explaining prognosis: 5-year survival drops from roughly 75% (stage I) to 25% (stage IV), and node involvement is the single biggest driver of that drop.</li>
+      <li><strong>1 in 10 patients with oral cancer develop a second primary somewhere in the upper aerodigestive tract</strong> — this is why lifelong surveillance (not just checking the original site) matters, and why any general dentist seeing a post-treatment cancer patient should examine the whole mouth and visible pharynx, not just the scar.</li>
+      <li>Practical management-explanation line: <strong>treatment is a multidisciplinary team decision</strong> (surgeon, oncologist, radiotherapist, speech therapist, dietitian, dentist), and the <strong>general dentist's specific job before treatment starts is extracting poor-prognosis teeth and stabilising caries</strong> — teeth are increasingly conserved rather than routinely extracted before radiotherapy, given modern techniques reduce ORN risk.</li>
+      <li><strong>Why early detection matters is a legitimate exam-answer, not just a platitude</strong>: delayed diagnosis is described explicitly as a source of litigation risk and GDC referral for the dentist, as well as being the single biggest driver of poor patient outcome — both halves are worth stating.</li>
+  </ul>
+</div>
+<div class="case-card" id="diagnosing-an-oral-white-patch">
+  <h3>Diagnosing an oral white patch</h3>
+  <div class="case-vignette">Odell Case 45 — A White Patch on the Tongue &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-50 (Incidental White Lesion — Differential Diagnosis &amp; Biopsy Decision)</strong></div>
+  <ul>
+      <li><strong>"Leukoplakia" is a diagnosis of exclusion, not a specific disease</strong> — it literally means "white patch that cannot be attributed to any other identifiable cause." Using it as a catch-all label before ruling out other causes is imprecise and worth avoiding in an answer.</li>
+      <li><strong>The rule to state explicitly and confidently: virtually all oral white patches require biopsy</strong> — completely typical frictional keratosis or classic keratotic lichen planus are the only exceptions some authorities allow, and only for an experienced clinician. "It looks benign" is not, by itself, a reason to skip biopsy.</li>
+      <li>Features that push a white patch toward urgent/specialist referral rather than routine GDP biopsy: <strong>associated red areas, speckling, ulceration (especially chronic), induration, enlarged draining lymph nodes, and a high-risk site</strong> (floor of mouth, ventral/posterior lateral tongue, retromolar area carry the highest transformation risk).</li>
+      <li><strong>Adjunctive tests (toluidine blue, autofluorescence, chemiluminescence, brush cytology) are all screening aids, not diagnostic tests</strong> — none are accurate enough to replace biopsy, and this is worth stating plainly if a patient asks about a "non-invasive test" instead.</li>
+      <li>Full risk-factor list worth having ready for prognosis discussion: <strong>degree of dysplasia (best single predictor), high-risk site, red colour/speckling, verrucous/nodular/ulcerated surface, larger size, longer duration, multiple leukoplakia patches, increasing age, and — counterintuitively — female sex and non-smoking status carry HIGHER individual transformation risk</strong>, even though oral cancer overall is more common in male smokers (because smoking causes so many white patches that are never dysplastic, the smoking-associated ones are statistically diluted).</li>
+      <li><strong>Dysplasia does not reliably predict transformation in either direction</strong> — some dysplastic lesions regress, and carcinoma occasionally develops in a lesion with minimal or no dysplasia. Frame prognosis as "increased risk," never as a guarantee either way.</li>
+      <li>Practical biopsy technique detail worth knowing: <strong>~10mm × 4-5mm sample, including some lesion margin and adjacent normal mucosa</strong>, and in a high-risk lesion, sample <strong>any suspicious sub-areas (red/speckled/ulcerated) specifically</strong> rather than an arbitrary central point.</li>
+      <li>Management for mild/no dysplasia is <strong>active surveillance, not intervention</strong> — smoking cessation and alcohol moderation advice, then review at <strong>3-monthly intervals initially, extending to annual</strong> if stable, with repeat biopsy if the lesion changes. Only moderate/severe dysplasia routinely prompts excision.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='paediatric-dentistry'><span class='mod-num'>🧒</span>Paediatric dentistry</div>
+<div class="case-card" id="managing-the-anxious-uncooperative-young-child">
+  <h3>Managing the anxious/uncooperative young child</h3>
+  <div class="case-vignette">Odell Case 14 — A Difficult Young Child &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-29 (Uncooperative Four-Year-Old: Charting and Diet Counselling)</strong></div>
+  <ul>
+      <li><strong>Ask specifically whether the child attends nursery/playgroup, and how the mother feels about dental visits</strong> — nursery attendance predicts better coping skills (used to separation, rules, strangers), and maternal anxiety transmits directly to the child. Both are genuinely diagnostic history questions, not small talk.</li>
+      <li><strong>"Is this genuine fear or is she playing up?" is explicitly hard to answer immediately</strong> — it's fine to say in an answer that this requires observing behaviour over time rather than pretending to diagnose it instantly.</li>
+      <li><strong>Behaviour management technique names worth using precisely</strong>: <strong>tell-show-do</strong>, <strong>behaviour shaping</strong> (small graded steps/"approximations," backtracking if a step isn't accepted before progressing), <strong>voice control</strong>, <strong>empathy statements</strong> (shown to reliably lower anxiety — genuinely more effective than blanket reassurance like "it'll be fine"), <strong>stop signals</strong> (a raised hand — gives the child a sense of control), and <strong>specific reinforcement</strong> (praise the specific thing done well, not generic "good girl").</li>
+      <li><strong>Avoid explicitly</strong>: bribes/coercion (reinforce bad behaviour long-term), blanket reassurance, belittling the child, sending the parent out of the room, and losing your composure — all are named as actively counterproductive, not just unhelpful.</li>
+      <li><strong>The knee-to-knee examination position</strong> is worth being able to describe: parent and clinician face each other, child sits across the parent's lap facing the parent, then is gently lowered so her head rests on the clinician's lap — useful for both anxious and young disabled children when a chair examination isn't tolerated.</li>
+      <li>Treatment planning principle: <strong>sequence treatment items in order of increasing difficulty</strong> (examination → toothbrushing instruction → radiographs/polish → fluoride varnish → fissure sealants → restorative without LA → restorative with LA → stainless steel/Hall crown → extraction) and let the child's tolerance on the day set the pace, rather than committing to a full plan in advance.</li>
+      <li><strong>If behaviour management genuinely fails by the second or third visit</strong>, the escalation pathway is: <strong>specialist paediatric referral or nitrous oxide inhalation sedation</strong> (works best age 5+) → <strong>general anaesthesia as a last resort</strong>, planned to be definitive and completed in one visit specifically to avoid repeat GA exposure. IV sedation is explicitly flagged as unpredictable in children and not recommended.</li>
+  </ul>
+</div>
+<div class="case-card" id="molar-incisor-hypomineralisation-mih">
+  <h3>Molar-incisor hypomineralisation (MIH)</h3>
+  <div class="case-vignette">Odell Case 56 — Rapid Breakdown of First Permanent Molars &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-53 (MIH in an 8-Year-Old), PQ-59 (MIH in an 11-Year-Old — Second Opinion on GA Extraction)</strong></div>
+  <ul>
+      <li><strong>The pattern that nails the diagnosis: discrete white/brown opacities on the incisal third of the incisors PLUS crumbling/post-eruptive breakdown of the first permanent molars, in a chronological distribution</strong> — both sets of teeth mineralise their affected surfaces at the same developmental window (late pregnancy through the first 1–2 years of life), which is why they're linked.</li>
+      <li><strong>Canines and premolars are essentially never affected despite mineralising in the same window</strong> — worth stating as a distinguishing feature that helps separate MIH from a more generalised hypoplasia.</li>
+      <li><strong>Ask specifically about the first two years of life, not just "any illness"</strong>: significant maternal illness, preterm birth, and frequent febrile illness in infancy (even relatively minor infections like ear infections) are all linked to MIH-pattern defects.</li>
+      <li><strong>A parent blaming fluoride for the damage is a genuine, common misconception worth addressing directly and confidently</strong>: fluorosis severe enough to cause this pattern would require concentrations far above anything seen in normal water supplies, and true fluorosis doesn't follow this incisor+first-molar-only chronological distribution. The one caveat worth acknowledging honestly: <strong>using adult-strength fluoride toothpaste from a very young age genuinely can cause MILD fluorosis</strong> — so the concern isn't baseless, it's just not the explanation for a defect this severe.</li>
+      <li><strong>MIH molars are known to be unusually sensitive AND unusually difficult to anaesthetise locally</strong> — worth flagging as a real clinical challenge, not something to dismiss if a child says an injection "still hurts."</li>
+      <li><strong>Timing of extraction (if a first molar has a hopeless prognosis) is a specific, examinable decision</strong>: the ideal window is when there's radiographic evidence of interradicular bone starting to calcify at the second molar's furcation (usually age 8–10) — extracting at the right time lets the second molar erupt passively into the space rather than requiring later orthodontic space closure.</li>
+      <li><strong>Incisor opacities in a child usually need NO treatment at presentation</strong> — they often become less obvious over time, and the fallback if the patient later wants improvement is minimally invasive (resin infiltration, localized composite, or full composite veneers), never porcelain veneers or crowns until late teens when the gingival contour and pulp horns have matured.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='prosthodontics-implants'><span class='mod-num'>🦴</span>Prosthodontics &amp; implants</div>
+<div class="case-card" id="missing-lateral-incisors-space-opening-vs-closing-and-the-bridge-design-that-follows">
+  <h3>Missing lateral incisors — space opening vs. closing, and the bridge design that follows</h3>
+  <div class="case-vignette">Odell Case 50 — Missing Upper Lateral Incisors &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-21 (Missing Permanent Lateral Incisor), PQ-44 (Missing Maxillary Canine)</strong></div>
+  <ul>
+      <li><strong>A red flag worth internalising</strong>: if a lateral incisor hasn't erupted by around age 10 (or the contralateral side has erupted and this one hasn't), radiograph it — an ectopic/impacted lateral incisor is a recognised cause of root resorption on the adjacent central incisor, and catching it early changes the whole treatment plan.</li>
+      <li><strong>The fundamental decision — orthodontic space CLOSURE (canine substitution) vs. space OPENING (for a prosthetic replacement) — must be made collaboratively between the orthodontist and restorative dentist before treatment starts</strong>, not decided restoratively after the fact. Root positions, the interocclusal relationship, and case-specific factors all drive which is achievable.</li>
+      <li><strong>Canine substitution requires the canine to be reshaped to look like a lateral incisor</strong> — composite added for a mesio-incisal angle, sometimes the cusp tip ground down, and the darker canine shade addressed separately (bleaching). This is a real technique worth naming if space closure is chosen.</li>
+      <li><strong>Fixed-fixed minimum-preparation adhesive bridges are generally avoided across two abutments of differing mobility</strong> — differential movement debonds one wing, creating a stagnation area and caries risk. <strong>A cantilever design off the more stable/larger abutment is the standard minimum-prep choice.</strong></li>
+      <li><strong>Implants are not appropriate in patients under 18 because of ongoing jaw growth</strong> — and some authorities push this even later for single anterior sites specifically because delayed growth after 18 can leave an implant crown in infra-occlusion relative to the drifting adjacent natural teeth.</li>
+      <li><strong>"Plan for failure" is an explicit, quotable consent principle</strong>: when a case includes a tooth with a doubtful prognosis (here, a resorbed central incisor root), the future fallback options should be discussed and documented at the SAME visit as the current plan — not left until the tooth actually fails.</li>
+      <li>Practical space-planning number worth having: <strong>roughly 7mm of mesio-distal space is generally needed between root apices to accommodate a single-tooth implant</strong> — useful for explaining to a patient why "just moving the teeth a little" may not be enough to make an implant a future option.</li>
+  </ul>
+</div>
+<div class="case-card" id="planning-an-anterior-implant-case">
+  <h3>Planning an anterior implant case</h3>
+  <div class="case-vignette">Odell Case 69 — Implant Planning &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-37 (Peri-Implantitis), PQ-27 (Patient Wants Implants, Heart Valve), PQ-7 (Replacement Options After a Posterior Extraction)</strong></div>
+  <ul>
+      <li><strong>Periodontal susceptibility is itself a risk factor for implant failure and peri-implantitis</strong> — worth stating explicitly when planning implants for a patient with any periodontitis history, not just checking "is there active disease right now."</li>
+      <li><strong>Bruxism/parafunction is a contraindication specifically for narrow-diameter implants</strong> — ask about it and examine for wear facets/fractured cusps before committing to implant diameter, not just before treatment in general.</li>
+      <li>Practical space assessment rule worth quoting: <strong>minimum mesio-distal span of ~7mm is commonly needed to place a narrow ~3mm implant with adequate (~2mm) surrounding bone</strong> — useful for explaining to a patient why a very tight gap may need a different solution (e.g. ortho space opening, or a bridge instead).</li>
+      <li><strong>A denture that's ridge-lapped or set up labial to the existing ridge gives a false impression of available restorative space</strong> — worth checking any existing prosthesis critically before assuming its tooth position/shape transfers directly to a fixed restoration.</li>
+      <li><strong>Natural interproximal papillae are achievable in a removable denture but are NOT guaranteed around individual implant crowns</strong> — this is a genuine, specific expectation-management point worth raising with any patient hoping an implant will look identical to a natural tooth in a visible aesthetic zone.</li>
+      <li><strong>A diagnostic wax-up tried directly in the patient's mouth (not just shown as a photo/digital image) is the recommended way to manage aesthetic expectations</strong> — patients struggle to interpret a wax model or digital rendering, but can react to something in their own mouth; document the conversation and the patient's reaction to it.</li>
+      <li>Consent point worth stating explicitly for any implant discussion: <strong>an implant is not a lifelong solution and has a limited life expectancy like any other restoration</strong> — patients (and sometimes clinicians) can present it as more permanent than it is.</li>
+      <li>Quick comparison worth having ready for a "what are my options" conversation: <strong>adhesive/resin-retained bridge</strong> (minimal prep, ~8+ year survival, needs sound enamel on the abutment) vs <strong>conventional bridge</strong> (more destructive of an unrestored abutment, ~15-year survival documented) vs <strong>implant</strong> (most expensive, most surgical visits, but no biological cost to adjacent teeth — discuss smoking and uncontrolled diabetes explicitly as factors that worsen long-term maintenance and complication risk) vs <strong>removable prosthesis</strong> (least invasive, no surgery, but more gingival coverage and higher plaque-related risk).</li>
+  </ul>
+</div>
+<div class="case-card" id="a-problem-denture-systematic-complaint-work-up">
+  <h3>A problem denture — systematic complaint work-up</h3>
+  <div class="case-vignette">Odell Case 24 — A Problem Overdenture &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-3 (Denture Stomatitis in a Diabetic Patient)</strong></div>
+  <ul>
+      <li><strong>A vague "just doesn't feel right" complaint that follows a pattern of tolerable-in-the-morning, intolerable-by-afternoon is a classic occlusal vertical dimension (OVD) problem</strong>, not a fit or extension issue — worth pattern-matching to this specific history rather than defaulting to "the base doesn't fit."</li>
+      <li>Full systematic denture work-up worth reproducing as a checklist: <strong>base extension, posterior border/post-dam to the vibrating line, retention, fit-surface adaptation, occlusal vertical dimension and freeway space, occlusion in retruded position, effect of any opposing natural teeth on the occlusal plane, and appearance.</strong></li>
+      <li><strong>Freeway space measurement methods, in order of reliability</strong>: dividers/calipers or a Willis bite gauge (both measure rest vs. occlusal face height directly), versus the "closest speaking space" test (asking the patient to say words like "Mississippi") — the speech test is only an adjunct, since patients adapt their speech to both increased and decreased OVD.</li>
+      <li><strong>Normal freeway space is 2–4mm in the premolar region</strong> — but some patients (especially long-term denture wearers who've habituated to excess space) can have a much larger comfortable freeway space, and it's reasonable to accept that as their new normal rather than forcing the textbook figure.</li>
+      <li><strong>Denture-related (chronic atrophic) stomatitis is classically asymptomatic and unnoticed by the patient</strong> — redness under a denture-bearing area is a real diagnosis worth treating (hygiene, night-time removal, antifungal if needed) even when it isn't what the patient is complaining about.</li>
+      <li>Sequencing point worth stating explicitly: <strong>treat denture stomatitis BEFORE constructing/fitting a new denture</strong> — the inflamed tissue needs to settle first so the new prosthesis is built against healthy, stable mucosa, not swollen tissue that will shrink once treated.</li>
+      <li>A patient's dissatisfaction can genuinely be about <strong>appearance/self-image rather than fit</strong> (comments from family, unrealistic hope of "looking younger") — this is diagnosed by careful, considerate questioning, not by assuming it away, but should only be reached after occlusal and fit causes have been properly excluded.</li>
+  </ul>
+</div>
+<div class="case-card" id="owning-an-error-and-working-with-a-lab-or-colleague">
+  <h3>Owning an error and working with a lab or colleague</h3>
+  <div class="case-vignette">Odell Case 30 — Whose Fault Is It This Time? &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">general disclosure/complaint-handling communication, tangential to PQ-24/PQ-30</strong></div>
+  <ul>
+      <li>Useful general principle even outside the lab-specific context: <strong>when something goes wrong, check your own instructions/actions for the root cause before assuming the other party is at fault</strong> — in both scenarios in this case, at least part of the error traced back to the dentist's own incomplete prescription, not just the lab.</li>
+      <li><strong>A clear written prescription needs explicit detail, not assumed shared convention</strong> — "the other tray will obviously also be X" is exactly the kind of gap that causes rework; state it, don't imply it.</li>
+      <li><strong>A good working relationship with a lab/colleague survives an error better when approached as "let's fix this and agree how to prevent it" rather than immediate blame</strong> — in this case, an open conversation about the shared cause led the lab to remake work free of charge, which a defensive/accusatory approach would likely not have achieved.</li>
+  </ul>
+</div>
+<div class="case-card" id="peri-implantitis-vs-peri-implant-mucositis">
+  <h3>Peri-implantitis vs. peri-implant mucositis</h3>
+  <div class="case-vignette">Odell Case 75 — Failing Implant Restoration &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-37 (Peri-Implantitis)</strong></div>
+  <ul>
+      <li><strong>The core distinction to state precisely</strong>: <strong>peri-implant mucositis</strong> is inflammation of the soft tissue only, reversible, managed with oral hygiene and debridement alone. <strong>Peri-implantitis</strong> is a tissue-destructive disease that has caused <strong>bone loss</strong> around the implant — that's the defining line, not just "more inflamed."</li>
+      <li><strong>Clinical appearance can be misleading in both directions</strong> — this case's gingiva looked barely inflamed despite significant radiographic bone loss on one implant. Don't let a benign-looking soft tissue picture talk you out of probing and imaging.</li>
+      <li><strong>Probe implants the same way as teeth</strong>, but expect the probe to stop roughly 1mm short of the bone crest (thinner peri-implant tissue offers less resistance than periodontal fibres). <strong>Healthy peri-implant probing depth is &lt;4mm with no/minimal bleeding.</strong></li>
+      <li><strong>Before probing, apply gentle finger pressure on the buccal soft tissue over the implant first</strong> — checking for bleeding, exudate, or discomfort gives useful information before the probe itself potentially causes bleeding.</li>
+      <li><strong>A genuinely loose implant is rare, even with significant bone loss</strong> — if a restoration feels mobile, the more likely cause is a loose/fractured abutment screw or a debonded cemented crown, not the implant itself failing. Worth distinguishing explicitly rather than assuming implant failure.</li>
+      <li>Radiographic assessment has a useful fixed reference point worth naming: <strong>describe bone loss in terms of how many implant threads (micro- or macro-) are now visible/exposed</strong> — this gives a comparable, objective measure between sequential radiographs, unlike vague "some bone loss" descriptions.</li>
+      <li><strong>Baseline radiographs and a genuine recall protocol are part of the standard of care, not optional extras</strong> — typically at 1 year post-loading, then again ~2 years later, adjusted based on findings. Failing to have baseline imaging is explicitly flagged as a medico-legal weak point if problems develop later.</li>
+      <li><strong>Early specialist referral is the recommended response to any suspected peri-implantitis</strong> — clinical signs alone are shown in this case to under-represent the true extent of bone loss, so "let's just watch it" is a riskier default than it might feel.</li>
+  </ul>
+</div>
+<div class='mod-hdr' id='endodontics'><span class='mod-num'>🪥</span>Endodontics</div>
+<div class="case-card" id="failed-root-canal-treatment-separated-instruments-and-disclosure">
+  <h3>Failed root canal treatment, separated instruments, and disclosure</h3>
+  <div class="case-vignette">Odell Case 48 — An Endodontic Problem &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-48 (Consent for Endodontic Treatment), PQ-24 (Root Canal Treatment Done by Your Colleague), PQ-41 (Vertical Root Fracture)</strong></div>
+  <ul>
+      <li>History that flags a *failed* RCT rather than a fresh problem: <strong>pain on biting, well-localized, symptoms unchanged since the original treatment</strong> — periapical periodontitis from a failed root fill, not fresh pulpitis.</li>
+      <li>Useful rule of thumb worth quoting: <strong>if a coronal restoration/temporary has been lost and the root filling exposed to the oral cavity for 3 months or more, retreatment should be considered even with no symptoms</strong> — because coronal microleakage is time-dependent and largely silent.</li>
+      <li><strong>Instrument separation must always be disclosed to the patient at the time it happens, with the management options and possible outcomes explained — and documented contemporaneously.</strong> This is a direct, quotable consent/disclosure standard, useful for any "should I tell the patient about an intraoperative complication" scenario.</li>
+      <li>The risk of instrument separation should be raised <strong>as part of initial consent before starting treatment</strong> — not just disclosed reactively if it happens.</li>
+      <li>If a separated fragment can't be removed, <strong>extraction is not the only fallback</strong> — retreatment of the rest of the canal, root resection/hemisection (if roots aren't fused), or periradicular surgery are all legitimate intermediate options depending on where the fragment sits.</li>
+      <li>Whether a fragment is retrievable depends predictably on: <strong>which third of the canal it's in</strong> (coronal = good chance; apical/curved = often left in situ), <strong>instrument type</strong> (stainless steel files are removable; NiTi files and Gates-Glidden burs usually are not), and <strong>canal shape</strong> (oval canals are easier to bypass than round ones).</li>
+  </ul>
+</div>
+<div class="case-card" id="diagnosing-unclear-toothache">
+  <h3>Diagnosing unclear toothache</h3>
+  <div class="case-vignette">Odell Case 62 — A Case of Toothache &nbsp;·&nbsp; <strong style="color:var(--accent);font-style:normal;">PQ-52 (Vague Pain), any station where the causative tooth isn't obvious</strong></div>
+  <ul>
+      <li>Systematic localization sequence worth stating explicitly: <strong>percuss and vitality-test every tooth in the quadrant, compared against the same teeth on the opposite side</strong> — not just the tooth the patient points to, since patients frequently mislocalize pulpal pain.</li>
+      <li>If pulp testing is equivocal and the tooth is genuinely uncertain, two named techniques are worth knowing: a <strong>test cavity without local anaesthetic</strong> (works for chronic low-grade pain where the pulp may be partially viable — pain confirms residual vitality) or a <strong>diagnostic LA injection</strong> to see if it abolishes the pain (limited for molars, since a block anaesthetises more than one candidate tooth at once, and no further testing is possible once it's given).</li>
+      <li>Radiographs can't directly show vitality, but they show the downstream evidence: <strong>caries, inadequate restorations, prior RCT, and periapical bone change</strong> — useful framing when explaining to a patient why an X-ray is needed even though "it can't feel your pain."</li>
+  </ul>
+</div>
+
+  <div class="ec-source-note">Source: <em>Odell's Clinical Problem Solving in Dentistry</em>, 4th ed. (Elsevier). 22 of 75 cases mined so far, chosen for direct overlap with stations in this bank — not a substitute for the full text, and not a substitute for reading the ADC-specific stations themselves. Facts and thresholds here reflect UK clinical guidance in the source text; where Australian practice differs (e.g. antibiotic regimens — see the <a href="/antibiotics-in-tg" style="color:var(--accent);font-weight:600;">Antibiotics in TG</a> page), follow the Australian source.</div>
+</main>
+
+<script>
+<script>
+
+(function(){
+  var menuBtn=document.getElementById('menu-btn'),sidebar=document.getElementById('sidebar'),
+      overlay=document.getElementById('overlay'),search=document.getElementById('sb-search');
+
+  function openSidebar(){sidebar.classList.add('open');overlay.classList.add('visible');}
+  function closeSidebar(){sidebar.classList.remove('open');overlay.classList.remove('visible');}
+  menuBtn.addEventListener('click',function(){
+    sidebar.classList.contains('open')?closeSidebar():openSidebar();
+  });
+  overlay.addEventListener('click',closeSidebar);
+  document.querySelectorAll('.cs-link').forEach(function(a){
+    a.addEventListener('click',closeSidebar);
+  });
+
+  search.addEventListener('input',function(){
+    var q=search.value.trim().toLowerCase();
+    document.querySelectorAll('.ch-group').forEach(function(group){
+      var links=group.querySelectorAll('.cs-link'),anyVisible=0,countEl=group.querySelector('.ch-count');
+      links.forEach(function(a){
+        var match=a.textContent.toLowerCase().indexOf(q)!==-1;
+        a.classList.toggle('filtered-out',!match);
+        if(match)anyVisible++;
+      });
+      if(countEl){
+        if(!countEl.dataset.total)countEl.dataset.total=countEl.textContent;
+        countEl.textContent=q?anyVisible:countEl.dataset.total;
+      }
+      group.classList.toggle('all-filtered',anyVisible===0);
+    });
+  });
+
+  // Scroll-spy: highlight whichever case card is currently most in view.
+  var links=Array.prototype.slice.call(document.querySelectorAll('.cs-link'));
+  var targets=links.map(function(a){return document.getElementById(a.dataset.target);}).filter(Boolean);
+  if('IntersectionObserver' in window && targets.length){
+    var observer=new IntersectionObserver(function(entries){
+      var best=null,bestRatio=0;
+      entries.forEach(function(e){
+        if(e.isIntersecting && e.intersectionRatio>bestRatio){best=e.target;bestRatio=e.intersectionRatio;}
+      });
+      if(best){
+        links.forEach(function(a){a.classList.toggle('active',a.dataset.target===best.id);});
+      }
+    },{rootMargin:'-15% 0px -70% 0px',threshold:[0,0.25,0.5,0.75,1]});
+    targets.forEach(function(t){observer.observe(t);});
+  }
+})();
+
+</script>
+
+</div>
+</body>
+</html>
+
