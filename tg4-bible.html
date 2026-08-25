@@ -225,6 +225,13 @@ form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
     return loadHistory().find((e) => e.question.trim().toLowerCase() === norm);
   }
 
+  // Only auto-scroll to the latest content if the user was already down
+  // there — otherwise a streaming answer fights every manual scroll-up
+  // attempt, snapping straight back to the bottom on the next chunk.
+  function isNearBottom() {
+    return (window.innerHeight + window.scrollY) >= (document.body.scrollHeight - 80);
+  }
+
   // ── Markdown rendering ───────────────────────────────────────────────────
   function escapeHtml(s) {
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -267,16 +274,18 @@ form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
     window.scrollTo(0, document.body.scrollHeight);
   }
   function addBotMessage(placeholder) {
+    const wasNearBottom = isNearBottom();
     const div = document.createElement('div');
     div.className = 'tg4-page-msg bot';
     div.textContent = placeholder || '';
     messagesEl.appendChild(div);
-    window.scrollTo(0, document.body.scrollHeight);
+    if (wasNearBottom) window.scrollTo(0, document.body.scrollHeight);
     return div;
   }
 
   function renderSources(container, pages) {
     if (!pages || !pages.length) return;
+    const wasNearBottom = isNearBottom();
     const wrap = document.createElement('div');
     wrap.className = 'tg4-sources';
     pages.forEach((p) => {
@@ -292,7 +301,7 @@ form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
       wrap.appendChild(a);
     });
     container.appendChild(wrap);
-    window.scrollTo(0, document.body.scrollHeight);
+    if (wasNearBottom) window.scrollTo(0, document.body.scrollHeight);
   }
 
   // ── History sidebar ──────────────────────────────────────────────────────
@@ -396,9 +405,10 @@ form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
       while (true) {
         const chunk = await reader.read();
         if (chunk.done) break;
+        const wasNearBottom = isNearBottom();
         text += decoder.decode(chunk.value, { stream: true });
         botDiv.textContent = text;
-        window.scrollTo(0, document.body.scrollHeight);
+        if (wasNearBottom) window.scrollTo(0, document.body.scrollHeight);
       }
       botDiv.innerHTML = renderMarkdown(text);
       renderSources(botDiv, sourcePages);
@@ -461,5 +471,6 @@ form.tg4-page-form button:disabled{opacity:.5;cursor:default;}
   }
 })();
 </script>
+<script defer src="/feedback-banner.js"></script>
 </body>
 </html>
