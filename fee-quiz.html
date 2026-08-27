@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,interactive-widget=resizes-content">
+<title>What's It Cost? — Fee Quiz | ADC Study Bank</title>
+<meta name="description" content="Ten-question quiz on indicative Australian private-practice dental fees, for informed-financial-consent stations.">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232A6049'/%3E%3Ctext x='16' y='22' font-family='Georgia,serif' font-size='15' font-weight='700' fill='white' text-anchor='middle' letter-spacing='-0.5'%3EOC%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:#f5f2ed; --card:#ffffff; --border:#ddd8cf; --border-light:#ece8e2;
+  --text:#1c1917; --muted:#78716c; --accent:#44403c;
+  --badge-bg:#3d3935; --badge-text:#f5f2ed;
+  --tg4-bg:#fdf8f0; --tg4-border:#c4a97a; --h3-bar:#b5a897;
+  --green:#2A6049; --green-bg:#f2faf4; --green-border:#3a9a5c; --green-text:#14532d;
+  --red-bg:#fff5f5; --red-border:#e85555; --red-text:#7a1a1a;
+  --font-serif:'Playfair Display',Georgia,serif;
+  --font-sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{overflow-x:hidden;}
+body{font-family:var(--font-sans);background:var(--bg);color:var(--text);
+  min-height:100vh;font-size:15px;line-height:1.7;-webkit-font-smoothing:antialiased;}
+
+header.ec-header{display:flex;align-items:center;gap:14px;padding:14px 20px;
+  border-bottom:1px solid var(--border);background:var(--card);position:sticky;top:0;z-index:30;}
+.ec-back{font-size:13px;color:var(--muted);text-decoration:none;white-space:nowrap;}
+.ec-back:hover{color:var(--text);}
+.ec-title{font-family:var(--font-serif);font-size:18px;font-weight:700;}
+.ec-sub{font-size:11.5px;color:var(--muted);margin-left:auto;text-align:right;max-width:260px;}
+@media(max-width:640px){.ec-sub{display:none;}}
+
+main{max-width:680px;margin:0 auto;padding:24px 18px 90px;}
+
+/* ---------- START SCREEN ---------- */
+.q-intro{background:var(--tg4-bg);border:1px solid var(--tg4-border);border-radius:14px;
+  padding:22px 22px 24px;text-align:center;}
+.q-intro h1{font-family:var(--font-serif);font-size:26px;line-height:1.25;margin-bottom:10px;}
+.q-intro p{font-size:14px;color:var(--accent);margin-bottom:6px;}
+.q-intro .q-note{font-size:12px;color:var(--muted);margin-top:14px;line-height:1.6;}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  background:var(--green);color:#fff;border:none;border-radius:999px;
+  padding:14px 30px;font-family:inherit;font-size:15px;font-weight:700;
+  cursor:pointer;margin-top:18px;min-height:48px;text-decoration:none;
+  -webkit-tap-highlight-color:transparent;}
+.btn:active{opacity:.85;}
+.btn.ghost{background:var(--card);color:var(--accent);border:1px solid var(--border);font-weight:600;}
+
+/* ---------- PROGRESS ---------- */
+.q-bar-wrap{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+.q-bar{flex:1;height:6px;background:var(--border-light);border-radius:999px;overflow:hidden;}
+.q-bar-fill{height:100%;width:0;background:var(--green);border-radius:999px;transition:width .3s ease;}
+.q-count{font-size:11.5px;font-weight:700;color:var(--muted);letter-spacing:.5px;
+  white-space:nowrap;font-variant-numeric:tabular-nums;}
+.q-score{font-size:11.5px;font-weight:700;color:var(--green);white-space:nowrap;
+  font-variant-numeric:tabular-nums;}
+
+/* ---------- QUESTION CARD ---------- */
+.q-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:22px 20px;}
+.q-cat{display:inline-block;background:var(--badge-bg);color:var(--badge-text);
+  font-size:10px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  padding:3px 10px;border-radius:999px;margin-bottom:12px;}
+.q-item{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;
+  color:var(--muted);margin-left:8px;}
+.q-text{font-family:var(--font-serif);font-size:21px;font-weight:700;line-height:1.35;
+  margin-bottom:4px;}
+.q-lead{font-size:12.5px;color:var(--muted);margin-bottom:18px;}
+
+.opts{display:flex;flex-direction:column;gap:10px;}
+.opt{display:flex;align-items:center;gap:12px;width:100%;text-align:left;
+  background:var(--card);border:1.5px solid var(--border);border-radius:12px;
+  padding:14px 16px;font-family:inherit;font-size:16px;font-weight:600;color:var(--text);
+  cursor:pointer;min-height:56px;font-variant-numeric:tabular-nums;
+  transition:border-color .12s,background .12s;-webkit-tap-highlight-color:transparent;}
+.opt:active{background:var(--border-light);}
+.opt .opt-key{flex-shrink:0;width:26px;height:26px;border-radius:50%;
+  background:var(--border-light);color:var(--accent);font-size:11.5px;font-weight:800;
+  display:flex;align-items:center;justify-content:center;}
+.opt[disabled]{cursor:default;}
+.opt.correct{border-color:var(--green-border);background:var(--green-bg);color:var(--green-text);}
+.opt.correct .opt-key{background:var(--green-border);color:#fff;}
+.opt.wrong{border-color:var(--red-border);background:var(--red-bg);color:var(--red-text);}
+.opt.wrong .opt-key{background:var(--red-border);color:#fff;}
+.opt.faded{opacity:.45;}
+
+/* ---------- FEEDBACK ---------- */
+.fb{margin-top:18px;border-radius:12px;padding:15px 17px;font-size:13.5px;line-height:1.65;
+  border:1px solid var(--border);background:var(--bg);}
+.fb.ok{background:var(--green-bg);border-color:#2a604933;}
+.fb.no{background:var(--red-bg);border-color:#e8555533;}
+.fb-verdict{font-size:12px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;
+  margin-bottom:7px;}
+.fb.ok .fb-verdict{color:var(--green-text);}
+.fb.no .fb-verdict{color:var(--red-text);}
+.fb-answer{font-weight:700;}
+.fb-tip{margin-top:8px;color:var(--accent);}
+.fb-tip b{color:var(--text);}
+
+/* ---------- RESULTS ---------- */
+.res-card{background:var(--card);border:1px solid var(--border);border-radius:14px;
+  padding:26px 22px;text-align:center;}
+.res-score{font-family:var(--font-serif);font-size:52px;font-weight:700;line-height:1;}
+.res-score span{font-size:26px;color:var(--muted);}
+.res-band{font-size:15px;font-weight:700;margin-top:10px;}
+.res-msg{font-size:13.5px;color:var(--muted);margin-top:8px;}
+.res-actions{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:6px;}
+
+.review{margin-top:24px;}
+.review h2{font-family:var(--font-serif);font-size:16px;margin-bottom:12px;}
+.rv{display:flex;gap:12px;background:var(--card);border:1px solid var(--border);
+  border-radius:12px;padding:13px 15px;margin-bottom:10px;font-size:13.5px;line-height:1.55;}
+.rv-mark{flex-shrink:0;font-size:15px;line-height:1.5;}
+.rv-name{font-weight:700;}
+.rv-detail{color:var(--muted);font-size:12.5px;margin-top:3px;}
+.rv-detail b{color:var(--text);font-weight:700;}
+
+.q-disc{font-size:11.5px;line-height:1.6;color:var(--muted);
+  border-top:1px solid var(--border);padding-top:14px;margin-top:30px;}
+.q-disc a{color:var(--accent);}
+</style>
+</head>
+<body>
+
+<header class="ec-header">
+  <a href="/" class="ec-back">← Back</a>
+  <div class="ec-title">What's It Cost?</div>
+  <div class="ec-sub">10 questions on indicative AUD private-practice fees</div>
+</header>
+
+<main id="app"></main>
+
+<script>
+/* ------------------------------------------------------------------
+   Fee pool. Ranges mirror /dental-fee-ranges exactly — if that sheet is
+   revised, revise these numbers with it. Items whose fee is not a clean
+   numeric range there (loadings, "up to", split figures) are left out,
+   because the distractor generator below needs two real numbers.
+------------------------------------------------------------------- */
+var POOL = [
+  // Diagnostic & Preventive
+  {c:'Diagnostic',i:'011',n:'A comprehensive oral examination',lo:60,hi:110,
+   t:'The cheapest thing you do all day — and the one patients most often expect to be free. Say the fee before they sit down.'},
+  {c:'Diagnostic',i:'037',n:'A panoramic radiograph (OPG)',lo:120,hi:200,
+   t:'Roughly triple a single periapical. Justify it on clinical grounds, not convenience, or you lose the radiation-justification mark.'},
+  {c:'Diagnostic',i:'088',n:'A small-volume cone-beam CT',lo:250,hi:450,
+   t:'Reserve for implant planning, impacted teeth or suspected root fracture — and warn the patient it is usually a separate imaging-centre fee.'},
+  {c:'Diagnostic',i:'111/114',n:'A scale and clean (removal of calculus)',lo:120,hi:250,
+   t:'Extras cover usually pays most of this. It is the item patients benchmark every other fee against.'},
+  {c:'Diagnostic',i:'161',n:'A fissure sealant, per tooth',lo:50,hi:90,
+   t:'Per tooth — quote the arch total, not the unit price, or the invoice reads as a surprise.'},
+  {c:'Diagnostic',i:'—',n:'A bundled check-up, clean and fluoride',lo:180,hi:320,
+   t:'The classic "how much for a check-up and clean?" phone question. Have this range memorised.'},
+
+  // Restorative
+  {c:'Restorative',i:'531/532',n:'A posterior composite, 1–2 surface',lo:170,hi:320,
+   t:'Fee climbs with surfaces, so give a range and confirm the actual number after you have the radiograph.'},
+  {c:'Restorative',i:'533+',n:'A posterior composite, 3+ surface or cuspal',lo:280,hi:450,
+   t:'At this size flag the alternative up front: a large composite versus an onlay/crown is a cost conversation, not just a clinical one.'},
+  {c:'Restorative',i:'613/615',n:'A full indirect crown (PFM, zirconia or E-max)',lo:1200,hi:2300,
+   t:'Contains a laboratory fee you must disclose separately. The single most-quoted figure in consent stations.'},
+  {c:'Restorative',i:'618',n:'A post and core for a crown',lo:400,hi:750,
+   t:'An add-on, not a substitute — quote it on top of the crown, never folded into it.'},
+  {c:'Restorative',i:'625/643',n:'A 3-unit fixed bridge, total',lo:3000,hi:6000,
+   t:'Compare against a single implant in the same breath: similar money, very different biological cost to the abutment teeth.'},
+  {c:'Restorative',i:'577',n:'A porcelain veneer, per tooth',lo:1000,hi:2200,
+   t:'Per tooth. Six upper anteriors is a five-figure plan — state the whole-case total, and that health funds rarely cover cosmetic work.'},
+
+  // Endodontics
+  {c:'Endodontics',i:'414/415',n:'A complete anterior root canal (single canal)',lo:900,hi:1500,
+   t:'The floor of the endo range. Anything quoted per visit must still add to a disclosed total.'},
+  {c:'Endodontics',i:'417/418',n:'A molar root canal',lo:1500,hi:3400,
+   t:'Then add the crown. "RCT plus crown on a molar" is realistically $3,000–$5,500 — say that, or the patient hears only the first number.'},
+  {c:'Endodontics',i:'411',n:'A pulpotomy or emergency pulp extirpation',lo:250,hi:500,
+   t:'The pain-relief visit. Make clear it is the first instalment of the RCT fee, not the whole treatment.'},
+  {c:'Endodontics',i:'431',n:'An apicectomy (surgical endodontics)',lo:1200,hi:2500,
+   t:'Usually a specialist fee, separate from yours — spelling that out is a marked point in referral stations.'},
+
+  // Oral Surgery
+  {c:'Oral Surgery',i:'311/314',n:'A simple extraction, per tooth',lo:200,hi:400,
+   t:'Per tooth, chairside, LA only. Everything below is an escalation from this baseline.'},
+  {c:'Oral Surgery',i:'322',n:'A sectional or surgical extraction',lo:350,hi:700,
+   t:'If you convert from simple to surgical mid-procedure, you must stop and re-consent to the higher fee.'},
+  {c:'Oral Surgery',i:'324',n:'Removal of an impacted tooth, per tooth',lo:400,hi:900,
+   t:'Per tooth, and before any sedation or facility charge.'},
+  {c:'Oral Surgery',i:'—',n:'Four impacted third molars under GA, all-in',lo:2500,hi:5000,
+   t:'Three separate invoices — surgeon, anaesthetist, hospital. Naming all three is the consent mark.'},
+  {c:'Oral Surgery',i:'—',n:'IV sedation (the sedationist’s fee)',lo:500,hi:1000,
+   t:'A separate practitioner billing separately. Never quote it inside your own fee.'},
+  {c:'Oral Surgery',i:'—',n:'Relative analgesia (N₂O/O₂)',lo:100,hi:220,
+   t:'The cheap anxiety option. Offering it before IV sedation shows proportionate care.'},
+  {c:'Oral Surgery',i:'—',n:'A biopsy or lesion excision',lo:300,hi:900,
+   t:'Add the pathology laboratory fee, which is billed to the patient directly.'},
+
+  // Periodontics
+  {c:'Periodontics',i:'221/222',n:'Root planing / debridement, per quadrant',lo:150,hi:350,
+   t:'Per quadrant — four quadrants is the number the patient actually pays.'},
+  {c:'Periodontics',i:'—',n:'Full-mouth non-surgical periodontal therapy',lo:600,hi:1400,
+   t:'Then the lifelong maintenance cost. A perio plan without the recall cost is an incomplete plan.'},
+  {c:'Periodontics',i:'232/238',n:'Periodontal flap surgery, per quadrant',lo:600,hi:1800,
+   t:'Specialist territory. Say plainly that the periodontist sets their own fee.'},
+  {c:'Periodontics',i:'—',n:'Supportive periodontal maintenance, 3-monthly',lo:180,hi:350,
+   t:'Four times a year, indefinitely — around $700–$1,400 a year. Quote it annually, not per visit.'},
+
+  // Prosthodontics & Implants
+  {c:'Prosthodontics',i:'711/712',n:'A complete denture, per arch',lo:1200,hi:2800,
+   t:'Multiple appointments and a laboratory bill. Relines and repairs later are extra — flag that at the start.'},
+  {c:'Prosthodontics',i:'721/727',n:'An acrylic partial denture',lo:800,hi:1800,
+   t:'The affordable interim. Position it honestly as a stopgap, not a definitive result.'},
+  {c:'Prosthodontics',i:'727/733',n:'A cobalt-chrome partial denture',lo:1800,hi:3500,
+   t:'Roughly double the acrylic, and worth it for a long-term case. Give the patient both numbers.'},
+  {c:'Prosthodontics',i:'743/768',n:'A denture reline or repair',lo:250,hi:700,
+   t:'The predictable follow-up cost. Mentioning it up front prevents the "I already paid for this" complaint.'},
+  {c:'Prosthodontics',i:'684/688',n:'A single implant with abutment and crown',lo:4500,hi:7300,
+   t:'Quote the three components together. Quoting the fixture alone is the classic informed-financial-consent failure.'},
+  {c:'Prosthodontics',i:'—',n:'A bone graft or sinus lift',lo:1000,hi:2500,
+   t:'A conditional cost — it may only be confirmed at surgery, so consent to the possibility beforehand.'},
+  {c:'Prosthodontics',i:'—',n:'A full-arch fixed implant bridge (All-on-4)',lo:25000,hi:40000,
+   t:'Per arch. At this level a written, itemised, staged plan is not optional.'},
+
+  // Orthodontics & other
+  {c:'Orthodontics',i:'—',n:'A full course of metal fixed appliances',lo:6000,hi:10000,
+   t:'Usually paid by instalment over 18–24 months. Say the total and the monthly figure.'},
+  {c:'Orthodontics',i:'—',n:'Clear aligners, limited to comprehensive',lo:4500,hi:11000,
+   t:'The range is enormous because case complexity is. Never quote aligners as a single number.'},
+  {c:'Orthodontics',i:'—',n:'Orthodontic consultation and records',lo:150,hi:450,
+   t:'Often credited against treatment if the patient proceeds — worth saying, it lowers the barrier to referral.'},
+  {c:'Orthodontics',i:'—',n:'Retainers, per arch',lo:250,hi:600,
+   t:'The cost patients forget. Retention is lifelong and replacements are on them.'},
+  {c:'Orthodontics',i:'—',n:'An occlusal splint',lo:500,hi:1000,
+   t:'A laboratory item. Distinguish it clearly from a sports mouthguard, which costs far less.'},
+  {c:'Orthodontics',i:'—',n:'A custom-made sports mouthguard',lo:180,hi:400,
+   t:'Cheaper than one anterior composite. That comparison is the whole prevention argument.'}
+];
+
+var QUIZ_LEN = 10;
+
+/* ---------- helpers ---------- */
+function shuffle(a){
+  for(var i=a.length-1;i>0;i--){var j=Math.floor(Math.random()*(i+1));var t=a[i];a[i]=a[j];a[j]=t;}
+  return a;
+}
+// Round to a figure a dentist would actually say out loud.
+function nice(v){
+  if(v<100) return Math.max(5,Math.round(v/5)*5);
+  if(v<1000) return Math.round(v/10)*10;
+  if(v<10000) return Math.round(v/50)*50;
+  return Math.round(v/500)*500;
+}
+function money(v){ return '$'+v.toLocaleString('en-AU'); }
+function range(lo,hi){ return money(lo)+' – '+money(hi); }
+
+/* Distractors are derived from the true range rather than hand-written, so
+   they always sit plausibly on the same scale. Two are near misses (the band
+   directly below and directly above), one is an order-of-magnitude miss —
+   which is the error that actually loses marks in a consent station. */
+function buildOptions(q){
+  var ratio = q.hi/q.lo;
+  var cands = [];
+  function push(lo,hi){
+    lo=nice(lo); hi=nice(hi);
+    if(lo<5||hi<=lo) return;
+    if(hi>=q.lo && lo<=q.hi) return;          // overlaps the truth
+    var s=range(lo,hi);
+    for(var k=0;k<cands.length;k++) if(cands[k]===s) return;
+    cands.push(s);
+  }
+  push(q.lo*0.9/ratio, q.lo*0.9);             // the band just below
+  push(q.hi*1.12, q.hi*1.12*ratio);           // the band just above
+  if(Math.random()<0.5) push(q.lo/(ratio*3.2), q.lo/3.2);   // way too cheap
+  else                  push(q.hi*3.2, q.hi*3.2*ratio);     // way too dear
+  // Fallbacks, in case rounding collapsed one of the three above.
+  push(q.hi*6, q.hi*6*ratio);
+  push(q.lo/6/ratio, q.lo/6);
+  push(q.hi*2, q.hi*2*ratio);
+
+  var opts = [range(q.lo,q.hi)].concat(cands.slice(0,3));
+  return shuffle(opts);
+}
+
+/* ---------- state ---------- */
+var app = document.getElementById('app');
+var quiz, idx, score, log;
+
+function start(){
+  quiz = shuffle(POOL.slice()).slice(0,QUIZ_LEN).map(function(q){
+    return {q:q, answer:range(q.lo,q.hi), opts:buildOptions(q)};
+  });
+  idx = 0; score = 0; log = [];
+  renderQuestion();
+}
+
+function renderIntro(){
+  app.innerHTML =
+    '<div class="q-intro">' +
+      '<h1>What&rsquo;s It Cost?</h1>' +
+      '<p>Ten procedures. Four price ranges each. Pick the one a private Australian practice would actually quote.</p>' +
+      '<p style="font-size:13px;color:var(--muted)">Fees are in AUD with no health-fund rebate applied — the same figures as the Fee Ranges sheet.</p>' +
+      '<button class="btn" id="go">Start the quiz →</button>' +
+      '<div class="q-note">Built for informed-financial-consent, treatment-planning and referral stations. Questions are drawn fresh each round.</div>' +
+    '</div>' +
+    '<p class="q-disc"><strong>Disclaimer.</strong> Indicative ranges compiled July 2026 from published Australian practice price guides and health-fund data, for ADC OSCE preparation only. Fees vary by up to 40% between practices and states. Full sheet and sources: <a href="/dental-fee-ranges">Dental Fee Ranges</a>. Not financial or clinical advice.</p>';
+  document.getElementById('go').addEventListener('click', start);
+}
+
+function renderQuestion(){
+  var cur = quiz[idx];
+  var pct = (idx/QUIZ_LEN)*100;
+  var keys = ['A','B','C','D'];
+  var html =
+    '<div class="q-bar-wrap">' +
+      '<span class="q-count">Q'+(idx+1)+' / '+QUIZ_LEN+'</span>' +
+      '<div class="q-bar"><div class="q-bar-fill" style="width:'+pct+'%"></div></div>' +
+      '<span class="q-score">'+score+' correct</span>' +
+    '</div>' +
+    '<div class="q-card">' +
+      '<span class="q-cat">'+cur.q.c+'</span>' +
+      (cur.q.i!=='—' ? '<span class="q-item">item '+cur.q.i+'</span>' : '') +
+      '<div class="q-text">'+cur.q.n+'</div>' +
+      '<div class="q-lead">What would a private practice typically charge?</div>' +
+      '<div class="opts">' +
+        cur.opts.map(function(o,n){
+          return '<button class="opt" data-val="'+o+'"><span class="opt-key">'+keys[n]+'</span>'+o+'</button>';
+        }).join('') +
+      '</div>' +
+      '<div id="fb"></div>' +
+    '</div>';
+  app.innerHTML = html;
+  app.querySelectorAll('.opt').forEach(function(b){
+    b.addEventListener('click', function(){ answer(b.dataset.val); });
+  });
+  window.scrollTo(0,0);
+}
+
+function answer(chosen){
+  var cur = quiz[idx];
+  var right = chosen === cur.answer;
+  if(right) score++;
+  log.push({q:cur.q, chosen:chosen, answer:cur.answer, right:right});
+
+  app.querySelectorAll('.opt').forEach(function(b){
+    b.disabled = true;
+    var v = b.dataset.val;
+    if(v === cur.answer) b.classList.add('correct');
+    else if(v === chosen) b.classList.add('wrong');
+    else b.classList.add('faded');
+  });
+  document.querySelector('.q-score').textContent = score+' correct';
+
+  var last = idx === QUIZ_LEN-1;
+  document.getElementById('fb').innerHTML =
+    '<div class="fb '+(right?'ok':'no')+'">' +
+      '<div class="fb-verdict">'+(right?'✓ Correct':'✗ Not quite')+'</div>' +
+      '<div><span class="fb-answer">'+cur.answer+'</span>' +
+        (right ? '' : ' — you picked '+chosen) + '</div>' +
+      '<div class="fb-tip">'+cur.q.t+'</div>' +
+    '</div>' +
+    '<div class="res-actions" style="justify-content:flex-start;margin-top:16px">' +
+      '<button class="btn" id="next" style="margin-top:0">'+(last?'See my score →':'Next question →')+'</button>' +
+    '</div>';
+  document.getElementById('next').addEventListener('click', function(){
+    if(last){ renderResults(); } else { idx++; renderQuestion(); }
+  });
+}
+function band(s){
+  if(s===10) return {t:'Flawless.',m:'You could quote this sheet from memory in a station. Now practise saying the range out loud with a written estimate offer attached.'};
+  if(s>=8)  return {t:'Consent-ready.',m:'Solid command of the numbers. Tighten the two you missed and you are safe in any financial-consent station.'};
+  if(s>=6)  return {t:'Getting there.',m:'You have the shape of the fees but not the edges. The near-miss answers are where examiners probe.'};
+  if(s>=4)  return {t:'Shaky.',m:'Worth a slow read of the full Fee Ranges sheet before you attempt a treatment-planning station.'};
+  return {t:'Start with the sheet.',m:'These figures are learnable in one sitting — read the Fee Ranges page, then come straight back.'};
+}
+
+function renderResults(){
+  var b = band(score);
+  app.innerHTML =
+    '<div class="res-card">' +
+      '<div class="res-score">'+score+'<span>/'+QUIZ_LEN+'</span></div>' +
+      '<div class="res-band">'+b.t+'</div>' +
+      '<div class="res-msg">'+b.m+'</div>' +
+      '<div class="res-actions">' +
+        '<button class="btn" id="again">Play again →</button>' +
+        '<a class="btn ghost" href="/dental-fee-ranges">Open the fee sheet</a>' +
+      '</div>' +
+    '</div>' +
+    '<div class="review"><h2>Your round</h2>' +
+      log.map(function(r){
+        return '<div class="rv">' +
+          '<span class="rv-mark">'+(r.right?'✅':'❌')+'</span>' +
+          '<div><div class="rv-name">'+r.q.n+'</div>' +
+          '<div class="rv-detail">Actual <b>'+r.answer+'</b>' +
+            (r.right?'':' · you said '+r.chosen) + '</div>' +
+          '<div class="rv-detail" style="margin-top:5px">'+r.q.t+'</div></div>' +
+        '</div>';
+      }).join('') +
+    '</div>' +
+    '<p class="q-disc"><strong>Disclaimer.</strong> Indicative ranges compiled July 2026 from published Australian practice price guides and health-fund data, for ADC OSCE preparation only. Fees vary by up to 40% between practices and states, and each practice sets its own. Full sheet and sources: <a href="/dental-fee-ranges">Dental Fee Ranges</a>. Not financial or clinical advice.</p>';
+  document.getElementById('again').addEventListener('click', start);
+  window.scrollTo(0,0);
+}
+
+renderIntro();
+</script>
+
+<script defer src="/feedback-banner.js"></script>
+<script defer src="/support-bot.js"></script>
+</body>
+</html>
