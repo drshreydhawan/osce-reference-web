@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width,initial-scale=1.0" name="viewport"/>
+<title>Feedback — Admin</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;background:#f5f2ed;color:#1c1917;
+    padding:32px 20px;line-height:1.5;}
+  .wrap{max-width:900px;margin:0 auto;}
+  h1{font-size:22px;margin-bottom:6px;}
+  p.sub{color:#78716c;font-size:14px;margin-bottom:20px;}
+  #gate{max-width:360px;margin:80px auto;background:#fff;border:1px solid #ddd8cf;border-radius:12px;padding:24px;}
+  #gate input{width:100%;padding:10px;border:1px solid #ddd8cf;border-radius:8px;font-size:14px;margin:12px 0;}
+  #gate button{width:100%;padding:10px;border:none;border-radius:8px;background:#1c1917;color:#fff;
+    font-weight:600;cursor:pointer;}
+  #gate .err{color:#c0392b;font-size:13px;margin-top:8px;display:none;}
+  #app{display:none;}
+  .stats{display:flex;gap:16px;margin-bottom:24px;flex-wrap:wrap;}
+  .stat{background:#fff;border:1px solid #ddd8cf;border-radius:10px;padding:14px 18px;min-width:140px;}
+  .stat .n{font-size:24px;font-weight:700;}
+  .stat .l{font-size:12px;color:#78716c;}
+  table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #ddd8cf;border-radius:10px;
+    overflow:hidden;}
+  th,td{text-align:left;padding:10px 12px;border-bottom:1px solid #ece8e2;font-size:13px;vertical-align:top;}
+  th{background:#eeeae3;font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:#57534e;}
+  tr:last-child td{border-bottom:none;}
+  .msg{max-width:420px;white-space:pre-wrap;}
+  .stars{color:#e0a020;white-space:nowrap;}
+  .muted{color:#a8a29e;}
+  #refresh{margin-bottom:16px;padding:8px 14px;border:1px solid #ddd8cf;border-radius:8px;background:#fff;
+    cursor:pointer;font-size:13px;}
+</style>
+</head>
+<body>
+
+<div id="gate">
+  <h1 style="font-size:17px;">Feedback — Admin</h1>
+  <input id="pw" type="password" placeholder="Password" autofocus/>
+  <button id="unlock">View feedback</button>
+  <p class="err" id="err">Wrong password.</p>
+</div>
+
+<div id="app">
+  <div class="wrap">
+    <h1>Feedback</h1>
+    <p class="sub">All responses, newest first. Anonymous.</p>
+    <button id="refresh">Refresh</button>
+    <div class="stats" id="stats"></div>
+    <table>
+      <thead>
+        <tr><th>When</th><th>Useful</th><th>Realism</th><th>Message</th><th>Page</th></tr>
+      </thead>
+      <tbody id="rows"></tbody>
+    </table>
+  </div>
+</div>
+
+<script>
+(function () {
+  var SESSION_KEY = "osce_admin_pw";
+  var pw = sessionStorage.getItem(SESSION_KEY);
+
+  function stars(n) {
+    if (!n) return '<span class="muted">—</span>';
+    return '<span class="stars">' + '★'.repeat(n) + '<span class="muted">' + '★'.repeat(5 - n) + '</span></span>';
+  }
+
+  function render(rows) {
+    var useful = rows.filter(function (r) { return r.usefulness_rating; });
+    var realism = rows.filter(function (r) { return r.realism_rating; });
+    var avg = function (arr, key) {
+      if (!arr.length) return "—";
+      return (arr.reduce(function (s, r) { return s + r[key]; }, 0) / arr.length).toFixed(1);
+    };
+    document.getElementById("stats").innerHTML =
+      '<div class="stat"><div class="n">' + rows.length + '</div><div class="l">Responses</div></div>' +
+      '<div class="stat"><div class="n">' + avg(useful, "usefulness_rating") + '</div><div class="l">Avg usefulness</div></div>' +
+      '<div class="stat"><div class="n">' + avg(realism, "realism_rating") + '</div><div class="l">Avg realism</div></div>';
+
+    document.getElementById("rows").innerHTML = rows.map(function (r) {
+      var when = new Date(r.created_at).toLocaleString();
+      var msg = r.message ? r.message.replace(/</g, "&lt;") : '<span class="muted">—</span>';
+      var page = r.page ? r.page.replace(/</g, "&lt;") : "";
+      return "<tr><td>" + when + "</td><td>" + stars(r.usefulness_rating) + "</td><td>" +
+        stars(r.realism_rating) + '</td><td class="msg">' + msg + "</td><td>" + page + "</td></tr>";
+    }).join("");
+  }
+
+  function load() {
+    fetch("/api/feedback", { headers: { "x-admin-password": pw } })
+      .then(function (r) {
+        if (r.status === 401) throw new Error("unauthorized");
+        return r.json();
+      })
+      .then(function (data) {
+        document.getElementById("gate").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        render(data.rows || []);
+      })
+      .catch(function () {
+        sessionStorage.removeItem(SESSION_KEY);
+        pw = null;
+        document.getElementById("err").style.display = "block";
+      });
+  }
+
+  document.getElementById("unlock").onclick = function () {
+    pw = document.getElementById("pw").value;
+    sessionStorage.setItem(SESSION_KEY, pw);
+    load();
+  };
+  document.getElementById("pw").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") document.getElementById("unlock").click();
+  });
+  document.getElementById("refresh").onclick = load;
+
+  if (pw) load();
+})();
+</script>
+</body>
+</html>
