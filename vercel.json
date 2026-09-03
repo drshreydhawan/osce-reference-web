@@ -1,4 +1,21 @@
 {
   "cleanUrls": true,
-  "trailingSlash": false
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/fee-quiz",
+      "destination": "https://oscecoach.bytesizeddentistry.com/fee-quiz",
+      "permanent": false
+    },
+    {
+      "source": "/dental-fee-ranges",
+      "destination": "https://oscecoach.bytesizeddentistry.com/fee-quiz",
+      "permanent": false
+    },
+    {
+      "source": "/dental-fee-ranges.pdf",
+      "destination": "https://oscecoach.bytesizeddentistry.com/fee-quiz",
+      "permanent": false
+    }
+  ]
 }
