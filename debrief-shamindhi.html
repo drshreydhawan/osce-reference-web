@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<meta name="robots" content="noindex, nofollow, noarchive"/>
+<title>Debrief — Sign in</title>
+<style>
+  *{box-sizing:border-box;margin:0;padding:0;}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Inter',sans-serif;background:#f5f2ed;color:#1c1917;
+    min-height:100vh;display:flex;align-items:center;justify-content:center;padding:20px;}
+  #gate{max-width:360px;width:100%;background:#fff;border:1px solid #ddd8cf;border-radius:12px;padding:28px;}
+  #gate h1{font-size:17px;margin-bottom:6px;}
+  #gate p{color:#78716c;font-size:13.5px;margin-bottom:16px;}
+  #gate input{width:100%;padding:11px;border:1px solid #ddd8cf;border-radius:8px;font-size:14px;margin-bottom:12px;}
+  #gate button{width:100%;padding:11px;border:none;border-radius:8px;background:#1c1917;color:#fff;
+    font-weight:600;cursor:pointer;font-size:14px;}
+  #gate .err{color:#c0392b;font-size:13px;margin-top:10px;display:none;}
+  #gate .loading{color:#78716c;font-size:13px;margin-top:10px;display:none;}
+</style>
+</head>
+<body>
+<div id="gate">
+  <h1>Personal debrief</h1>
+  <p>This report contains one candidate's private practice data. Enter the password to view it.</p>
+  <input id="pw" type="password" placeholder="Password" autofocus/>
+  <button id="unlock">View debrief</button>
+  <p class="err" id="err">Wrong password.</p>
+  <p class="loading" id="loading">Loading…</p>
+</div>
+<script>
+(function () {
+  var params = new URLSearchParams(location.search);
+  var who = params.get("who") || "shamindhi";
+
+  function tryUnlock(pw) {
+    document.getElementById("err").style.display = "none";
+    document.getElementById("loading").style.display = "block";
+    fetch("/api/debrief?who=" + encodeURIComponent(who), {
+      headers: { "x-debrief-password": pw }
+    }).then(function (r) {
+      if (!r.ok) throw new Error("unauthorized");
+      return r.text();
+    }).then(function (html) {
+      sessionStorage.setItem("osce_debrief_pw", pw);
+      document.open();
+      document.write(html);
+      document.close();
+    }).catch(function () {
+      document.getElementById("loading").style.display = "none";
+      document.getElementById("err").style.display = "block";
+    });
+  }
+
+  document.getElementById("unlock").onclick = function () {
+    tryUnlock(document.getElementById("pw").value);
+  };
+  document.getElementById("pw").addEventListener("keydown", function (e) {
+    if (e.key === "Enter") document.getElementById("unlock").click();
+  });
+
+  var saved = sessionStorage.getItem("osce_debrief_pw");
+  if (saved) tryUnlock(saved);
+})();
+</script>
+</body>
+</html>

@@ -3,3 +3,9 @@ node_modules
 .env
 .env.local
 .env*
+
+# Private per-candidate debrief content — real personal coaching/performance
+# data (safety flags, named errors). This repo is PUBLIC on GitHub, so this
+# must never be committed. Served only via api/debrief.ts behind
+# DEBRIEF_PASSWORD; regenerable any time from the candidate's live attempts.
+api/_private/
