@@ -16,6 +16,56 @@
       "source": "/dental-fee-ranges.pdf",
       "destination": "https://oscecoach.bytesizeddentistry.com/fee-quiz",
       "permanent": false
+    },
+    {
+      "source": "/",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/index",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/naz-notes",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/gold-transcripts",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/notebook",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/exam-craft",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/ideal-answers",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/ideal-answers.pdf",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/data/examcraft-notebook.pdf",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
+    },
+    {
+      "source": "/data/examcraft-transcript.json",
+      "destination": "https://oscecoach.bytesizeddentistry.com/",
+      "permanent": false
     }
   ]
 }

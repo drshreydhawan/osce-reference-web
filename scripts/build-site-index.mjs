@@ -32,7 +32,9 @@ function stripTags(html) {
 const chunks = [];
 
 // --- 1. ideal-answers.html: one chunk per station card ---------------------
-const ideal = fs.readFileSync(path.join(ROOT, "ideal-answers.html"), "utf8");
+// Oct 2026: recall-derived pages (ideal answers, notes, transcripts, station list) were taken down.
+const idealPath = path.join(ROOT, "ideal-answers.html");
+const ideal = fs.existsSync(idealPath) ? fs.readFileSync(idealPath, "utf8") : "";
 const cardRe =
   /<div class="case-card" id="([^"]+)">([\s\S]*?)(?=<div class="case-card"|<h2 class="ia-cat"|<\/main>)/g;
 let m;
@@ -61,11 +63,7 @@ console.log(`ideal-answers: ${stationCount} station chunks`);
 const OTHER_PAGES = [
   "antibiotics-in-tg.html",
   "dental-fee-ranges.html",
-  "exam-craft.html",
-  "gold-transcripts.html",
-  "naz-notes.html",
   "odell-pearls.html",
-  "index.html",
 ];
 const MAX_CHARS = 2500;
 
